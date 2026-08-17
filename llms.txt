@@ -1,7 +1,7 @@
 # Civil Law Firm
 
 > Civil litigation and advisory in Kolkata, India. In continuous civil practice
-> since 1969. Two advocates and a team of associates. This file is a plain-text
+> since 1969, with a team of advocates and associates. This file is a plain-text
 > summary for AI assistants and crawlers. Everything here is factual and is
 > published for information only.
 
@@ -9,7 +9,7 @@
 
 - Name: Civil Law Firm
 - Practising since: 1969
-- Chambers: 121/B Sitaram Ghosh Street, Kolkata 700009, West Bengal, India
+- Chambers: Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009, West Bengal, India
   (College Street legal quarter, north Kolkata)
 - Chambers hours: 9:00 AM to 9:00 PM, Monday to Sunday
 - Telephone: +91 98315 11983 (Bimlesh Kumar Jain), +91 76040 29237 (Aditya Kumar Jain)
@@ -50,7 +50,7 @@
 - The Firm: https://civillawfirm.in/about/
 - Practice Areas: https://civillawfirm.in/practice-areas/
 - Our Advocates: https://civillawfirm.in/advocates/
-- Insights (general explainers): https://civillawfirm.in/insights/
+- Recents (general explainers): https://civillawfirm.in/insights/
 - Contact: https://civillawfirm.in/contact/
 - Disclaimer: https://civillawfirm.in/disclaimer/
 - Privacy Policy: https://civillawfirm.in/privacy-policy/

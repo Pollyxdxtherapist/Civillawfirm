@@ -1,6 +1,6 @@
 # civillawfirm.in — website source
 
-This is the complete website for **Civil Law Firm**, 121/B Sitaram Ghosh Street,
+This is the complete website for **Civil Law Firm**, Ground Floor, 121/B Sitaram Ghosh Street,
 Kolkata 700009.
 
 It is built from **plain HTML and CSS files**. There is no WordPress, no
@@ -298,7 +298,7 @@ Search for the printed text and replace it everywhere:
 
 - hours: `9:00 AM to 9:00 PM` and `9:00 AM – 9:00 PM` (English),
   `प्रातः 9:00 से रात्रि 9:00` (Hindi), `সকাল ৯টা থেকে রাত ৯টা` (Bengali)
-- address: `121/B Sitaram Ghosh Street, Kolkata 700009`
+- address: `Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009`
 
 Two extra places to update by hand if the hours or address change:
 
@@ -360,7 +360,7 @@ change:
 
 | Find this | Change it to |
 | --- | --- |
-| `<title>Post Title Goes Here \| Insights ...</title>` | the real title, about 60 characters |
+| `<title>Post Title Goes Here \| Recents ...</title>` | the real title, about 60 characters |
 | `<meta name="description" content="Replace this sentence ...">` | one sentence about the post, about 150 characters |
 | `<link rel="canonical" href="https://civillawfirm.in/insights/_template/">` | `.../insights/how-partition-suits-work/` |
 | the three `<link rel="alternate" hreflang=...>` lines | the same new folder name, keeping `/hi/` and `/bn/` |
@@ -382,7 +382,7 @@ Then **delete these two lines**, which exist only in the template:
 (The first one is what tells Google to ignore the template. If you leave it in,
 your new post will never appear in search results.)
 
-**Step 3 — list it on the Insights page.** Open `insights/index.html`, find the
+**Step 3 — list it on the Recents page.** Open `insights/index.html`, find the
 list marked `<!-- ===== POST LIST ===== -->`, copy one whole block from
 `<li class="post-item">` to `</li>`, paste it at the **top** of the list, and
 change the date, title, address and summary in your copy. Newest posts go first.
