@@ -71,8 +71,6 @@ body {
   font-size: 1.0625rem;          /* 17px */
   line-height: 1.65;
   text-rendering: optimizeLegibility;
-  /* Room for the sticky contact bar on small screens. */
-  padding-bottom: 4.25rem;
 }
 
 /* Hindi and Bengali read better with a little more line height. */
@@ -638,6 +636,11 @@ code {
   padding: 2.5rem 0 1.5rem;
   font-size: .95rem;
 }
+/* Below 1000px the floating WhatsApp button sits over the bottom-right
+   corner of the page; give the footer's last line room to clear it. */
+@media (max-width: 999px) {
+  .site-footer { padding-bottom: 4.75rem; }
+}
 .footer-grid { display: grid; gap: 1.75rem; }
 @media (min-width: 700px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1.4fr 1fr; gap: 2rem; } }
 .footer-h {
@@ -659,41 +662,45 @@ code {
 .footer-copy { font-size: .85rem; color: var(--muted); margin: 0; }
 
 /* ==========================================================================
-   11. Sticky contact bar
+   11. Floating WhatsApp button
+   A small round button pinned to the bottom-right corner, the usual place
+   visitors expect a WhatsApp action -- not a bar spanning the screen.
    ========================================================================== */
 .contactbar {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
+  right: 1rem;
+  /* env() keeps it clear of the home-bar / gesture area on iOS; the plain
+     1rem is what browsers without env() support use instead. */
+  bottom: 1rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
   z-index: 60;
-  display: flex;             /* works whatever number of actions the bar holds */
-  border-top: 1px solid var(--accent-dark);
-  box-shadow: 0 -2px 10px rgba(36, 31, 25, .12);
 }
-.cb-item { flex: 1 1 0; }
 .cb-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: .35rem;
-  padding: .9rem .4rem;
+  gap: .4rem;
+  padding: .8rem 1.1rem;
+  border-radius: 999px;
   font-size: .95rem;
   font-weight: 600;
   text-decoration: none;
-  color: #fffdf9;
-  background: var(--accent-dark);
+  color: #fff;
+  background: var(--wa);
+  box-shadow: 0 4px 14px rgba(36, 31, 25, .28);
 }
-.cb-item + .cb-item { border-left: 1px solid rgba(255, 255, 255, .22); }
-.cb-item span { flex: 0 0 auto; }
-@media (max-width: 360px) { .cb-item { font-size: .85rem; padding: .85rem .25rem; } }
-.cb-wa { background: var(--wa); }
-.cb-item:hover { color: #fff; background: var(--ink); }
-.cb-wa:hover { background: var(--wa-dark); }
+.cb-item:hover { background: var(--wa-dark); color: #fff; }
+@media (max-width: 360px) {
+  /* Icon only on the narrowest phones, so the button stays out of the way
+     of the page content beneath it. The link's aria-label still names it
+     for screen readers. */
+  .cb-item .cb-label { display: none; }
+  .cb-item { padding: .8rem; }
+}
 
-/* On wider screens the header buttons are always visible, so the bar is not
-   needed. This breakpoint must match the one where the full menu appears. */
+/* On wider screens the header's own WhatsApp button is visible, so the
+   floating one is redundant. This breakpoint must match the header's. */
 @media (min-width: 1000px) {
   .contactbar { display: none; }
-  body { padding-bottom: 0; }
 }
 
 /* ==========================================================================

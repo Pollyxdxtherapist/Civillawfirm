@@ -529,7 +529,7 @@ _headers                      Security and caching settings (Cloudflare/Netlify)
 README.md                     This file
 ```
 
-Every page carries the same header, footer, sticky WhatsApp bar and
+Every page carries the same header, footer, floating WhatsApp button and
 acknowledgement box. Because these are plain HTML files, changing something in
 the header means changing it in each file — use "Replace in Files" in VS Code,
 or the Terminal commands shown above, rather than editing 67 files by hand.
