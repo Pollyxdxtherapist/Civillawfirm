@@ -263,11 +263,8 @@ code {
 .lang-switch a:hover { color: var(--accent-dark); text-decoration: underline; }
 .lang-current { color: var(--ink); font-weight: 600; }
 
-/* Small screens: the header keeps to firm name + Call + Menu. WhatsApp and the
-   second number live in the sticky bar at the bottom, so nothing is lost. */
-@media (max-width: 999px) {
-  .header-cta .btn-wa { display: none; }
-}
+/* Small screens: the header keeps to firm name + WhatsApp + Menu. Telephone
+   numbers are on the Contact page and in the footer of every page. */
 @media (max-width: 540px) {
   .brand-text small { display: none; }
   .nav-toggle-text { display: none; }
@@ -668,11 +665,11 @@ code {
   position: fixed;
   left: 0; right: 0; bottom: 0;
   z-index: 60;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;             /* works whatever number of actions the bar holds */
   border-top: 1px solid var(--accent-dark);
   box-shadow: 0 -2px 10px rgba(36, 31, 25, .12);
 }
+.cb-item { flex: 1 1 0; }
 .cb-item {
   display: flex;
   align-items: center;

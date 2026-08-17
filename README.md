@@ -91,8 +91,8 @@ by email. It takes two minutes and no card:
    that key. It appears once on each of the three Contact pages.
 
 Until this is done, the form's "Send message" button will not deliver anything —
-but the **"Send on WhatsApp"** button beside it works immediately, and so do all
-the phone buttons.
+but the **"Send on WhatsApp"** button beside it works immediately, and so do the
+two Call buttons on the Contact page.
 
 (If you prefer Formspree instead, change the form's `action="..."` address to
 your Formspree endpoint and delete the hidden `access_key` line.)
@@ -254,9 +254,16 @@ A phone number appears in three forms, and all three must be changed:
 
 | Form | Looks like | Where |
 | --- | --- | --- |
-| The dialling link | `href="tel:+917604029237"` | buttons |
-| The printed number | `+91 76040 29237` | the words next to the button |
-| The WhatsApp link | `wa.me/917604029237` | WhatsApp buttons |
+| The dialling link | `href="tel:+917604029237"` | the two Call buttons on the Contact page, the footer of every page, and each advocate's fact list |
+| The printed number | `+91 76040 29237` | wherever the number is shown as words |
+| The WhatsApp link | `wa.me/917604029237` | WhatsApp buttons, on every page |
+
+**Where the Call buttons are.** Click-to-call *buttons* appear on the **Contact
+page only**. Every other page offers WhatsApp plus a link through to Contact.
+The phone numbers themselves are still printed, as plain click-to-call lines, in
+the footer of every page and in each advocate's fact list — that is deliberate,
+because the name, address and telephone number appearing consistently on every
+page is one of the things Google uses to rank a local firm.
 
 Because the number is printed in plain text on every page (which is exactly what
 lets Google and AI assistants read it), it appears in many files. Do not edit
@@ -522,7 +529,7 @@ _headers                      Security and caching settings (Cloudflare/Netlify)
 README.md                     This file
 ```
 
-Every page carries the same header, footer, sticky call/WhatsApp bar and
+Every page carries the same header, footer, sticky WhatsApp bar and
 acknowledgement box. Because these are plain HTML files, changing something in
 the header means changing it in each file — use "Replace in Files" in VS Code,
 or the Terminal commands shown above, rather than editing 67 files by hand.
