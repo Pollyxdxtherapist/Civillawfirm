@@ -740,8 +740,12 @@ code {
   max-height: 40vh;
   min-height: 5rem;
   overflow-y: auto;
-  padding: 0 .6rem .8rem 0;
+  padding: 0 .6rem 1.25rem 0;
   border-bottom: 1px solid var(--line);
+  /* Softens the cut where the text continues below, so a clipped line does not
+     look like a fault. The padding above keeps the last line clear of it. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4rem), transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 calc(100% - 1.4rem), transparent 100%);
 }
 .gate-body p { margin-bottom: .8em; }
 .gate-body p:last-child { margin-bottom: 0; }
