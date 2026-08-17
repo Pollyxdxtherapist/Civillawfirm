@@ -4,12 +4,8 @@
   <g fill="none" stroke="#3b332a" stroke-width="4">
     <rect x="10" y="18" width="60" height="60" rx="8"/>
   </g>
-  <g fill="#3b332a">
-    <rect x="24" y="30" width="5" height="33"/>
-    <rect x="37.5" y="30" width="5" height="33"/>
-    <rect x="51" y="30" width="5" height="33"/>
-    <rect x="20" y="61" width="40" height="5"/>
-  </g>
+  <text x="40" y="55" text-anchor="middle" fill="#3b332a" font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="22" letter-spacing="0.5">CLF</text>
   <text x="88" y="48" fill="#3b332a" font-family="Georgia, 'Times New Roman', serif"
         font-size="30" letter-spacing="0.5">Civil Law Firm</text>
   <text x="89" y="72" fill="#3b332a" font-family="system-ui, Arial, sans-serif"
