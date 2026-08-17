@@ -213,6 +213,13 @@ code {
 .header-cta .btn { flex: 0 0 auto; flex-wrap: nowrap; }
 .header-cta .btn-sub { display: none; }
 
+/* On phones and tablets the floating WhatsApp button (section 11, .contactbar)
+   already covers this, so the header copy would just be a duplicate. It comes
+   back at the same breakpoint where the floating button is hidden. */
+@media (max-width: 999px) {
+  .header-cta { display: none; }
+}
+
 .nav-toggle {
   grid-area: toggle;
   display: inline-flex;
