@@ -800,3 +800,121 @@ body.gate-open { overflow: hidden; }
   a { color: #000; }
   .card, .factbox, .office, .formwrap, .post-item { border: 1px solid #999; box-shadow: none; }
 }
+
+/* ==========================================================================
+   14. Guides, reference and case-type pages
+   Built from the tokens in section 1 only — no new colours, no new fonts.
+   ========================================================================== */
+
+/* "Last reviewed ... Reviewed by ..." furniture line, just under the standfirst. */
+.furniture {
+  font-size: .88rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+/* The direct-answer block: the first thing under the standfirst on every
+   guide and case-type page. A left rule and slightly larger type. */
+.direct-answer {
+  border-left: 3px solid var(--accent);
+  padding: .1rem 0 .1rem 1.3rem;
+  margin: 0 0 2rem;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+.direct-answer p { margin: 0; }
+
+/* Bordered blocks shared by documents-needed and authority. */
+.docblock, .authority {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  margin: 1.85rem 0;
+  max-width: var(--measure);
+}
+.docblock h2, .authority h2 { font-size: 1.05rem; margin-bottom: .6rem; }
+.docblock ul { margin: 0; padding-left: 1.15rem; }
+.docblock li { padding: .2rem 0; }
+.authority dl { margin: 0; }
+.authority dt {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin-top: .85rem;
+}
+.authority dt:first-child { margin-top: 0; }
+.authority dd { margin: .15rem 0 0; font-size: .98rem; }
+
+/* Rate and reference tables inside prose content. */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: .94rem;
+}
+.prose caption { text-align: left; font-size: .85rem; color: var(--muted); margin-bottom: .4rem; }
+.prose th, .prose td {
+  border: 1px solid var(--line);
+  padding: .55rem .65rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose th { background: var(--bg-alt); font-weight: 600; }
+.prose table + p.table-note { font-size: .88rem; color: var(--muted); margin-top: -1rem; }
+
+/* FAQ sections: plain heading/paragraph pairs, no accordion. */
+.faq-item { margin-top: 1.5rem; }
+.faq-item h3 { margin-bottom: .35rem; }
+.faq-item p { margin-bottom: 0; }
+
+/* Guides hub: four bands of cards. */
+.guide-band { margin-top: 2.5rem; }
+.guide-band h2 { font-size: 1.2rem; margin-bottom: .3rem; }
+
+/* Glossary: definition list with anchors, and a client-side filter box that
+   narrows the list as the reader types. The full list is present, and works,
+   without JavaScript -- the filter only hides rows when it runs. */
+.glossary-filter { margin: 1.5rem 0; max-width: 26rem; }
+.glossary-filter label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: .35rem; }
+.glossary-filter input {
+  width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: .65rem .75rem;
+}
+.glossary-filter input:focus { border-color: var(--accent); }
+.glossary-group-h { margin-top: 2.25rem; font-size: 1.15rem; }
+.glossary dl { margin: 1.25rem 0; max-width: var(--measure); }
+.glossary dt {
+  font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); margin-top: 1.15rem;
+}
+.glossary dt:first-of-type { margin-top: 0; }
+.glossary dd { margin: .3rem 0 0; color: var(--ink-2); }
+.glossary [hidden] { display: none; }
+.glossary-empty { color: var(--muted); font-style: italic; }
+
+/* Stamp duty calculator. Progressive enhancement: the rate tables above this
+   block are ordinary HTML and read fine with no JavaScript. This block
+   itself stays hidden until js/stamp-duty-calculator.js confirms it can run. */
+.calc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.35rem;
+  margin: 1.85rem 0;
+  max-width: var(--measure);
+}
+.calc[hidden] { display: none; }
+.calc h2 { font-size: 1.1rem; margin-bottom: .3rem; }
+.calc-intro { font-size: .92rem; color: var(--muted); margin-bottom: 1.1rem; }
+.calc-grid { display: grid; gap: 1rem; margin: 0 0 .25rem; }
+@media (min-width: 620px) { .calc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.calc .field { margin-bottom: 0; }
+.calc-result { margin-top: 1.3rem; padding-top: 1.15rem; border-top: 1px solid var(--line); }
+.calc-result dl { margin: 0; display: grid; gap: .5rem; }
+.calc-result .calc-row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.calc-result dt { color: var(--muted); }
+.calc-result dd { margin: 0; text-align: right; }
+.calc-row-total dt, .calc-row-total dd { font-weight: 600; color: var(--ink); font-size: 1.08rem; }
+.calc-note { font-size: .88rem; color: var(--muted); margin: 1.2rem 0 0; }
