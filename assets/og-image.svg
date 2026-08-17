@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Source for /assets/og-image.png (the sharing preview picture).
+       Edit this file, then export it as a 1200x630 PNG named og-image.png. -->
+  <rect width="1200" height="630" fill="#f2ede3"/>
+  <rect x="0" y="0" width="1200" height="14" fill="#7d6a4f"/>
+  <g fill="none" stroke="#3b332a" stroke-width="7">
+    <rect x="90" y="150" width="110" height="110" rx="14"/>
+  </g>
+  <g fill="#3b332a">
+    <rect x="115" y="172" width="9" height="60"/>
+    <rect x="140" y="172" width="9" height="60"/>
+    <rect x="165" y="172" width="9" height="60"/>
+    <rect x="106" y="228" width="77" height="9"/>
+  </g>
+  <text x="90" y="360" fill="#241f19" font-family="Georgia, 'Times New Roman', serif"
+        font-size="82">Civil Law Firm</text>
+  <text x="90" y="424" fill="#5c5346" font-family="system-ui, Arial, sans-serif"
+        font-size="34">Civil litigation and advisory in Kolkata since 1969</text>
+  <text x="90" y="492" fill="#6f6659" font-family="system-ui, Arial, sans-serif"
+        font-size="27">121/B Sitaram Ghosh Street, Kolkata 700009</text>
+  <text x="90" y="536" fill="#6f6659" font-family="system-ui, Arial, sans-serif"
+        font-size="27">Chambers 9 AM - 9 PM  |  +91 98315 11983  |  +91 76040 29237</text>
+  <rect x="90" y="570" width="1020" height="3" fill="#ddd6c9"/>
+</svg>

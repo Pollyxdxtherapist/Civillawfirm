@@ -1,0 +1,25 @@
+# Extra response headers, read automatically by Cloudflare Pages and Netlify.
+# Other hosts ignore this file harmlessly. Nothing here is required for the
+# site to work -- it just adds a little security hardening and caching.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Pages themselves are checked for freshness on every visit, so an edit shows up
+# straight away.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# The stylesheet and script are cached for an hour: long enough to be fast,
+# short enough that an edit appears the same working session.
+/css/*
+  Cache-Control: public, max-age=3600
+/js/*
+  Cache-Control: public, max-age=3600
+
+# Logos and pictures rarely change.
+/assets/*
+  Cache-Control: public, max-age=86400

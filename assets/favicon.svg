@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- Favicon for civillawfirm.in -->
+  <rect width="40" height="40" rx="6" fill="#3b332a"/>
+  <g fill="#efe7d8">
+    <rect x="9" y="10" width="3.4" height="20"/>
+    <rect x="18.3" y="10" width="3.4" height="20"/>
+    <rect x="27.6" y="10" width="3.4" height="20"/>
+    <rect x="7" y="27" width="26" height="3.2"/>
+  </g>
+</svg>

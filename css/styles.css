@@ -1,0 +1,794 @@
+/* ==========================================================================
+   Civil Law Firm — civillawfirm.in
+   One stylesheet for the whole site. Plain CSS, no build step.
+
+   HOW THIS FILE IS ORGANISED
+     1. Colours, fonts and other settings ("variables")
+     2. Base / reset
+     3. Layout helpers
+     4. Header and navigation
+     5. Buttons and links
+     6. Home page (hero and the four pillar blocks)
+     7. Cards, lists, prose, fact boxes
+     8. Photo placeholders
+     9. Contact page and the enquiry form
+    10. Footer
+    11. Sticky contact bar (phone + WhatsApp)
+    12. Acknowledgement overlay (Bar Council of India notice)
+    13. Accessibility, motion, print
+
+   To change the colours, edit section 1 only.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Colours, fonts and other settings
+   ========================================================================== */
+:root {
+  /* Warm light grey / beige palette */
+  --bg:          #f6f3ee;   /* page background */
+  --bg-alt:      #efeae0;   /* alternating band */
+  --bg-deep:     #e7e0d3;   /* hero / footer tint */
+  --surface:     #fffdf9;   /* cards */
+  --ink:         #241f19;   /* main text */
+  --ink-2:       #423b31;   /* headings on tinted panels */
+  --muted:       #6b6357;   /* secondary text */
+  --line:        #ddd6c9;   /* hairlines and borders */
+  --line-soft:   #eae4d8;
+  --accent:      #7d6a4f;   /* warm brown — links, buttons */
+  --accent-dark: #5b4c37;   /* hover */
+  --accent-soft: #f0e9dc;   /* tinted background for accents */
+  --wa:          #1f7a53;   /* WhatsApp green, darkened for contrast */
+  --wa-dark:     #17603f;
+  --focus:       #9a5b1f;   /* focus ring */
+
+  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+                "Noto Serif Devanagari", "Noto Serif Bengali", serif;
+  --font-sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+                "Noto Sans Devanagari", "Noto Sans Bengali", Arial, sans-serif;
+
+  --wrap: 1140px;          /* maximum content width */
+  --measure: 68ch;         /* comfortable reading width */
+  --radius: 4px;
+  --shadow: 0 1px 2px rgba(36, 31, 25, .06), 0 6px 18px rgba(36, 31, 25, .05);
+  --header-h: 66px;
+}
+
+/* ==========================================================================
+   2. Base / reset
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;          /* 17px */
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  /* Room for the sticky contact bar on small screens. */
+  padding-bottom: 4.25rem;
+}
+
+/* Hindi and Bengali read better with a little more line height. */
+html[lang^="hi"] body,
+html[lang^="bn"] body { line-height: 1.8; }
+
+img, svg { max-width: 100%; height: auto; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.22;
+  margin: 0 0 .6em;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+h1 { font-size: clamp(1.85rem, 1.3rem + 2.4vw, 2.85rem); }
+h2 { font-size: clamp(1.4rem, 1.15rem + 1.1vw, 1.9rem); }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p, ul, ol, dl { margin: 0 0 1.1em; }
+
+a { color: var(--accent-dark); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ink); }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .92em;
+  background: var(--accent-soft);
+  padding: .1em .35em;
+  border-radius: 3px;
+}
+
+/* Anchor targets clear the sticky header. */
+:target, [id] { scroll-margin-top: calc(var(--header-h) + 1rem); }
+
+/* ==========================================================================
+   3. Layout helpers
+   ========================================================================== */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.15rem;
+}
+
+.measure { max-width: var(--measure); }
+
+.layout-1col { padding-bottom: 1rem; }
+
+.layout-2col {
+  display: grid;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 900px) {
+  .layout-2col { grid-template-columns: minmax(0, 1fr) 320px; gap: 3.5rem; }
+  .layout-2col-wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+.page-head { padding: 1.75rem 0 1.25rem; max-width: 46ch; }
+.page-head h1 { margin-bottom: .5rem; }
+.layout-1col .page-head, .post .page-head { max-width: var(--measure); }
+
+.lede {
+  font-size: 1.16rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+.band { padding: 3rem 0; border-top: 1px solid var(--line); }
+.band-alt { background: var(--bg-alt); }
+
+.section-label, .eyebrow, .post-date, .card-meta {
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 .6rem;
+}
+
+/* Breadcrumbs */
+.breadcrumb { padding: 1rem 0 0; font-size: .87rem; color: var(--muted); }
+.breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem .5rem; }
+.breadcrumb li + li::before { content: "/"; margin-right: .5rem; color: var(--line); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb [aria-current] { color: var(--ink-2); }
+
+/* ==========================================================================
+   4. Header and navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 243, 238, .96);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "brand cta toggle";
+  align-items: center;
+  gap: .75rem;
+  min-height: var(--header-h);
+}
+
+.brand {
+  grid-area: brand;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand .mark { color: var(--accent-dark); flex: 0 0 auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text strong {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;      /* the firm name must never break across lines */
+}
+.brand-text small {
+  font-size: .7rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.header-cta { grid-area: cta; display: flex; gap: .4rem; justify-content: flex-end; }
+.header-cta .btn { flex: 0 0 auto; flex-wrap: nowrap; }
+.header-cta .btn-sub { display: none; }
+
+.nav-toggle {
+  grid-area: toggle;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font: inherit;
+  font-size: .9rem;
+  padding: .45rem .6rem;
+  cursor: pointer;
+}
+.nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after {
+  display: block; width: 18px; height: 2px; background: var(--ink); content: "";
+}
+.nav-toggle-bars { position: relative; }
+.nav-toggle-bars::before { position: absolute; top: -6px; }
+.nav-toggle-bars::after  { position: absolute; top: 6px; }
+
+.site-nav {
+  grid-column: 1 / -1;
+  display: none;
+  padding: .25rem 0 1rem;
+  border-top: 1px solid var(--line-soft);
+}
+.site-nav.is-open { display: block; }
+
+.nav-list, .lang-switch { list-style: none; margin: 0; padding: 0; }
+.nav-list a {
+  display: block;
+  padding: .6rem .1rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 1.02rem;
+  white-space: nowrap;        /* menu labels must not break in two */
+}
+.nav-list a:hover, .nav-list [aria-current="page"] { color: var(--accent-dark); }
+.nav-list [aria-current="page"] { font-weight: 600; }
+
+.lang-switch { display: flex; gap: .5rem; margin-top: .9rem; align-items: center; }
+.lang-switch li + li::before { content: "·"; color: var(--line); margin-right: .5rem; }
+.lang-switch a, .lang-current { font-size: .9rem; text-decoration: none; color: var(--muted); }
+.lang-switch a:hover { color: var(--accent-dark); text-decoration: underline; }
+.lang-current { color: var(--ink); font-weight: 600; }
+
+/* Small screens: the header keeps to firm name + Call + Menu. WhatsApp and the
+   second number live in the sticky bar at the bottom, so nothing is lost. */
+@media (max-width: 999px) {
+  .header-cta .btn-wa { display: none; }
+}
+@media (max-width: 540px) {
+  .brand-text small { display: none; }
+  .nav-toggle-text { display: none; }
+  .nav-toggle { padding: .5rem .55rem; }
+}
+@media (max-width: 390px) {
+  .brand-text strong { font-size: 1rem; }
+  /* Icon-only Call button. The link still announces "Call the chambers on ..."
+     to a screen reader through its aria-label. */
+  .header-cta .btn-txt { position: absolute; left: -9999px; }
+  .header-cta .btn { padding: .5rem .6rem; }
+}
+
+/* From 1000px there is room for the full menu on one line. */
+@media (min-width: 1000px) {
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "brand nav cta";
+  }
+  .nav-toggle { display: none; }
+  .site-nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.1rem;
+    border-top: 0;
+    padding: 0;
+  }
+  .nav-list { display: flex; gap: 1rem; }
+  .nav-list a { border-bottom: 0; padding: .35rem 0; font-size: .95rem; }
+  .lang-switch { margin: 0; }
+}
+
+/* Wide screens: room for the telephone number on the header button too. */
+@media (min-width: 1160px) {
+  .site-nav { gap: 1.6rem; }
+  .nav-list { gap: 1.3rem; }
+  .nav-list a { font-size: .97rem; }
+  .header-cta .btn-sub { display: inline; }
+}
+
+/* ==========================================================================
+   5. Buttons and links
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  /* On a narrow phone the label may drop below the telephone number, but the
+     number itself is never broken across two lines. */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem;
+  padding: .7rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: .97rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn-ico { font-size: 1.05em; }
+.btn-sub {
+  font-variant-numeric: tabular-nums;
+  opacity: .85;
+  font-size: .92em;
+  white-space: nowrap;        /* never break a telephone number in two */
+}
+.btn-txt { white-space: nowrap; }
+
+.btn-primary { background: var(--accent-dark); color: #fffdf9; }
+.btn-primary:hover { background: var(--ink); color: #fffdf9; }
+
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { background: var(--wa-dark); color: #fff; }
+
+.btn-outline { background: transparent; color: var(--ink); border-color: var(--accent); }
+.btn-outline:hover { background: var(--accent-soft); color: var(--ink); }
+
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { background: var(--accent-soft); }
+
+.btn-sm { padding: .5rem .7rem; font-size: .9rem; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.35rem 0; }
+.cta-col { display: flex; flex-direction: column; gap: .5rem; margin: 1rem 0; }
+.cta-col .btn { justify-content: center; }
+
+.link-more { font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line); }
+.link-more:hover { border-bottom-color: var(--accent); }
+.link-tel { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Down-arrow scroll cue between home page blocks */
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 1.15rem;
+  background: var(--surface);
+}
+.scroll-cue:hover { color: var(--ink); border-color: var(--accent); }
+.hero-cue, .pillar-cue { margin: 1.5rem 0 0; }
+
+/* ==========================================================================
+   6. Home page — hero and pillars
+   ========================================================================== */
+.hero {
+  background:
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner {
+  padding: 2.75rem 1.15rem 3rem;
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .hero-inner { grid-template-columns: minmax(0, 1.1fr) minmax(0, 360px); gap: 3rem; }
+}
+
+/* The card on the right of the hero: address, hours, contact buttons. */
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.hero-card .hero-meta { margin: 0; }
+.hero-card .hero-meta li { display: block; }
+.hero-card .hero-meta li:first-child { border-top: 0; padding-top: 0; }
+.hero-card .meta-k { display: block; margin-bottom: .1rem; }
+.hero-card .cta-col { margin-bottom: 0; }
+
+.hero-h1 { margin-bottom: 1rem; }
+.h1-name { display: block; }
+.h1-sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: .5em;
+  font-weight: 400;
+  color: var(--ink-2);
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin-top: .55rem;
+  max-width: 32ch;
+}
+
+.hero-meta, .pillar-meta { list-style: none; margin: 1.35rem 0; padding: 0; }
+.hero-meta li, .pillar-meta li {
+  display: flex; flex-wrap: wrap; gap: .25rem .6rem;
+  padding: .45rem 0; border-top: 1px solid var(--line);
+  font-size: .97rem;
+}
+.meta-k { color: var(--muted); min-width: 9.5rem; font-size: .87rem; text-transform: uppercase; letter-spacing: .06em; }
+.meta-v { color: var(--ink); }
+
+.pillar { padding: 3.25rem 0; border-top: 1px solid var(--line); }
+.pillar-alt { background: var(--bg-alt); }
+.pillar-inner { display: grid; gap: 2rem; align-items: center; }
+.pillar-text h2 { margin-bottom: .7rem; }
+.pillar-text p { max-width: 54ch; color: var(--ink-2); }
+
+@media (min-width: 860px) {
+  .pillar-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; }
+  .pillar-alt .pillar-text { order: 2; }
+  .pillar-alt .pillar-media { order: 1; }
+}
+
+/* ==========================================================================
+   7. Cards, lists, prose, fact boxes
+   ========================================================================== */
+.cards { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 1rem; }
+@media (min-width: 620px) { .cards-2, .cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 960px) { .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.05rem;
+  box-shadow: var(--shadow);
+}
+.card-h { font-size: 1.13rem; margin-bottom: .4rem; }
+.card-h a { text-decoration: none; color: var(--ink); }
+.card-h a:hover { color: var(--accent-dark); text-decoration: underline; }
+.card-p { color: var(--muted); font-size: .97rem; margin-bottom: .8rem; }
+.card-meta { margin-bottom: .5rem; }
+.card-more { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem 1rem; font-size: .95rem; }
+
+.prose > :last-child, .card > :last-child, .factbox > :last-child { margin-bottom: 0; }
+.prose p, .prose li { max-width: var(--measure); }
+.prose-sec { margin-top: 2.25rem; }
+.prose-sec h2 { margin-bottom: .55rem; }
+.prose h3 { margin-top: 1.75rem; }
+
+.ticks { list-style: none; margin: 1rem 0; padding: 0; }
+.ticks li {
+  position: relative;
+  padding: .45rem 0 .45rem 1.5rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.ticks li::before {
+  content: "—";
+  position: absolute; left: 0; top: .45rem;
+  color: var(--accent);
+}
+
+.plain { list-style: none; margin: 0 0 1rem; padding: 0; }
+.plain li { padding: .2rem 0; }
+
+.rail { display: grid; gap: 1.5rem; align-content: start; }
+
+.factbox {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem;
+}
+.factbox h2 { font-size: 1.12rem; }
+.factbox dl { margin: 0; }
+.factbox dt {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin-top: .85rem;
+}
+.factbox dt:first-child { margin-top: 0; }
+.factbox dd { margin: .1rem 0 0; font-size: .98rem; }
+.factbox-meta { font-size: .9rem; color: var(--muted); margin: .5rem 0 0; }
+
+.related h2 { font-size: 1.05rem; }
+.related ul { list-style: none; margin: 0 0 .9rem; padding: 0; }
+.related li { border-bottom: 1px solid var(--line-soft); }
+.related a { display: block; padding: .5rem 0; font-size: .97rem; text-decoration: none; }
+.related a:hover { text-decoration: underline; }
+
+/* Insight posts */
+.post-list { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 1.25rem; }
+.post-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem;
+}
+.post-list-lg { gap: 1rem; }
+.post-h { font-size: 1.2rem; margin-bottom: .4rem; }
+.post-h a { text-decoration: none; color: var(--ink); }
+.post-h a:hover { color: var(--accent-dark); text-decoration: underline; }
+.post-x { color: var(--muted); margin-bottom: .6rem; }
+.post-date { margin-bottom: .35rem; }
+.post-body { margin-top: 1.5rem; }
+.post-body p { margin-bottom: 1.25em; }
+.post-foot { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.template-note {
+  background: #fbf2d8;
+  border: 1px dashed #c9a94b;
+  border-radius: var(--radius);
+  padding: .7rem .85rem;
+  font-size: .92rem;
+  color: #5c4a12;
+}
+
+/* Call-to-action band, repeated at the foot of content pages */
+.cta-block {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 2.5rem 0;
+  margin-top: 3rem;
+}
+.cta-block h2 { margin-bottom: .5rem; }
+.cta-block p { max-width: 62ch; color: var(--ink-2); }
+.cta-meta { font-size: .92rem; color: var(--muted); margin: 0; }
+
+/* ==========================================================================
+   8. Photo placeholders
+   ========================================================================== */
+.photo { margin: 0; }
+.photo-ph {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;      /* reserves space, so nothing jumps while loading */
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.photo img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.photo-note {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: .5rem;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   9. Contact page and enquiry form
+   ========================================================================== */
+.office, .formwrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.35rem;
+  box-shadow: var(--shadow);
+}
+.office-dl { margin: 0 0 1rem; }
+.office-dl dt {
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin-top: 1rem;
+}
+.office-dl dt:first-child { margin-top: 0; }
+.office-dl dd { margin: .15rem 0 0; }
+.office-addr { margin: 0; font-size: 1.02rem; line-height: 1.5; }
+
+.field { display: block; margin-bottom: 1.1rem; }
+.field label {
+  display: block;
+  font-size: .9rem;
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+.req { font-weight: 400; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.field input, .field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .65rem .7rem;
+}
+.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.field textarea { resize: vertical; min-height: 6.5rem; }
+.field-error { display: block; color: #9a2f2f; font-size: .88rem; margin-top: .3rem; }
+.field-error[hidden] { display: none; }
+.hp { position: absolute; left: -9999px; opacity: 0; }
+.form-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.25rem 0 .5rem; }
+.form-status {
+  border-radius: var(--radius);
+  padding: .75rem .85rem;
+  background: #e7f2ea;
+  border: 1px solid #b9d8c4;
+  color: #1c5334;
+  font-size: .97rem;
+}
+.form-status[hidden] { display: none; }
+.form-bad { background: #fbeaea; border-color: #e0b7b7; color: #8a2626; }
+.form-note { font-size: .85rem; color: var(--muted); margin: 1rem 0 0; }
+
+/* ==========================================================================
+   10. Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--line);
+  margin-top: 0;
+  padding: 2.5rem 0 1.5rem;
+  font-size: .95rem;
+}
+.footer-grid { display: grid; gap: 1.75rem; }
+@media (min-width: 700px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1.4fr 1fr; gap: 2rem; } }
+.footer-h {
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+.footer-list { list-style: none; margin: 0; padding: 0; }
+.footer-list li { padding: .2rem 0; }
+.footer-list a { text-decoration: none; color: var(--ink-2); }
+.footer-list a:hover { text-decoration: underline; color: var(--ink); }
+.footer-firm { margin: 0 0 .3rem; font-family: var(--font-serif); font-size: 1.1rem; }
+.footer-addr, .footer-hours, .footer-since { margin: 0 0 .3rem; color: var(--muted); }
+.footer-bottom { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.footer-note { font-size: .85rem; color: var(--muted); max-width: 90ch; }
+.footer-copy { font-size: .85rem; color: var(--muted); margin: 0; }
+
+/* ==========================================================================
+   11. Sticky contact bar
+   ========================================================================== */
+.contactbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--accent-dark);
+  box-shadow: 0 -2px 10px rgba(36, 31, 25, .12);
+}
+.cb-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .9rem .4rem;
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fffdf9;
+  background: var(--accent-dark);
+}
+.cb-item + .cb-item { border-left: 1px solid rgba(255, 255, 255, .22); }
+.cb-item span { flex: 0 0 auto; }
+@media (max-width: 360px) { .cb-item { font-size: .85rem; padding: .85rem .25rem; } }
+.cb-wa { background: var(--wa); }
+.cb-item:hover { color: #fff; background: var(--ink); }
+.cb-wa:hover { background: var(--wa-dark); }
+
+/* On wider screens the header buttons are always visible, so the bar is not
+   needed. This breakpoint must match the one where the full menu appears. */
+@media (min-width: 1000px) {
+  .contactbar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* ==========================================================================
+   12. Acknowledgement overlay (Bar Council of India notice)
+   The page underneath is complete and readable without this overlay.
+   ========================================================================== */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(36, 31, 25, .62);
+  overflow-y: auto;
+}
+.gate[hidden] { display: none; }   /* keep it out of the way until JS shows it */
+
+.gate-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .3);
+  max-width: 46rem;
+  width: 100%;
+  padding: 1.5rem 1.4rem;
+  margin: auto;
+}
+.gate-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
+.gate-logo .mark { color: var(--accent-dark); }
+.gate-logo span { display: flex; flex-direction: column; line-height: 1.15; }
+.gate-logo strong { font-family: var(--font-serif); font-size: 1.1rem; }
+.gate-logo small { font-size: .72rem; color: var(--muted); }
+.gate-title { font-size: 1.3rem; margin-bottom: .75rem; }
+/* The notice scrolls inside the card, so the checkbox and buttons stay in view
+   on a small screen. The hairline underneath shows there is more to read. */
+.gate-body {
+  font-size: .95rem;
+  color: var(--ink-2);
+  max-height: 40vh;
+  min-height: 5rem;
+  overflow-y: auto;
+  padding: 0 .6rem .8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.gate-body p { margin-bottom: .8em; }
+.gate-body p:last-child { margin-bottom: 0; }
+.gate-check {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  margin: 1.1rem 0 .5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gate-check input { width: 1.15rem; height: 1.15rem; margin-top: .18rem; flex: 0 0 auto; }
+.gate-error { color: #9a2f2f; font-size: .92rem; margin: .25rem 0 .5rem; }
+.gate-error[hidden] { display: none; }
+.gate-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .75rem; }
+.gate-foot { margin: 1rem 0 0; font-size: .85rem; }
+body.gate-open { overflow: hidden; }
+
+/* ==========================================================================
+   13. Accessibility, motion, print
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--ink);
+  color: #fff;
+  padding: .7rem 1rem;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+@media print {
+  .site-header, .contactbar, .gate, .scroll-cue, .cta-block, .photo-ph { display: none !important; }
+  body { padding: 0; background: #fff; font-size: 11pt; }
+  a { color: #000; }
+  .card, .factbox, .office, .formwrap, .post-item { border: 1px solid #999; box-shadow: none; }
+}
