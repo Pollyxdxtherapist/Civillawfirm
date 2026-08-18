@@ -44,21 +44,21 @@ you can always find what is left to do by searching the folder for
 
 ### (a) The firm's email address
 
-Search all files for `[PLACEHOLDER-FIRM-EMAIL]` and replace it with the real
-address (for example `office@civillawfirm.in`). It appears in the footer of
-every page, on the Contact page, and inside the "structured data" block at the
-top of each page.
+Already filled in: `contact@civillawfirm.in`, in the footer of every page, on
+the Contact page, and inside the "structured data" block at the top of each
+page. If the address ever changes, search all files for the old address and
+replace it with the new one.
 
-On a Mac or Linux computer you can do all of them at once. Open Terminal in this
-folder and run:
+On a Mac or Linux computer you can do that in one go. Open Terminal in this
+folder and run (replacing both addresses as needed):
 
 ```
-grep -rl "\[PLACEHOLDER-FIRM-EMAIL\]" . --include=*.html --include=*.txt \
-  | xargs sed -i 's/\[PLACEHOLDER-FIRM-EMAIL\]/office@civillawfirm.in/g'
+grep -rl "contact@civillawfirm.in" . --include=*.html --include=*.txt \
+  | xargs sed -i 's/contact@civillawfirm\.in/office@civillawfirm.in/g'
 ```
 
-On Windows, use VS Code: press `Ctrl+Shift+H` (Replace in Files), type the
-placeholder in the top box and the real email in the second box, then click
+On Windows, use VS Code: press `Ctrl+Shift+H` (Replace in Files), type the old
+address in the top box and the new one in the second box, then click
 "Replace All".
 
 ### (b) Confirm the WhatsApp number
