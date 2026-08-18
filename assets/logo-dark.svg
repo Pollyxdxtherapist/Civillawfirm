@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" width="360" height="96"
      role="img" aria-label="Civil Law Firm, Kolkata, practising since 1969">
   <title>Civil Law Firm</title>
-  <g fill="none" stroke="#3b332a" stroke-width="4">
-    <rect x="10" y="18" width="60" height="60" rx="8"/>
-  </g>
-  <text x="40" y="55" text-anchor="middle" fill="#3b332a" font-family="Georgia, 'Times New Roman', serif"
-        font-weight="700" font-size="22" letter-spacing="0.5">CLF</text>
+  <path d="M 55.006 63.537 A 21.6 21.6 0 1 1 55.006 32.463" fill="none" stroke="#3b332a" stroke-width="9" stroke-linecap="round"/>
+  <line x1="35.8" y1="34.8" x2="35.8" y2="62.4" stroke="#3b332a" stroke-width="5.7" stroke-linecap="round"/>
+  <line x1="35.8" y1="37.8" x2="47.8" y2="37.8" stroke="#3b332a" stroke-width="5.7" stroke-linecap="round"/>
+  <line x1="35.8" y1="49.8" x2="45.4" y2="49.8" stroke="#3b332a" stroke-width="5.7" stroke-linecap="round"/>
   <text x="88" y="48" fill="#3b332a" font-family="Georgia, 'Times New Roman', serif"
         font-size="30" letter-spacing="0.5">Civil Law Firm</text>
   <text x="89" y="72" fill="#3b332a" font-family="system-ui, Arial, sans-serif"

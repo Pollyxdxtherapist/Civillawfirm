@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
   <!-- Favicon for civillawfirm.in -->
   <rect width="40" height="40" rx="6" fill="#3b332a"/>
-  <text x="20" y="27" text-anchor="middle" fill="#efe7d8" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="16" letter-spacing="0.3">CLF</text>
+  <path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="#efe7d8" stroke-width="6" stroke-linecap="round"/>
+  <line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="#efe7d8" stroke-width="3.8" stroke-linecap="round"/>
+  <line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="#efe7d8" stroke-width="3.8" stroke-linecap="round"/>
+  <line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="#efe7d8" stroke-width="3.8" stroke-linecap="round"/>
 </svg>
