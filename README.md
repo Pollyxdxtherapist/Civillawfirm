@@ -61,24 +61,21 @@ On Windows, use VS Code: press `Ctrl+Shift+H` (Replace in Files), type the old
 address in the top box and the new one in the second box, then click
 "Replace All".
 
-### (b) Confirm the WhatsApp number
+### (b) The WhatsApp number
 
-The WhatsApp button everywhere points to **+91 76040 29237 (Aditya Kumar Jain)**.
+The WhatsApp button everywhere points to a dedicated WhatsApp number,
+**+91 91233 05701**, which is separate from either advocate's call number.
 
-**Please confirm this is the number that actually has WhatsApp on it.** Every
-WhatsApp link on the site is marked with the comment
-`CONFIRM which of the two numbers is on WhatsApp`.
-
-If it should be the other number instead, replace `917604029237` with
-`919831511983` everywhere:
+If this number ever changes, replace `919123305701` everywhere:
 
 ```
-grep -rl "917604029237" . --include=*.html --include=*.txt \
-  | xargs sed -i 's|wa.me/917604029237|wa.me/919831511983|g'
+grep -rl "919123305701" . --include=*.html --include=*.txt \
+  | xargs sed -i 's/919123305701/9XXXXXXXXX/g'
 ```
 
-Also change the two `data-wa-number="..."` values on the Contact pages
-(`/contact/index.html`, `/hi/contact/index.html`, `/bn/contact/index.html`).
+That single command also covers the two `data-wa-number="..."` values on the
+Contact pages (`/contact/index.html`, `/hi/contact/index.html`,
+`/bn/contact/index.html`) and the fallback default in `js/main.js`.
 
 ### (c) The contact form key (Web3Forms)
 
@@ -91,8 +88,8 @@ by email. It takes two minutes and no card:
    that key. It appears once on each of the three Contact pages.
 
 Until this is done, the form's "Send message" button will not deliver anything —
-but the **"Send on WhatsApp"** button beside it works immediately, and so do the
-two Call buttons on the Contact page.
+but the **"Send on WhatsApp"** button beside it works immediately, and so does
+the Call button on the Contact page.
 
 (If you prefer Formspree instead, change the form's `action="..."` address to
 your Formspree endpoint and delete the hidden `access_key` line.)
@@ -254,16 +251,19 @@ A phone number appears in three forms, and all three must be changed:
 
 | Form | Looks like | Where |
 | --- | --- | --- |
-| The dialling link | `href="tel:+917604029237"` | the two Call buttons on the Contact page, the footer of every page, and each advocate's fact list |
+| The dialling link | `href="tel:+917604029237"` | the Call button on the Contact page, the footer of every page, and Adv Aditya Kumar Jain's fact list |
 | The printed number | `+91 76040 29237` | wherever the number is shown as words |
-| The WhatsApp link | `wa.me/917604029237` | WhatsApp buttons, on every page |
 
-**Where the Call buttons are.** Click-to-call *buttons* appear on the **Contact
+The WhatsApp number is separate from this call number — see
+[section 1b](#b-the-whatsapp-number) if you need to change that instead.
+
+**Where the Call button is.** A click-to-call *button* appears on the **Contact
 page only**. Every other page offers WhatsApp plus a link through to Contact.
-The phone numbers themselves are still printed, as plain click-to-call lines, in
-the footer of every page and in each advocate's fact list — that is deliberate,
-because the name, address and telephone number appearing consistently on every
-page is one of the things Google uses to rank a local firm.
+The phone number itself is still printed, as a plain click-to-call line, in
+the footer of every page and in Adv Aditya Kumar Jain's fact list — that is
+deliberate, because the name, address and telephone number appearing
+consistently on every page is one of the things Google uses to rank a local
+firm.
 
 Because the number is printed in plain text on every page (which is exactly what
 lets Google and AI assistants read it), it appears in many files. Do not edit
@@ -277,12 +277,14 @@ grep -rl "7604029237" . --include=*.html --include=*.txt --include=*.js \
   | xargs sed -i \
     -e 's/tel:+917604029237/tel:+919876543210/g' \
     -e 's/+91 76040 29237/+91 98765 43210/g' \
-    -e 's|wa.me/917604029237|wa.me/919876543210|g' \
     -e 's/917604029237/919876543210/g'
 ```
 
-**Windows**, in VS Code: press `Ctrl+Shift+H` and do the same four
+**Windows**, in VS Code: press `Ctrl+Shift+H` and do the same three
 replacements, one after another, clicking "Replace All" each time.
+
+This does not touch the WhatsApp number, which is separate — see
+[section 1b](#b-the-whatsapp-number).
 
 Afterwards, search the folder for the old digits `7604029237` to be sure none
 are left, and check `llms.txt` and `sitemap.xml` by eye.
