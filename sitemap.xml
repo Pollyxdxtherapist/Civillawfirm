@@ -600,6 +600,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://civillawfirm.in/guides/common-legal-questions/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/common-legal-questions/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://civillawfirm.in/guides/mutation-namjari/</loc>
     <lastmod>2026-08-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/mutation-namjari/"/>
