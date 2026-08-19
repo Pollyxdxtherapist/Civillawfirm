@@ -571,6 +571,13 @@ code {
   display: block; width: 100%; height: auto;
   border: 1px solid var(--line); border-radius: var(--radius);
 }
+.photo-map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
 .photo-note {
   font-size: .8rem;
   color: var(--muted);
