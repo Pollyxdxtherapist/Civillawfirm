@@ -571,12 +571,22 @@ code {
   display: block; width: 100%; height: auto;
   border: 1px solid var(--line); border-radius: var(--radius);
 }
-.photo-map {
+.photo-map-frame {
   display: block;
+  position: relative;
   width: 100%;
-  aspect-ratio: 8 / 5;
+  padding-top: 62.5%;      /* 8:5 aspect ratio, as a fraction of the full width */
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-map {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .photo-note {
   font-size: .8rem;
