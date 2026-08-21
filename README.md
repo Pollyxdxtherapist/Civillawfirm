@@ -16,7 +16,7 @@ with its own web address, which is what makes them findable on Google.
 
 ## Contents
 
-1. [Before the site goes live: five things to fill in](#1-before-the-site-goes-live-five-things-to-fill-in)
+1. [Before the site goes live: what is left to fill in](#1-before-the-site-goes-live-what-is-left-to-fill-in)
 2. [How to look at the site on your own computer](#2-how-to-look-at-the-site-on-your-own-computer)
 3. [Putting it online (hosting)](#3-putting-it-online-hosting)
 4. [Getting found on Google (Search Console)](#4-getting-found-on-google-search-console)
@@ -35,12 +35,15 @@ with its own web address, which is what makes them findable on Google.
 
 ---
 
-## 1. Before the site goes live: five things to fill in
+## 1. Before the site goes live: what is left to fill in
 
-Everything on the site is real and final **except** the five items below. Each
-one is marked in the files with the word `PLACEHOLDER` in capital letters, so
-you can always find what is left to do by searching the folder for
-`PLACEHOLDER`.
+Items (a) to (c) below are **done**; they are kept here so you know how to
+change them later. Only **(d) the Google Search Console token** and **(e) the
+photographs** are still outstanding, plus the Web3Forms plan question in (c2).
+
+The only placeholder left in the files is
+`[PLACEHOLDER-GSC-VERIFICATION-TOKEN]` — searching the folder for
+`PLACEHOLDER` will always show you what remains.
 
 ### (a) The firm's email address
 
@@ -77,27 +80,32 @@ That single command also covers the two `data-wa-number="..."` values on the
 Contact pages (`/contact/index.html`, `/hi/contact/index.html`,
 `/bn/contact/index.html`) and the fallback default in `js/main.js`.
 
-### (c) The contact form key (Web3Forms)
+### (c) The form key (Web3Forms) — done
 
-The enquiry form on the Contact page needs a free key so that messages arrive
-by email. It takes two minutes and no card:
+Already filled in. The Web3Forms access key
+`0118d266-0f18-416a-9016-f571212295a4` is in the hidden `access_key` field of
+all six forms: the enquiry form on the three Contact pages, and the application
+form on the three Careers pages.
 
-1. Go to <https://web3forms.com>, type the firm's email address, and it will
-   email you an **access key** (a long code).
-2. Search all files for `[PLACEHOLDER-WEB3FORMS-ACCESS-KEY]` and replace it with
-   that key. It appears once on each of the three Contact pages.
+This key is meant to be public — it sits in the HTML that every visitor's
+browser downloads, and it only tells Web3Forms which mailbox to deliver to. It
+is not a password and gives nobody access to the account. The hidden `botcheck`
+field in each form is the spam trap that stops robots using it.
 
-Until this is done, the form's "Send message" button will not deliver anything —
-but the **"Send on WhatsApp"** button beside it works immediately, and so does
-the Call button on the Contact page.
+To change it later, replace it everywhere at once:
 
-(If you prefer Formspree instead, change the form's `action="..."` address to
+```
+grep -rl "0118d266-0f18-416a-9016-f571212295a4" . --include=*.html \
+  | xargs sed -i 's/0118d266-0f18-416a-9016-f571212295a4/NEW-KEY-HERE/g'
+```
+
+Where the messages arrive is set in the Web3Forms account, not in these files.
+
+(If you prefer Formspree instead, change each form's `action="..."` address to
 your Formspree endpoint and delete the hidden `access_key` line.)
 
-The same `[PLACEHOLDER-WEB3FORMS-ACCESS-KEY]` also appears once on each of the
-three **Careers** pages. Replacing it everywhere at once covers both forms — but
-please read the next section first, because the Careers form asks more of
-Web3Forms than the enquiry form does.
+**The Careers form needs more than this key** — please read the next section
+before announcing that page.
 
 ### (c2) The careers form — please read before going live
 
