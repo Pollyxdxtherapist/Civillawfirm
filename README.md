@@ -305,13 +305,29 @@ Useful extras:
   crawlers. Both are already set up; if the firm's details change, update
   `llms.txt` too.
 
-### Analytics (optional, later)
+### Analytics
 
-Every page has a commented-out slot near the top for a lightweight visitor
-counter. If the firm ever wants one, uncomment the Plausible line (or paste a
-GA4 snippet in the same place) on every page. Nothing is tracking anybody at
-present, and the Privacy Policy says so — if you switch a counter on, add a line
-about it to the Privacy Policy.
+**Google Analytics 4 is switched on.** The measurement ID is `G-D89Y18BMVX`, and
+the reports are at <https://analytics.google.com/>.
+
+The tag sits near the top of the `<head>` of every page, just after the viewport
+line, marked `<!-- ===== Google Analytics (GA4) ===== -->`. It is the standard
+snippet Google gives you, unmodified.
+
+To change the ID, replace every occurrence of `G-D89Y18BMVX` across the site —
+there are two per page, one in the script address and one in the `gtag('config',
+…)` line. To switch analytics off, delete the whole marked block from every page.
+
+Two things to keep in step with it:
+
+- **The Privacy Policy.** All three language versions now name Google Analytics,
+  list the two cookies it sets (`_ga` and `_ga_D89Y18BMVX`), and link to Google's
+  privacy policy. If you change or remove the tag, change those paragraphs too —
+  they are under "Information stored on your own device" and "Third parties".
+- **The advertising setting.** The policy says the analytics is not used to show
+  advertisements. That matches a default GA4 property. If anyone later turns on
+  **Google signals** (Admin → Data collection and modification → Data
+  collection), that stops being true and the policy has to be reworded.
 
 ---
 
@@ -639,16 +655,18 @@ or the Terminal commands shown above, rather than editing 67 files by hand.
 ## 9. Have the legal pages reviewed
 
 The **Privacy Policy**, **Terms of Use** and **Disclaimer** pages have been
-drafted to fit this website — a static site with no accounts, one email-only
-contact form, and no tracking. They are a sound starting point, **not** advice,
-and they have not been settled by anyone at the firm.
+drafted to fit this website. The site has moved on since they were written — it
+now stores careers applications and curriculum vitae on the server, and it runs
+Google Analytics — so the Privacy Policy in particular needs a proper reading.
+They are a sound starting point, **not** advice, and they have not been settled
+by anyone at the firm.
 
 Please read all three, in all three languages, and change anything that does not
 match how the firm actually works — particularly:
 
 - how long enquiry emails are kept;
 - who at the chambers receives them;
-- whether any analytics or tracking is switched on later.
+- the Google Analytics paragraphs, now that the tag is live.
 
 The same goes for the Hindi and Bengali translations throughout the site: they
 have been written carefully and in matching legal register, but a first reading
