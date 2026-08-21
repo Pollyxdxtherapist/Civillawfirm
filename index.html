@@ -9,6 +9,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- ===== Google Analytics (GA4) =====
+     Measurement ID G-D89Y18BMVX. Reports: https://analytics.google.com/
+     This is on every page; to change or remove it, see README.md, "Analytics". -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D89Y18BMVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D89Y18BMVX');
+</script>
+
 <!-- ===== Page title and description (unique to this page) ===== -->
 <title>Civil Law Firm | Civil Litigation Advocates in Kolkata</title>
 <meta name="description" content="Civil Law Firm, practising in Kolkata since 1969. Civil litigation and advisory in property, matrimonial, contract, succession, tenancy and recovery matters.">
@@ -34,7 +46,7 @@
 <meta property="og:image" content="https://civillawfirm.in/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Civil Law Firm, 121/B Sitaram Ghosh Street, Kolkata 700009">
+<meta property="og:image:alt" content="Civil Law Firm, Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta property="og:locale:alternate" content="bn_IN">
@@ -44,7 +56,10 @@
 <meta name="twitter:image" content="https://civillawfirm.in/assets/og-image.png">
 
 <!-- ===== Styles and icons ===== -->
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/css/styles.css?v=3">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <meta name="theme-color" content="#f6f3ee">
@@ -65,17 +80,14 @@
   "slogan": "Civil litigation and advisory in Kolkata since 1969",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "121/B Sitaram Ghosh Street",
+    "streetAddress": "Ground Floor, 121/B Sitaram Ghosh Street",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700009",
     "addressCountry": "IN"
   },
-  "telephone": [
-    "+919831511983",
-    "+917604029237"
-  ],
-  "email": "[PLACEHOLDER-FIRM-EMAIL]",
+  "telephone": "+917604029237",
+  "email": "contact@civillawfirm.in",
   "hasMap": "https://www.google.com/maps/search/?api=1&query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009",
   "openingHoursSpecification": [
     {
@@ -123,14 +135,14 @@
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/#person",
-      "name": "Bimlesh Kumar Jain",
+      "name": "Adv Bimlesh Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/"
     },
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/aditya-kumar-jain/#person",
-      "name": "Aditya Kumar Jain",
+      "name": "Adv Aditya Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/advocates/aditya-kumar-jain/"
     }
@@ -224,12 +236,6 @@
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
 <script src="/js/main.js" defer></script>
-
-<!-- OPTIONAL ANALYTICS SLOT (disabled).
-     To switch on a privacy-friendly counter later, uncomment ONE of these and
-     fill in the domain / id. Keep the `defer` attribute.
-     <script defer data-domain="civillawfirm.in" src="https://plausible.io/js/script.js"></script>
--->
 </head>
 <body class="page-home">
 
@@ -240,7 +246,7 @@
   <div class="wrap header-inner">
 
     <a class="brand" href="/">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span class="brand-text">
         <strong>Civil Law Firm</strong>
         <small>Practising since 1969</small>
@@ -250,8 +256,7 @@
     <!-- WhatsApp stays outside the hamburger so it is always visible.
          Telephone numbers live on the Contact page and in the footer. -->
     <div class="header-cta">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa btn-sm" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+<a class="btn btn-wa btn-sm" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
     </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
@@ -265,9 +270,11 @@
       <ul class="nav-list">
           <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="/practice-areas/">Practice Areas</a></li>
+          <li><a href="/guides/">Guides</a></li>
           <li><a href="/advocates/">Our Advocates</a></li>
-          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/insights/">Recents</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/careers/">Careers</a></li>
       </ul>
       <!-- Language switcher: real links to the same page in each language. -->
       <ul class="lang-switch" aria-label="Language">
@@ -291,7 +298,7 @@
         <span class="h1-name">Civil Law Firm</span>
         <span class="h1-sub">Civil litigation and advisory in Kolkata since 1969</span>
       </h1>
-      <p class="lede">A two-advocate chamber in the College Street legal quarter of Kolkata, working on the civil side of the law — property and title, matrimonial and family matters, contracts, succession, tenancy, recovery of money, and civil appeals.</p>
+      <p class="lede">A civil litigation chamber in the College Street legal quarter of Kolkata, working on the civil side of the law — property and title, matrimonial and family matters, contracts, succession, tenancy, recovery of money, and civil appeals.</p>
       <p class="hero-cue"><a class="scroll-cue" href="#practice-areas" aria-label="Scroll to the next section">
         <span aria-hidden="true">&darr;</span></a></p>
     </div>
@@ -299,12 +306,11 @@
     <!-- The chambers card: address, hours, and the buttons that matter most. -->
     <aside class="hero-card">
       <ul class="hero-meta">
-        <li><span class="meta-k">Chambers</span> <span class="meta-v">121/B Sitaram Ghosh Street, Kolkata 700009</span></li>
+        <li><span class="meta-k">Chambers</span> <span class="meta-v">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</span></li>
         <li><span class="meta-k">Chambers hours</span> <span class="meta-v">Monday to Sunday, 9:00 AM to 9:00 PM</span></li>
       </ul>
       <p class="cta-col">
-        <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+  <a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" aria-label="Open the chambers address in Google Maps" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#9906;</span><span class="btn-txt">Get directions</span></a>
         <a class="btn btn-outline" href="/contact/">Contact</a>
       </p>
@@ -359,8 +365,8 @@
   <div class="wrap pillar-inner">
     <div class="pillar-text">
       <p class="section-label">Our advocates</p>
-      <h2>Two advocates and a team of associates</h2>
-      <p>Bimlesh Kumar Jain, B.A. LL.B., has been in practice for over fifty years, in civil matters including property and matrimonial law. Aditya Kumar Jain, B.A. LL.B., has been in practice for over ten years, with a focus on property law, and works with a team of associates.</p>
+      <h2>Advocates and associates</h2>
+      <p>Adv Bimlesh Kumar Jain, B.A. LL.B., has been in practice for 40+ years, in civil matters including property and matrimonial law. Adv Aditya Kumar Jain, B.A. LL.B., has been in practice for 5+ years, with a focus on property law, and works with a team of associates.</p>
       <p class="cta-row">
         <a class="btn btn-outline" href="/advocates/">Meet the advocates</a>
       </p>
@@ -389,9 +395,18 @@
       <circle cx="600" cy="395" r="26" fill="#c3b79f"/>
     </g>
   </svg>
-  <figcaption class="photo-note">Photograph to be added — The two advocates, at the chambers</figcaption>
+  <figcaption class="photo-note">Photograph to be added — The advocates, at the chambers</figcaption>
 </figure>
     </div>
+  </div>
+</section>
+
+<!-- ===== Guides ===== -->
+<section class="band">
+  <div class="wrap">
+    <h2>Guides</h2>
+    <p class="measure">Explanations of the procedures that property matters in West Bengal run on &mdash; registration and stamp duty, land records and mutation, land use, court fees and jurisdiction.</p>
+    <p><a class="link-more" href="/guides/">Guides <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
@@ -415,12 +430,12 @@
          <source srcset="/assets/photos/home-3.webp" type="image/webp">
          <img src="/assets/photos/home-3.jpg" width="1200" height="750"
               loading="lazy" decoding="async"
-              alt="The street entrance to the chambers of Civil Law Firm at 121/B Sitaram Ghosh Street, Kolkata 700009">
+              alt="The street entrance to the chambers of Civil Law Firm at Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009">
        </picture>
   -->
   <svg class="photo-ph" viewBox="0 0 1200 750" width="1200" height="750"
-       role="img" aria-label="The street entrance to the chambers of Civil Law Firm at 121/B Sitaram Ghosh Street, Kolkata 700009" preserveAspectRatio="xMidYMid slice">
-    <title>The street entrance to the chambers of Civil Law Firm at 121/B Sitaram Ghosh Street, Kolkata 700009</title>
+       role="img" aria-label="The street entrance to the chambers of Civil Law Firm at Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009" preserveAspectRatio="xMidYMid slice">
+    <title>The street entrance to the chambers of Civil Law Firm at Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</title>
     <rect width="1200" height="750" fill="#ece6da"/>
     <rect x="18" y="18" width="1164" height="714" fill="none" stroke="#d5cbb8" stroke-width="4"/>
     <g fill="#c3b79f">
@@ -444,40 +459,22 @@
       <h2>The chambers is open every day, 9 AM to 9 PM</h2>
       <p>You are welcome to telephone during those hours. If it is easier, send a WhatsApp message setting out the matter in a line or two and the chambers will tell you what papers are relevant.</p>
       <ul class="pillar-meta">
-        <li><span class="meta-k">Chambers</span> <span class="meta-v">121/B Sitaram Ghosh Street, Kolkata 700009</span></li>
+        <li><span class="meta-k">Chambers</span> <span class="meta-v">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</span></li>
         <li><span class="meta-k">Chambers hours</span> <span class="meta-v">Monday to Sunday, 9:00 AM to 9:00 PM</span></li>
       </ul>
       <p class="cta-row">
-        <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+  <a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" aria-label="Open the chambers address in Google Maps" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#9906;</span><span class="btn-txt">Get directions</span></a>
         <a class="btn btn-outline" href="/contact/">Contact and directions</a>
       </p>
     </div>
     <div class="pillar-media">
 <figure class="photo ">
-  <!-- PHOTO PLACEHOLDER. When the real photograph is ready, delete the <svg> below
-       and paste this in its place, then put the files in /assets/photos/ :
-       <picture>
-         <source srcset="/assets/photos/home-4.webp" type="image/webp">
-         <img src="/assets/photos/home-4.jpg" width="1200" height="750"
-              loading="lazy" decoding="async"
-              alt="Map pin marking 121/B Sitaram Ghosh Street, Kolkata 700009">
-       </picture>
-  -->
-  <svg class="photo-ph" viewBox="0 0 1200 750" width="1200" height="750"
-       role="img" aria-label="Map pin marking 121/B Sitaram Ghosh Street, Kolkata 700009" preserveAspectRatio="xMidYMid slice">
-    <title>Map pin marking 121/B Sitaram Ghosh Street, Kolkata 700009</title>
-    <rect width="1200" height="750" fill="#ece6da"/>
-    <rect x="18" y="18" width="1164" height="714" fill="none" stroke="#d5cbb8" stroke-width="4"/>
-    <g fill="#c3b79f">
-      <rect x="500" y="330" width="200" height="130" rx="10"/>
-      <rect x="556" y="306" width="88" height="30" rx="8"/>
-      <circle cx="600" cy="395" r="44" fill="#ece6da"/>
-      <circle cx="600" cy="395" r="26" fill="#c3b79f"/>
-    </g>
-  </svg>
-  <figcaption class="photo-note">Photograph to be added — Locality photograph or map still</figcaption>
+  <div class="photo-map-frame">
+    <iframe class="photo-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.027897582214!2d88.3667512!3d22.5780599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02773eff8c4fa7%3A0x7e2f8873379433b2!2sCivil%20law%20firm!5e0!3m2!1sen!2sin!4v1787135499885!5m2!1sen!2sin"
+            loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+            title="Map showing Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009"></iframe>
+  </div>
 </figure>
     </div>
   </div>
@@ -489,36 +486,43 @@
     <h2>The seven areas</h2>
     <ul class="cards cards-3">
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.2 12 3.5l9 6.7"/><path d="M5.4 9v11.5h13.2V9"/><path d="M9.8 20.5v-5.6h4.4v5.6"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/property-title-disputes/">Property &amp; title disputes</a></h3>
         <p class="card-p">Ownership, title, boundaries, partition, possession and declaration of rights in immovable property.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/property-title-disputes/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9.3" cy="14" r="5.4"/><circle cx="14.7" cy="14" r="5.4"/><path d="M7.6 6.2h3.4L9.3 8.9z"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/matrimonial-family-law/">Matrimonial &amp; family law</a></h3>
         <p class="card-p">Matters of marriage, separation, maintenance, custody and family arrangements before the civil and family courts.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/matrimonial-family-law/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a1.6 1.6 0 0 0-1.6 1.6v14.8A1.6 1.6 0 0 0 7 21h10a1.6 1.6 0 0 0 1.6-1.6V7.6z"/><path d="M14 3v4.6h4.6"/><path d="M8.6 12.6h6.8"/><path d="M8.6 16.2h4.2"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/contract-civil-disputes/">Contract &amp; civil disputes</a></h3>
         <p class="card-p">Breach of agreement, specific performance, damages, and general civil disputes between persons and businesses.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/contract-civil-disputes/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.4 3.4h7.7l4.5 4.5v6.2"/><path d="M6.4 3.4v17.2h5"/><path d="M14.1 3.4v4.5h4.5"/><circle cx="16.2" cy="16.6" r="3"/><path d="M14.4 18.9 13.7 22l2.5-1.3 2.5 1.3-.7-3.1"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/succession-inheritance/">Succession &amp; inheritance</a></h3>
         <p class="card-p">Wills, probate, letters of administration, succession certificates and the devolution of an estate.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/succession-inheritance/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7.6" cy="16.4" r="3.9"/><path d="M10.4 13.6 19.8 4.2"/><path d="M16.6 7.4 19 9.8"/><path d="M14.3 9.7l2.4 2.4"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/tenancy-landlord-tenant/">Tenancy / landlord–tenant</a></h3>
         <p class="card-p">Rent, eviction, tenancy rights, sub-letting and disputes between landlords and tenants.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/tenancy-landlord-tenant/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="6.4" rx="6.6" ry="2.9"/><path d="M5.4 6.4v5.2c0 1.6 3 2.9 6.6 2.9s6.6-1.3 6.6-2.9V6.4"/><path d="M5.4 11.6v5.2c0 1.6 3 2.9 6.6 2.9s6.6-1.3 6.6-2.9v-5.2"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/recovery-suits/">Recovery suits</a></h3>
         <p class="card-p">Recovery of money due under invoices, loans, cheques, guarantees and accounts, and execution of decrees.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/recovery-suits/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5.6V20.4"/><path d="M8.3 20.4h7.4"/><path d="M4.4 8.4h15.2"/><circle cx="12" cy="4.4" r="1.2"/><path d="M4.4 8.4 2 14.1h4.8z"/><path d="M19.6 8.4 22 14.1h-4.8z"/></svg></span>
         <h3 class="card-h"><a href="/practice-areas/civil-appeals-writs/">Civil appeals &amp; writs</a></h3>
         <p class="card-p">Appeals, revisions and reviews from civil decrees and orders, and writ petitions in civil matters.</p>
         <p class="card-more"><a class="link-more" href="/practice-areas/civil-appeals-writs/">Learn more <span aria-hidden="true">&rarr;</span></a></p>
@@ -527,10 +531,10 @@
   </div>
 </section>
 
-<!-- ===== Latest Insights ===== -->
+<!-- ===== Latest Recents ===== -->
 <section class="band band-alt">
   <div class="wrap">
-    <h2>Insights</h2>
+    <h2>Recents</h2>
     <p class="measure">Short, general explainers about civil procedure and the areas of law the chambers works in. These are written for general understanding and are not legal advice.</p>
     <ul class="post-list">
       <li class="post-item">
@@ -549,7 +553,7 @@
         <p class="post-x">Three documents that are regularly confused with one another, and how to tell which one an estate actually needs.</p>
       </li>
     </ul>
-    <p><a class="link-more" href="/insights/">Insights <span aria-hidden="true">&rarr;</span></a></p>
+    <p><a class="link-more" href="/insights/">Recents <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
@@ -558,11 +562,10 @@
     <h2>Speak to the chambers</h2>
     <p>You are welcome to send a message on WhatsApp, or to telephone the chambers between 9:00 AM and 9:00 PM on any day of the week — both numbers are on the Contact page. The chambers will tell you what papers are relevant before any consultation.</p>
     <p class="cta-row">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+<a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
       <a class="btn btn-outline" href="/contact/">Contact</a>
     </p>
-    <p class="cta-meta">121/B Sitaram Ghosh Street, Kolkata 700009 &middot; 9:00 AM – 9:00 PM, Monday to Sunday</p>
+    <p class="cta-meta">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009 &middot; 9:00 AM – 9:00 PM, Monday to Sunday</p>
   </div>
 </section>
 </main>
@@ -573,7 +576,7 @@
 
     <div class="footer-col footer-brand">
       <p class="footer-firm"><strong>Civil Law Firm</strong></p>
-      <p class="footer-addr">121/B Sitaram Ghosh Street, Kolkata 700009</p>
+      <p class="footer-addr">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</p>
       <p class="footer-hours">Chambers hours: Monday to Sunday, 9:00 AM to 9:00 PM</p>
       <p class="footer-since">Practising since 1969</p>
     </div>
@@ -583,21 +586,28 @@
       <ul class="footer-list">
         <li><a href="/about/">The Firm</a></li>
         <li><a href="/practice-areas/">Practice Areas</a></li>
+        <li><a href="/guides/">Guides</a></li>
         <li><a href="/advocates/">Our Advocates</a></li>
-        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/insights/">Recents</a></li>
         <li><a href="/contact/">Contact</a></li>
+        <li><a href="/careers/">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-h">Reference</h2>
+      <ul class="footer-list">
+        <li><a href="/reference/courts-in-kolkata/">Courts in Kolkata</a></li>
+        <li><a href="/reference/glossary-of-land-and-revenue-terms/">Glossary of land terms</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h2 class="footer-h">Reach the chambers</h2>
       <ul class="footer-list">
-        <li><a href="tel:+919831511983">Bimlesh Kumar Jain &middot; +91 98315 11983</a></li>
-        <li><a href="tel:+917604029237">Aditya Kumar Jain &middot; +91 76040 29237</a></li>
-        <li><a href="https://wa.me/917604029237" rel="noopener" target="_blank">WhatsApp</a></li>
-        <!-- PLACEHOLDER: replace [PLACEHOLDER-FIRM-EMAIL] with the firm's email address
-             here and in every other page (see README.md, "Filling the placeholders"). -->
-        <li><a href="mailto:[PLACEHOLDER-FIRM-EMAIL]">[PLACEHOLDER-FIRM-EMAIL]</a></li>
+        <li><a href="tel:+917604029237">Adv Aditya Kumar Jain &middot; +91 76040 29237</a></li>
+        <li><a href="https://wa.me/919123305701" rel="noopener" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:contact@civillawfirm.in">contact@civillawfirm.in</a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" rel="noopener" target="_blank">Get directions</a></li>
       </ul>
       <!-- PLACEHOLDER: social profiles. The firm has none listed, so this row is
@@ -623,7 +633,10 @@
 
 <!-- ===== Floating WhatsApp button (small screens only). ===== -->
 <div class="contactbar">
-  <a class="cb-item cb-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank">
+  <a class="cb-item cb-call" href="tel:+917604029237" aria-label="Call the chambers on +91 76040 29237">
+    <span aria-hidden="true">&#9742;</span> <span class="cb-label">Call</span>
+  </a>
+  <a class="cb-item cb-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank">
     <span aria-hidden="true">&#128172;</span> <span class="cb-label">WhatsApp</span>
   </a>
 </div>
@@ -638,7 +651,7 @@
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">
     <div class="gate-logo">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span><strong>Civil Law Firm</strong><small>Practising since 1969</small></span>
     </div>
     <h2 class="gate-title" id="gate-title">Please read before you continue</h2>

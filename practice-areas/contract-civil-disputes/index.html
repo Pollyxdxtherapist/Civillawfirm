@@ -9,6 +9,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- ===== Google Analytics (GA4) =====
+     Measurement ID G-D89Y18BMVX. Reports: https://analytics.google.com/
+     This is on every page; to change or remove it, see README.md, "Analytics". -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D89Y18BMVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D89Y18BMVX');
+</script>
+
 <!-- ===== Page title and description (unique to this page) ===== -->
 <title>Contract &amp; Civil Dispute Lawyer in Kolkata | Civil Law Firm</title>
 <meta name="description" content="How contract and general civil disputes are framed and proved in the Kolkata courts. Civil Law Firm handles contract and civil disputes, practising since 1969.">
@@ -34,7 +46,7 @@
 <meta property="og:image" content="https://civillawfirm.in/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Civil Law Firm, 121/B Sitaram Ghosh Street, Kolkata 700009">
+<meta property="og:image:alt" content="Civil Law Firm, Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta property="og:locale:alternate" content="bn_IN">
@@ -44,7 +56,10 @@
 <meta name="twitter:image" content="https://civillawfirm.in/assets/og-image.png">
 
 <!-- ===== Styles and icons ===== -->
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/css/styles.css?v=3">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <meta name="theme-color" content="#f6f3ee">
@@ -65,17 +80,14 @@
   "slogan": "Civil litigation and advisory in Kolkata since 1969",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "121/B Sitaram Ghosh Street",
+    "streetAddress": "Ground Floor, 121/B Sitaram Ghosh Street",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700009",
     "addressCountry": "IN"
   },
-  "telephone": [
-    "+919831511983",
-    "+917604029237"
-  ],
-  "email": "[PLACEHOLDER-FIRM-EMAIL]",
+  "telephone": "+917604029237",
+  "email": "contact@civillawfirm.in",
   "hasMap": "https://www.google.com/maps/search/?api=1&query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009",
   "openingHoursSpecification": [
     {
@@ -123,14 +135,14 @@
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/#person",
-      "name": "Bimlesh Kumar Jain",
+      "name": "Adv Bimlesh Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/"
     },
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/aditya-kumar-jain/#person",
-      "name": "Aditya Kumar Jain",
+      "name": "Adv Aditya Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/advocates/aditya-kumar-jain/"
     }
@@ -266,12 +278,6 @@
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
 <script src="/js/main.js" defer></script>
-
-<!-- OPTIONAL ANALYTICS SLOT (disabled).
-     To switch on a privacy-friendly counter later, uncomment ONE of these and
-     fill in the domain / id. Keep the `defer` attribute.
-     <script defer data-domain="civillawfirm.in" src="https://plausible.io/js/script.js"></script>
--->
 </head>
 <body>
 
@@ -282,7 +288,7 @@
   <div class="wrap header-inner">
 
     <a class="brand" href="/">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span class="brand-text">
         <strong>Civil Law Firm</strong>
         <small>Practising since 1969</small>
@@ -292,8 +298,7 @@
     <!-- WhatsApp stays outside the hamburger so it is always visible.
          Telephone numbers live on the Contact page and in the footer. -->
     <div class="header-cta">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa btn-sm" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+<a class="btn btn-wa btn-sm" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
     </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
@@ -307,9 +312,11 @@
       <ul class="nav-list">
           <li><a href="/">Home</a></li>
           <li><a href="/practice-areas/">Practice Areas</a></li>
+          <li><a href="/guides/">Guides</a></li>
           <li><a href="/advocates/">Our Advocates</a></li>
-          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/insights/">Recents</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/careers/">Careers</a></li>
       </ul>
       <!-- Language switcher: real links to the same page in each language. -->
       <ul class="lang-switch" aria-label="Language">
@@ -362,17 +369,17 @@
       <h2>The advocates who handle these matters</h2>
       <ul class="cards cards-2">
       <li class="card card-adv">
-        <h3 class="card-h"><a href="/advocates/bimlesh-kumar-jain/">Bimlesh Kumar Jain</a></h3>
-        <p class="card-meta">B.A. LL.B. &middot; Over 50 years in practice</p>
-        <p class="card-p">In practice for over fifty years, in civil matters including property and matrimonial law.</p>
+        <h3 class="card-h"><a href="/advocates/bimlesh-kumar-jain/">Adv Bimlesh Kumar Jain</a></h3>
+        <p class="card-meta">B.A. LL.B. &middot; 40+ years in practice</p>
+        <p class="card-p">In practice for 40+ years, in civil matters including property and matrimonial law.</p>
         <p class="card-more">
           <a class="link-more" href="/advocates/bimlesh-kumar-jain/">View profile <span aria-hidden="true">&rarr;</span></a>
         </p>
       </li>
       <li class="card card-adv">
-        <h3 class="card-h"><a href="/advocates/aditya-kumar-jain/">Aditya Kumar Jain</a></h3>
-        <p class="card-meta">B.A. LL.B. &middot; Over 10 years in practice</p>
-        <p class="card-p">In practice for over ten years, with a focus on property law, working with a team of associates.</p>
+        <h3 class="card-h"><a href="/advocates/aditya-kumar-jain/">Adv Aditya Kumar Jain</a></h3>
+        <p class="card-meta">B.A. LL.B. &middot; 5+ years in practice</p>
+        <p class="card-p">In practice for 5+ years, with a focus on property law, working with a team of associates.</p>
         <p class="card-more">
           <a class="link-more" href="/advocates/aditya-kumar-jain/">View profile <span aria-hidden="true">&rarr;</span></a>
         </p>
@@ -386,11 +393,10 @@
       <h2>Speak to the chambers</h2>
       <p>If your matter falls in this area, send a message on WhatsApp, or telephone the chambers during working hours — both numbers are on the Contact page. The chambers will tell you what papers are relevant before any consultation.</p>
       <p class="cta-col">
-        <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+  <a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
         <a class="btn btn-outline" href="/contact/">Contact</a>
       </p>
-      <p class="factbox-meta">121/B Sitaram Ghosh Street, Kolkata 700009<br>9:00 AM – 9:00 PM, Monday to Sunday</p>
+      <p class="factbox-meta">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009<br>9:00 AM – 9:00 PM, Monday to Sunday</p>
     </aside>
 
     <nav class="related" aria-labelledby="related-h">
@@ -413,11 +419,10 @@
     <h2>Speak to the chambers</h2>
     <p>If your matter falls in this area, send a message on WhatsApp, or telephone the chambers during working hours — both numbers are on the Contact page. The chambers will tell you what papers are relevant before any consultation.</p>
     <p class="cta-row">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
+<a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">WhatsApp</span></a>
       <a class="btn btn-outline" href="/contact/">Contact</a>
     </p>
-    <p class="cta-meta">121/B Sitaram Ghosh Street, Kolkata 700009 &middot; 9:00 AM – 9:00 PM, Monday to Sunday</p>
+    <p class="cta-meta">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009 &middot; 9:00 AM – 9:00 PM, Monday to Sunday</p>
   </div>
 </section>
 </main>
@@ -428,7 +433,7 @@
 
     <div class="footer-col footer-brand">
       <p class="footer-firm"><strong>Civil Law Firm</strong></p>
-      <p class="footer-addr">121/B Sitaram Ghosh Street, Kolkata 700009</p>
+      <p class="footer-addr">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</p>
       <p class="footer-hours">Chambers hours: Monday to Sunday, 9:00 AM to 9:00 PM</p>
       <p class="footer-since">Practising since 1969</p>
     </div>
@@ -438,21 +443,28 @@
       <ul class="footer-list">
         <li><a href="/about/">The Firm</a></li>
         <li><a href="/practice-areas/">Practice Areas</a></li>
+        <li><a href="/guides/">Guides</a></li>
         <li><a href="/advocates/">Our Advocates</a></li>
-        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/insights/">Recents</a></li>
         <li><a href="/contact/">Contact</a></li>
+        <li><a href="/careers/">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-h">Reference</h2>
+      <ul class="footer-list">
+        <li><a href="/reference/courts-in-kolkata/">Courts in Kolkata</a></li>
+        <li><a href="/reference/glossary-of-land-and-revenue-terms/">Glossary of land terms</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h2 class="footer-h">Reach the chambers</h2>
       <ul class="footer-list">
-        <li><a href="tel:+919831511983">Bimlesh Kumar Jain &middot; +91 98315 11983</a></li>
-        <li><a href="tel:+917604029237">Aditya Kumar Jain &middot; +91 76040 29237</a></li>
-        <li><a href="https://wa.me/917604029237" rel="noopener" target="_blank">WhatsApp</a></li>
-        <!-- PLACEHOLDER: replace [PLACEHOLDER-FIRM-EMAIL] with the firm's email address
-             here and in every other page (see README.md, "Filling the placeholders"). -->
-        <li><a href="mailto:[PLACEHOLDER-FIRM-EMAIL]">[PLACEHOLDER-FIRM-EMAIL]</a></li>
+        <li><a href="tel:+917604029237">Adv Aditya Kumar Jain &middot; +91 76040 29237</a></li>
+        <li><a href="https://wa.me/919123305701" rel="noopener" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:contact@civillawfirm.in">contact@civillawfirm.in</a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" rel="noopener" target="_blank">Get directions</a></li>
       </ul>
       <!-- PLACEHOLDER: social profiles. The firm has none listed, so this row is
@@ -478,7 +490,10 @@
 
 <!-- ===== Floating WhatsApp button (small screens only). ===== -->
 <div class="contactbar">
-  <a class="cb-item cb-wa" href="https://wa.me/917604029237" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank">
+  <a class="cb-item cb-call" href="tel:+917604029237" aria-label="Call the chambers on +91 76040 29237">
+    <span aria-hidden="true">&#9742;</span> <span class="cb-label">Call</span>
+  </a>
+  <a class="cb-item cb-wa" href="https://wa.me/919123305701" aria-label="Send a WhatsApp message to the chambers" rel="noopener" target="_blank">
     <span aria-hidden="true">&#128172;</span> <span class="cb-label">WhatsApp</span>
   </a>
 </div>
@@ -493,7 +508,7 @@
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">
     <div class="gate-logo">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span><strong>Civil Law Firm</strong><small>Practising since 1969</small></span>
     </div>
     <h2 class="gate-title" id="gate-title">Please read before you continue</h2>

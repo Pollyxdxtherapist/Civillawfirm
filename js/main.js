@@ -8,11 +8,12 @@
    search engine ignores it, every page still reads in full. Please keep it
    that way.
 
-   It does four small jobs:
+   It does five small jobs:
      1. Opens and closes the menu on small screens
      2. Shows the Bar Council of India acknowledgement on a first visit
      3. Checks the enquiry form before it is sent, and reports the result
      4. Builds a WhatsApp message from whatever was typed into the form
+     5. Sends the careers application without leaving the page
    ========================================================================== */
 (function () {
   'use strict';
@@ -102,6 +103,59 @@
   }
 
   /* ------------------------------------------------------------------
+     5. Careers application form (Careers page only)
+
+     The form posts to /api/apply, which is this site's own code, so the
+     applicant never leaves the page. With JavaScript switched off the same
+     form still posts normally and the server answers with a plain page --
+     nothing here is required for it to work.
+
+     The wording of any message shown belongs to the page, not to this
+     script, so the Hindi and Bengali pages stay in their own language.
+     ------------------------------------------------------------------ */
+  var cf = document.getElementById('careers-form');
+  if (cf) {
+    var cOk = document.getElementById('careers-ok');
+    var cBad = document.getElementById('careers-bad');
+    var cBtn = document.getElementById('c-submit');
+
+    cf.addEventListener('submit', function (ev) {
+      /* Let the browser show its own messages for empty or malformed fields. */
+      if (cf.checkValidity && !cf.checkValidity()) { return; }
+      ev.preventDefault();
+
+      if (cOk) { cOk.hidden = true; }
+      if (cBad) { cBad.hidden = true; }
+
+      var label = '';
+      if (cBtn) {
+        label = cBtn.textContent;
+        cBtn.disabled = true;
+        cBtn.textContent = cf.getAttribute('data-sending') || label;
+      }
+
+      fetch(cf.getAttribute('action'), {
+        method: 'POST',
+        body: new FormData(cf),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (res) { return res.json().catch(function () { return {}; }); })
+        .then(function (out) {
+          if (out && out.success === true) {
+            if (cOk) { cOk.hidden = false; }
+            cf.reset();
+          } else if (cBad) {
+            cBad.hidden = false;
+          }
+        })
+        .catch(function () { if (cBad) { cBad.hidden = false; } })
+        .then(function () {
+          if (cBtn) { cBtn.disabled = false; cBtn.textContent = label; }
+        });
+    });
+  }
+
+  /* ------------------------------------------------------------------
      3 & 4. Enquiry form (Contact page only)
      ------------------------------------------------------------------ */
   var ef = document.getElementById('enquiry-form');
@@ -166,7 +220,7 @@
   if (waBtn) {
     waBtn.addEventListener('click', function () {
       if (!validate()) { return; }
-      var number = ef.getAttribute('data-wa-number') || '917604029237';
+      var number = ef.getAttribute('data-wa-number') || '919123305701';
       var lines = [
         (ef.getAttribute('data-l-name') || 'Name') + ': ' + clean(fName.value),
         (ef.getAttribute('data-l-phone') || 'Phone') + ': ' + clean(fPhone.value),

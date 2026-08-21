@@ -3,22 +3,17 @@
        Edit this file, then export it as a 1200x630 PNG named og-image.png. -->
   <rect width="1200" height="630" fill="#f2ede3"/>
   <rect x="0" y="0" width="1200" height="14" fill="#7d6a4f"/>
-  <g fill="none" stroke="#3b332a" stroke-width="7">
-    <rect x="90" y="150" width="110" height="110" rx="14"/>
-  </g>
-  <g fill="#3b332a">
-    <rect x="115" y="172" width="9" height="60"/>
-    <rect x="140" y="172" width="9" height="60"/>
-    <rect x="165" y="172" width="9" height="60"/>
-    <rect x="106" y="228" width="77" height="9"/>
-  </g>
+  <path d="M 172.511 233.485 A 39.6 39.6 0 1 1 172.511 176.515" fill="none" stroke="#3b332a" stroke-width="16.5" stroke-linecap="round"/>
+  <line x1="137.3" y1="180.8" x2="137.3" y2="231.4" stroke="#3b332a" stroke-width="10.45" stroke-linecap="round"/>
+  <line x1="137.3" y1="186.3" x2="159.3" y2="186.3" stroke="#3b332a" stroke-width="10.45" stroke-linecap="round"/>
+  <line x1="137.3" y1="208.3" x2="154.9" y2="208.3" stroke="#3b332a" stroke-width="10.45" stroke-linecap="round"/>
   <text x="90" y="360" fill="#241f19" font-family="Georgia, 'Times New Roman', serif"
         font-size="82">Civil Law Firm</text>
   <text x="90" y="424" fill="#5c5346" font-family="system-ui, Arial, sans-serif"
         font-size="34">Civil litigation and advisory in Kolkata since 1969</text>
   <text x="90" y="492" fill="#6f6659" font-family="system-ui, Arial, sans-serif"
-        font-size="27">121/B Sitaram Ghosh Street, Kolkata 700009</text>
+        font-size="27">Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009</text>
   <text x="90" y="536" fill="#6f6659" font-family="system-ui, Arial, sans-serif"
-        font-size="27">Chambers 9 AM - 9 PM  |  +91 98315 11983  |  +91 76040 29237</text>
+        font-size="27">Chambers 9 AM - 9 PM  |  +91 76040 29237</text>
   <rect x="90" y="570" width="1020" height="3" fill="#ddd6c9"/>
 </svg>

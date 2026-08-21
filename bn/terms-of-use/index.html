@@ -9,6 +9,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- ===== Google Analytics (GA4) =====
+     Measurement ID G-D89Y18BMVX. Reports: https://analytics.google.com/
+     This is on every page; to change or remove it, see README.md, "Analytics". -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D89Y18BMVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D89Y18BMVX');
+</script>
+
 <!-- ===== Page title and description (unique to this page) ===== -->
 <title>ব্যবহারের শর্ত | সিভিল ল ফার্ম, কলকাতা</title>
 <meta name="description" content="এই ওয়েবসাইট ব্যবহারের শর্ত: কোনও প্রার্থনা নয়, কোনও আইনি পরামর্শ নয়, কোনও আইনজীবী–মক্কেল সম্পর্ক নয়, এবং দায়ের সীমা।">
@@ -34,7 +46,7 @@
 <meta property="og:image" content="https://civillawfirm.in/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Civil Law Firm, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯">
+<meta property="og:image:alt" content="Civil Law Firm, গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯">
 <meta property="og:locale" content="bn_IN">
 <meta property="og:locale:alternate" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
@@ -44,7 +56,10 @@
 <meta name="twitter:image" content="https://civillawfirm.in/assets/og-image.png">
 
 <!-- ===== Styles and icons ===== -->
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/css/styles.css?v=3">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <meta name="theme-color" content="#f6f3ee">
@@ -65,17 +80,14 @@
   "slogan": "১৯৬৯ সাল থেকে কলকাতায় দেওয়ানি মামলা ও আইনি পরামর্শ",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "121/B Sitaram Ghosh Street",
+    "streetAddress": "Ground Floor, 121/B Sitaram Ghosh Street",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700009",
     "addressCountry": "IN"
   },
-  "telephone": [
-    "+919831511983",
-    "+917604029237"
-  ],
-  "email": "[PLACEHOLDER-FIRM-EMAIL]",
+  "telephone": "+917604029237",
+  "email": "contact@civillawfirm.in",
   "hasMap": "https://www.google.com/maps/search/?api=1&query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009",
   "openingHoursSpecification": [
     {
@@ -123,14 +135,14 @@
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/#person",
-      "name": "Bimlesh Kumar Jain",
+      "name": "Adv Bimlesh Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/bn/advocates/bimlesh-kumar-jain/"
     },
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/aditya-kumar-jain/#person",
-      "name": "Aditya Kumar Jain",
+      "name": "Adv Aditya Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/bn/advocates/aditya-kumar-jain/"
     }
@@ -231,12 +243,6 @@
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
 <script src="/js/main.js" defer></script>
-
-<!-- OPTIONAL ANALYTICS SLOT (disabled).
-     To switch on a privacy-friendly counter later, uncomment ONE of these and
-     fill in the domain / id. Keep the `defer` attribute.
-     <script defer data-domain="civillawfirm.in" src="https://plausible.io/js/script.js"></script>
--->
 </head>
 <body>
 
@@ -247,7 +253,7 @@
   <div class="wrap header-inner">
 
     <a class="brand" href="/bn/">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span class="brand-text">
         <strong>Civil Law Firm</strong>
         <small>১৯৬৯ সাল থেকে ওকালতি</small>
@@ -257,8 +263,7 @@
     <!-- WhatsApp stays outside the hamburger so it is always visible.
          Telephone numbers live on the Contact page and in the footer. -->
     <div class="header-cta">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa btn-sm" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+<a class="btn btn-wa btn-sm" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
     </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
@@ -272,9 +277,11 @@
       <ul class="nav-list">
           <li><a href="/bn/">হোম</a></li>
           <li><a href="/bn/practice-areas/">কাজের ক্ষেত্র</a></li>
+          <li><a href="/bn/guides/">নির্দেশিকা</a></li>
           <li><a href="/bn/advocates/">আমাদের আইনজীবী</a></li>
           <li><a href="/bn/insights/">তথ্য</a></li>
           <li><a href="/bn/contact/">যোগাযোগ</a></li>
+          <li><a href="/bn/careers/">কর্মসংস্থান</a></li>
       </ul>
       <!-- Language switcher: real links to the same page in each language. -->
       <ul class="lang-switch" aria-label="ভাষা">
@@ -355,11 +362,10 @@
     <h2>চেম্বারে কথা বলুন</h2>
     <p>আপনি হোয়াটসঅ্যাপে বার্তা পাঠাতে পারেন, বা সপ্তাহের যে কোনও দিন সকাল ৯টা থেকে রাত ৯টার মধ্যে চেম্বারে ফোন করতে পারেন — দুটি নম্বরই যোগাযোগ পৃষ্ঠায় দেওয়া আছে। পরামর্শের আগেই আপনাকে জানিয়ে দেওয়া হবে কোন কোন কাগজ প্রাসঙ্গিক।</p>
     <p class="cta-row">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+<a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
       <a class="btn btn-outline" href="/bn/contact/">যোগাযোগ</a>
     </p>
-    <p class="cta-meta">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ &middot; সকাল ৯টা – রাত ৯টা, সোমবার থেকে রবিবার</p>
+    <p class="cta-meta">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ &middot; সকাল ৯টা – রাত ৯টা, সোমবার থেকে রবিবার</p>
   </div>
 </section>
 </main>
@@ -370,7 +376,7 @@
 
     <div class="footer-col footer-brand">
       <p class="footer-firm"><strong>Civil Law Firm</strong></p>
-      <p class="footer-addr">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</p>
+      <p class="footer-addr">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</p>
       <p class="footer-hours">চেম্বারের সময়: সোমবার থেকে রবিবার, সকাল ৯টা থেকে রাত ৯টা</p>
       <p class="footer-since">১৯৬৯ সাল থেকে ওকালতি</p>
     </div>
@@ -380,21 +386,28 @@
       <ul class="footer-list">
         <li><a href="/bn/about/">ফার্ম সম্পর্কে</a></li>
         <li><a href="/bn/practice-areas/">কাজের ক্ষেত্র</a></li>
+        <li><a href="/bn/guides/">নির্দেশিকা</a></li>
         <li><a href="/bn/advocates/">আমাদের আইনজীবী</a></li>
         <li><a href="/bn/insights/">তথ্য</a></li>
         <li><a href="/bn/contact/">যোগাযোগ</a></li>
+        <li><a href="/bn/careers/">কর্মসংস্থান</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-h">তথ্যসূত্র</h2>
+      <ul class="footer-list">
+        <li><a href="/bn/reference/courts-in-kolkata/">কলকাতার আদালত</a></li>
+        <li><a href="/bn/reference/glossary-of-land-and-revenue-terms/">জমি-সংক্রান্ত শব্দকোষ</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h2 class="footer-h">চেম্বারে যোগাযোগ</h2>
       <ul class="footer-list">
-        <li><a href="tel:+919831511983">বিমলেশ কুমার জৈন &middot; +91 98315 11983</a></li>
-        <li><a href="tel:+917604029237">আদিত্য কুমার জৈন &middot; +91 76040 29237</a></li>
-        <li><a href="https://wa.me/917604029237" rel="noopener" target="_blank">হোয়াটসঅ্যাপ</a></li>
-        <!-- PLACEHOLDER: replace [PLACEHOLDER-FIRM-EMAIL] with the firm's email address
-             here and in every other page (see README.md, "Filling the placeholders"). -->
-        <li><a href="mailto:[PLACEHOLDER-FIRM-EMAIL]">[PLACEHOLDER-FIRM-EMAIL]</a></li>
+        <li><a href="tel:+917604029237">আইনজীবী আদিত্য কুমার জৈন &middot; +91 76040 29237</a></li>
+        <li><a href="https://wa.me/919123305701" rel="noopener" target="_blank">হোয়াটসঅ্যাপ</a></li>
+        <li><a href="mailto:contact@civillawfirm.in">contact@civillawfirm.in</a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" rel="noopener" target="_blank">পথনির্দেশ</a></li>
       </ul>
       <!-- PLACEHOLDER: social profiles. The firm has none listed, so this row is
@@ -420,7 +433,10 @@
 
 <!-- ===== Floating WhatsApp button (small screens only). ===== -->
 <div class="contactbar">
-  <a class="cb-item cb-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank">
+  <a class="cb-item cb-call" href="tel:+917604029237" aria-label="চেম্বারে +91 76040 29237 নম্বরে ফোন করুন">
+    <span aria-hidden="true">&#9742;</span> <span class="cb-label">ফোন করুন</span>
+  </a>
+  <a class="cb-item cb-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank">
     <span aria-hidden="true">&#128172;</span> <span class="cb-label">হোয়াটসঅ্যাপ</span>
   </a>
 </div>
@@ -435,7 +451,7 @@
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">
     <div class="gate-logo">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span><strong>Civil Law Firm</strong><small>১৯৬৯ সাল থেকে ওকালতি</small></span>
     </div>
     <h2 class="gate-title" id="gate-title">এগিয়ে যাওয়ার আগে পড়ুন</h2>

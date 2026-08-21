@@ -1,6 +1,6 @@
 # civillawfirm.in — website source
 
-This is the complete website for **Civil Law Firm**, 121/B Sitaram Ghosh Street,
+This is the complete website for **Civil Law Firm**, Ground Floor, 121/B Sitaram Ghosh Street,
 Kolkata 700009.
 
 It is built from **plain HTML and CSS files**. There is no WordPress, no
@@ -16,7 +16,7 @@ with its own web address, which is what makes them findable on Google.
 
 ## Contents
 
-1. [Before the site goes live: five things to fill in](#1-before-the-site-goes-live-five-things-to-fill-in)
+1. [Before the site goes live: what is left to fill in](#1-before-the-site-goes-live-what-is-left-to-fill-in)
 2. [How to look at the site on your own computer](#2-how-to-look-at-the-site-on-your-own-computer)
 3. [Putting it online (hosting)](#3-putting-it-online-hosting)
 4. [Getting found on Google (Search Console)](#4-getting-found-on-google-search-console)
@@ -35,67 +35,151 @@ with its own web address, which is what makes them findable on Google.
 
 ---
 
-## 1. Before the site goes live: five things to fill in
+## 1. Before the site goes live: what is left to fill in
 
-Everything on the site is real and final **except** the five items below. Each
-one is marked in the files with the word `PLACEHOLDER` in capital letters, so
-you can always find what is left to do by searching the folder for
-`PLACEHOLDER`.
+Items (a) to (c) below are **done**; they are kept here so you know how to
+change them later. Only **(d) the Google Search Console token** and **(e) the
+photographs** are still outstanding, plus the three Cloudflare settings the
+careers form needs — (c2).
+
+The only placeholder left in the files is
+`[PLACEHOLDER-GSC-VERIFICATION-TOKEN]` — searching the folder for
+`PLACEHOLDER` will always show you what remains.
 
 ### (a) The firm's email address
 
-Search all files for `[PLACEHOLDER-FIRM-EMAIL]` and replace it with the real
-address (for example `office@civillawfirm.in`). It appears in the footer of
-every page, on the Contact page, and inside the "structured data" block at the
-top of each page.
+Already filled in: `contact@civillawfirm.in`, in the footer of every page, on
+the Contact page, and inside the "structured data" block at the top of each
+page. If the address ever changes, search all files for the old address and
+replace it with the new one.
 
-On a Mac or Linux computer you can do all of them at once. Open Terminal in this
-folder and run:
+On a Mac or Linux computer you can do that in one go. Open Terminal in this
+folder and run (replacing both addresses as needed):
 
 ```
-grep -rl "\[PLACEHOLDER-FIRM-EMAIL\]" . --include=*.html --include=*.txt \
-  | xargs sed -i 's/\[PLACEHOLDER-FIRM-EMAIL\]/office@civillawfirm.in/g'
+grep -rl "contact@civillawfirm.in" . --include=*.html --include=*.txt \
+  | xargs sed -i 's/contact@civillawfirm\.in/office@civillawfirm.in/g'
 ```
 
-On Windows, use VS Code: press `Ctrl+Shift+H` (Replace in Files), type the
-placeholder in the top box and the real email in the second box, then click
+On Windows, use VS Code: press `Ctrl+Shift+H` (Replace in Files), type the old
+address in the top box and the new one in the second box, then click
 "Replace All".
 
-### (b) Confirm the WhatsApp number
+### (b) The WhatsApp number
 
-The WhatsApp button everywhere points to **+91 76040 29237 (Aditya Kumar Jain)**.
+The WhatsApp button everywhere points to a dedicated WhatsApp number,
+**+91 91233 05701**, which is separate from either advocate's call number.
 
-**Please confirm this is the number that actually has WhatsApp on it.** Every
-WhatsApp link on the site is marked with the comment
-`CONFIRM which of the two numbers is on WhatsApp`.
-
-If it should be the other number instead, replace `917604029237` with
-`919831511983` everywhere:
+If this number ever changes, replace `919123305701` everywhere:
 
 ```
-grep -rl "917604029237" . --include=*.html --include=*.txt \
-  | xargs sed -i 's|wa.me/917604029237|wa.me/919831511983|g'
+grep -rl "919123305701" . --include=*.html --include=*.txt \
+  | xargs sed -i 's/919123305701/9XXXXXXXXX/g'
 ```
 
-Also change the two `data-wa-number="..."` values on the Contact pages
-(`/contact/index.html`, `/hi/contact/index.html`, `/bn/contact/index.html`).
+That single command also covers the two `data-wa-number="..."` values on the
+Contact pages (`/contact/index.html`, `/hi/contact/index.html`,
+`/bn/contact/index.html`) and the fallback default in `js/main.js`.
 
-### (c) The contact form key (Web3Forms)
+### (c) The form key (Web3Forms) — done
 
-The enquiry form on the Contact page needs a free key so that messages arrive
-by email. It takes two minutes and no card:
+Already filled in. The Web3Forms access key
+`0118d266-0f18-416a-9016-f571212295a4` is in the hidden `access_key` field of
+the enquiry form on the three Contact pages. (The Careers form no longer uses
+Web3Forms at all — see the next section.)
 
-1. Go to <https://web3forms.com>, type the firm's email address, and it will
-   email you an **access key** (a long code).
-2. Search all files for `[PLACEHOLDER-WEB3FORMS-ACCESS-KEY]` and replace it with
-   that key. It appears once on each of the three Contact pages.
+This key is meant to be public — it sits in the HTML that every visitor's
+browser downloads, and it only tells Web3Forms which mailbox to deliver to. It
+is not a password and gives nobody access to the account. The hidden `botcheck`
+field in each form is the spam trap that stops robots using it.
 
-Until this is done, the form's "Send message" button will not deliver anything —
-but the **"Send on WhatsApp"** button beside it works immediately, and so do the
-two Call buttons on the Contact page.
+To change it later, replace it everywhere at once:
 
-(If you prefer Formspree instead, change the form's `action="..."` address to
+```
+grep -rl "0118d266-0f18-416a-9016-f571212295a4" . --include=*.html \
+  | xargs sed -i 's/0118d266-0f18-416a-9016-f571212295a4/NEW-KEY-HERE/g'
+```
+
+Where the messages arrive is set in the Web3Forms account, not in these files.
+
+(If you prefer Formspree instead, change each form's `action="..."` address to
 your Formspree endpoint and delete the hidden `access_key` line.)
+
+**The Careers form needs more than this key** — please read the next section
+before announcing that page.
+
+### (c2) The careers form and the applications portal
+
+Applications are **not emailed**. They are saved into the firm's own MySQL
+database on Hostinger, and the curriculum vitae files are kept in a folder
+outside `public_html`. You read them by signing in at
+**civillawfirm.in/admin/**.
+
+No outside form service is involved, and nothing about the arrangement is
+visible in the website's source.
+
+#### Setting it up, once
+
+**1. Make the database.** hPanel → **Databases** → **Management** → create a
+database and a user. Note the four values it gives you.
+
+**2. Make the table.** hPanel → **phpMyAdmin** → open the database → the
+**SQL** tab → paste in the whole of `admin/schema.sql` → **Go**.
+
+**3. Make the folder for the CV files.** hPanel → **File Manager**. Go *up*
+one level from `public_html`, so you are in `/home/uXXXXXXXX/`, and create a
+folder called `clf-storage`. It must sit **beside** `public_html`, never
+inside it — that is what stops anyone downloading a CV without signing in.
+
+**4. Choose the admin password.** Visit `civillawfirm.in/admin/make-hash.php`,
+type the password you want, and copy the long line it gives back. Then
+**delete `admin/make-hash.php`** from the File Manager.
+
+**5. Write the configuration.** In File Manager, open
+`public_html/admin/inc/`, copy `config.sample.php` to `config.php`, and fill
+in: the four database values, the full path to `clf-storage/cvs`, and the
+username and hash from step 4.
+
+`config.php` is in `.gitignore` and must never be committed — this repository
+is public, so anything committed to it can be read by anyone.
+
+**6. Try it.** Send yourself an application through `/careers/` with a small
+PDF, then sign in at `/admin/` and check it is there and the CV downloads.
+
+#### Using it
+
+- `/admin/` — every application, newest first. A dot marks unread ones.
+- Click a name for the full application, with a download link for the CV.
+  Opening it marks it read.
+- **Delete this application** removes the record *and* the CV file.
+- `/admin/prune.php` deletes anything older than `retain_days` in config.php
+  (a year by default). Hostinger can run it monthly: hPanel → **Advanced** →
+  **Cron Jobs**:
+  `/usr/bin/php /home/uXXXXXXXX/public_html/admin/prune.php --cli`
+
+#### What the code already does about security
+
+Passwords are stored as bcrypt hashes, never in the clear. Sign-in gives no
+clue whether it was the username or the password that was wrong, and stops
+after eight tries in fifteen minutes. Session cookies are HttpOnly, SameSite
+and HTTPS-only. Every action that changes something carries a one-use token,
+so another website cannot make your browser delete an application. All
+database access uses prepared statements. Uploads are checked for what they
+actually contain, not just what they are called — a program renamed to
+`.pdf` is refused — and are stored under a random name, so nothing an
+applicant types can ever become a path on the server.
+
+#### Two things that are your decision, not the code's
+
+**The Privacy Policy needs a line about this.** The site now stores personal
+data: names, telephone numbers, email addresses and CVs. The Privacy Policy
+page should say so, say how long it is kept, and say how someone asks for
+theirs to be removed. Please have that wording checked by someone qualified.
+
+**Nothing tells you an application has arrived.** There is no email, by
+design. Somebody has to remember to open `/admin/`. If that turns out not to
+happen, say so and a short "new application" alert can be added without
+putting any applicant's details in the email.
 
 ### (d) The Google Search Console token
 
@@ -221,13 +305,29 @@ Useful extras:
   crawlers. Both are already set up; if the firm's details change, update
   `llms.txt` too.
 
-### Analytics (optional, later)
+### Analytics
 
-Every page has a commented-out slot near the top for a lightweight visitor
-counter. If the firm ever wants one, uncomment the Plausible line (or paste a
-GA4 snippet in the same place) on every page. Nothing is tracking anybody at
-present, and the Privacy Policy says so — if you switch a counter on, add a line
-about it to the Privacy Policy.
+**Google Analytics 4 is switched on.** The measurement ID is `G-D89Y18BMVX`, and
+the reports are at <https://analytics.google.com/>.
+
+The tag sits near the top of the `<head>` of every page, just after the viewport
+line, marked `<!-- ===== Google Analytics (GA4) ===== -->`. It is the standard
+snippet Google gives you, unmodified.
+
+To change the ID, replace every occurrence of `G-D89Y18BMVX` across the site —
+there are two per page, one in the script address and one in the `gtag('config',
+…)` line. To switch analytics off, delete the whole marked block from every page.
+
+Two things to keep in step with it:
+
+- **The Privacy Policy.** All three language versions now name Google Analytics,
+  list the two cookies it sets (`_ga` and `_ga_D89Y18BMVX`), and link to Google's
+  privacy policy. If you change or remove the tag, change those paragraphs too —
+  they are under "Information stored on your own device" and "Third parties".
+- **The advertising setting.** The policy says the analytics is not used to show
+  advertisements. That matches a default GA4 property. If anyone later turns on
+  **Google signals** (Admin → Data collection and modification → Data
+  collection), that stops being true and the policy has to be reworded.
 
 ---
 
@@ -254,16 +354,19 @@ A phone number appears in three forms, and all three must be changed:
 
 | Form | Looks like | Where |
 | --- | --- | --- |
-| The dialling link | `href="tel:+917604029237"` | the two Call buttons on the Contact page, the footer of every page, and each advocate's fact list |
+| The dialling link | `href="tel:+917604029237"` | the Call button on the Contact page, the footer of every page, and Adv Aditya Kumar Jain's fact list |
 | The printed number | `+91 76040 29237` | wherever the number is shown as words |
-| The WhatsApp link | `wa.me/917604029237` | WhatsApp buttons, on every page |
 
-**Where the Call buttons are.** Click-to-call *buttons* appear on the **Contact
+The WhatsApp number is separate from this call number — see
+[section 1b](#b-the-whatsapp-number) if you need to change that instead.
+
+**Where the Call button is.** A click-to-call *button* appears on the **Contact
 page only**. Every other page offers WhatsApp plus a link through to Contact.
-The phone numbers themselves are still printed, as plain click-to-call lines, in
-the footer of every page and in each advocate's fact list — that is deliberate,
-because the name, address and telephone number appearing consistently on every
-page is one of the things Google uses to rank a local firm.
+The phone number itself is still printed, as a plain click-to-call line, in
+the footer of every page and in Adv Aditya Kumar Jain's fact list — that is
+deliberate, because the name, address and telephone number appearing
+consistently on every page is one of the things Google uses to rank a local
+firm.
 
 Because the number is printed in plain text on every page (which is exactly what
 lets Google and AI assistants read it), it appears in many files. Do not edit
@@ -277,12 +380,14 @@ grep -rl "7604029237" . --include=*.html --include=*.txt --include=*.js \
   | xargs sed -i \
     -e 's/tel:+917604029237/tel:+919876543210/g' \
     -e 's/+91 76040 29237/+91 98765 43210/g' \
-    -e 's|wa.me/917604029237|wa.me/919876543210|g' \
     -e 's/917604029237/919876543210/g'
 ```
 
-**Windows**, in VS Code: press `Ctrl+Shift+H` and do the same four
+**Windows**, in VS Code: press `Ctrl+Shift+H` and do the same three
 replacements, one after another, clicking "Replace All" each time.
+
+This does not touch the WhatsApp number, which is separate — see
+[section 1b](#b-the-whatsapp-number).
 
 Afterwards, search the folder for the old digits `7604029237` to be sure none
 are left, and check `llms.txt` and `sitemap.xml` by eye.
@@ -298,7 +403,7 @@ Search for the printed text and replace it everywhere:
 
 - hours: `9:00 AM to 9:00 PM` and `9:00 AM – 9:00 PM` (English),
   `प्रातः 9:00 से रात्रि 9:00` (Hindi), `সকাল ৯টা থেকে রাত ৯টা` (Bengali)
-- address: `121/B Sitaram Ghosh Street, Kolkata 700009`
+- address: `Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009`
 
 Two extra places to update by hand if the hours or address change:
 
@@ -360,7 +465,7 @@ change:
 
 | Find this | Change it to |
 | --- | --- |
-| `<title>Post Title Goes Here \| Insights ...</title>` | the real title, about 60 characters |
+| `<title>Post Title Goes Here \| Recents ...</title>` | the real title, about 60 characters |
 | `<meta name="description" content="Replace this sentence ...">` | one sentence about the post, about 150 characters |
 | `<link rel="canonical" href="https://civillawfirm.in/insights/_template/">` | `.../insights/how-partition-suits-work/` |
 | the three `<link rel="alternate" hreflang=...>` lines | the same new folder name, keeping `/hi/` and `/bn/` |
@@ -382,7 +487,7 @@ Then **delete these two lines**, which exist only in the template:
 (The first one is what tells Google to ignore the template. If you leave it in,
 your new post will never appear in search results.)
 
-**Step 3 — list it on the Insights page.** Open `insights/index.html`, find the
+**Step 3 — list it on the Recents page.** Open `insights/index.html`, find the
 list marked `<!-- ===== POST LIST ===== -->`, copy one whole block from
 `<li class="post-item">` to `</li>`, paste it at the **top** of the list, and
 change the date, title, address and summary in your copy. Newest posts go first.
@@ -505,12 +610,23 @@ Three habits worth keeping:
   advocates/                  Listing + one folder per advocate (2)
   insights/                   Blog listing, the posts, and _template/
   contact/                    Contact page, with the enquiry form
+  careers/                    Internships and associate positions, with the
+                              application form (see section 1c2)
   privacy-policy/  terms-of-use/  disclaimer/
   404.html                    Shown if someone types an address that is wrong
 
-/hi/                          The same 21 pages, in Hindi
-/bn/                          The same 21 pages, in Bengali
+/hi/                          The same pages, in Hindi
+/bn/                          The same pages, in Bengali
 
+/api/apply.php                Receives the careers form and saves it
+/admin/                       The applications portal (sign-in required)
+  index.php                   Sign in, and the list of applications
+  application.php             One application in full
+  download.php                Hands over a CV, to signed-in people only
+  prune.php                   Deletes applications past the retention period
+  make-hash.php               Makes a password hash -- DELETE after setup
+  schema.sql                  The one table, for phpMyAdmin
+  inc/config.php              Database password etc -- NEVER committed
 /css/styles.css               All the styling for the whole site
 /js/main.js                   The only script: menu, acknowledgement box, form
 /assets/                      favicon, logos, sharing picture
@@ -539,16 +655,18 @@ or the Terminal commands shown above, rather than editing 67 files by hand.
 ## 9. Have the legal pages reviewed
 
 The **Privacy Policy**, **Terms of Use** and **Disclaimer** pages have been
-drafted to fit this website — a static site with no accounts, one email-only
-contact form, and no tracking. They are a sound starting point, **not** advice,
-and they have not been settled by anyone at the firm.
+drafted to fit this website. The site has moved on since they were written — it
+now stores careers applications and curriculum vitae on the server, and it runs
+Google Analytics — so the Privacy Policy in particular needs a proper reading.
+They are a sound starting point, **not** advice, and they have not been settled
+by anyone at the firm.
 
 Please read all three, in all three languages, and change anything that does not
 match how the firm actually works — particularly:
 
 - how long enquiry emails are kept;
 - who at the chambers receives them;
-- whether any analytics or tracking is switched on later.
+- the Google Analytics paragraphs, now that the tag is live.
 
 The same goes for the Hindi and Bengali translations throughout the site: they
 have been written carefully and in matching legal register, but a first reading

@@ -9,6 +9,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- ===== Google Analytics (GA4) =====
+     Measurement ID G-D89Y18BMVX. Reports: https://analytics.google.com/
+     This is on every page; to change or remove it, see README.md, "Analytics". -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D89Y18BMVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D89Y18BMVX');
+</script>
+
 <!-- ===== Page title and description (unique to this page) ===== -->
 <title>সিভিল ল ফার্ম | কলকাতার দেওয়ানি মামলার আইনজীবী</title>
 <meta name="description" content="সিভিল ল ফার্ম, ১৯৬৯ সাল থেকে কলকাতায় ওকালতি। সম্পত্তি, বৈবাহিক, চুক্তি, উত্তরাধিকার, ভাড়াটিয়া ও অর্থ আদায়ের দেওয়ানি বিষয়ে মামলা ও পরামর্শ।">
@@ -34,7 +46,7 @@
 <meta property="og:image" content="https://civillawfirm.in/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Civil Law Firm, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯">
+<meta property="og:image:alt" content="Civil Law Firm, গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯">
 <meta property="og:locale" content="bn_IN">
 <meta property="og:locale:alternate" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
@@ -44,7 +56,10 @@
 <meta name="twitter:image" content="https://civillawfirm.in/assets/og-image.png">
 
 <!-- ===== Styles and icons ===== -->
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/css/styles.css?v=3">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <meta name="theme-color" content="#f6f3ee">
@@ -65,17 +80,14 @@
   "slogan": "১৯৬৯ সাল থেকে কলকাতায় দেওয়ানি মামলা ও আইনি পরামর্শ",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "121/B Sitaram Ghosh Street",
+    "streetAddress": "Ground Floor, 121/B Sitaram Ghosh Street",
     "addressLocality": "Kolkata",
     "addressRegion": "West Bengal",
     "postalCode": "700009",
     "addressCountry": "IN"
   },
-  "telephone": [
-    "+919831511983",
-    "+917604029237"
-  ],
-  "email": "[PLACEHOLDER-FIRM-EMAIL]",
+  "telephone": "+917604029237",
+  "email": "contact@civillawfirm.in",
   "hasMap": "https://www.google.com/maps/search/?api=1&query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009",
   "openingHoursSpecification": [
     {
@@ -123,14 +135,14 @@
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/bimlesh-kumar-jain/#person",
-      "name": "Bimlesh Kumar Jain",
+      "name": "Adv Bimlesh Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/bn/advocates/bimlesh-kumar-jain/"
     },
     {
       "@type": "Person",
       "@id": "https://civillawfirm.in/advocates/aditya-kumar-jain/#person",
-      "name": "Aditya Kumar Jain",
+      "name": "Adv Aditya Kumar Jain",
       "jobTitle": "Advocate",
       "url": "https://civillawfirm.in/bn/advocates/aditya-kumar-jain/"
     }
@@ -224,12 +236,6 @@
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
 <script src="/js/main.js" defer></script>
-
-<!-- OPTIONAL ANALYTICS SLOT (disabled).
-     To switch on a privacy-friendly counter later, uncomment ONE of these and
-     fill in the domain / id. Keep the `defer` attribute.
-     <script defer data-domain="civillawfirm.in" src="https://plausible.io/js/script.js"></script>
--->
 </head>
 <body class="page-home">
 
@@ -240,7 +246,7 @@
   <div class="wrap header-inner">
 
     <a class="brand" href="/bn/">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span class="brand-text">
         <strong>Civil Law Firm</strong>
         <small>১৯৬৯ সাল থেকে ওকালতি</small>
@@ -250,8 +256,7 @@
     <!-- WhatsApp stays outside the hamburger so it is always visible.
          Telephone numbers live on the Contact page and in the footer. -->
     <div class="header-cta">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa btn-sm" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+<a class="btn btn-wa btn-sm" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
     </div>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
@@ -265,9 +270,11 @@
       <ul class="nav-list">
           <li><a href="/bn/" aria-current="page">হোম</a></li>
           <li><a href="/bn/practice-areas/">কাজের ক্ষেত্র</a></li>
+          <li><a href="/bn/guides/">নির্দেশিকা</a></li>
           <li><a href="/bn/advocates/">আমাদের আইনজীবী</a></li>
           <li><a href="/bn/insights/">তথ্য</a></li>
           <li><a href="/bn/contact/">যোগাযোগ</a></li>
+          <li><a href="/bn/careers/">কর্মসংস্থান</a></li>
       </ul>
       <!-- Language switcher: real links to the same page in each language. -->
       <ul class="lang-switch" aria-label="ভাষা">
@@ -291,7 +298,7 @@
         <span class="h1-name">সিভিল ল ফার্ম</span>
         <span class="h1-sub">১৯৬৯ সাল থেকে কলকাতায় দেওয়ানি মামলা ও আইনি পরামর্শ</span>
       </h1>
-      <p class="lede">কলকাতার কলেজ স্ট্রিট আইনি পাড়ায় দুই আইনজীবীর একটি চেম্বার, যা আইনের দেওয়ানি দিকেই কাজ করে — সম্পত্তি ও স্বত্ব, বৈবাহিক ও পারিবারিক বিষয়, চুক্তি, উত্তরাধিকার, ভাড়াটিয়া স্বত্ব, অর্থ আদায় এবং দেওয়ানি আপিল।</p>
+      <p class="lede">কলকাতার কলেজ স্ট্রিট আইনি পাড়ায় একটি দেওয়ানি মামলার চেম্বার, যা আইনের দেওয়ানি দিকেই কাজ করে — সম্পত্তি ও স্বত্ব, বৈবাহিক ও পারিবারিক বিষয়, চুক্তি, উত্তরাধিকার, ভাড়াটিয়া স্বত্ব, অর্থ আদায় এবং দেওয়ানি আপিল।</p>
       <p class="hero-cue"><a class="scroll-cue" href="#practice-areas" aria-label="পরের অংশে যান">
         <span aria-hidden="true">&darr;</span></a></p>
     </div>
@@ -299,12 +306,11 @@
     <!-- The chambers card: address, hours, and the buttons that matter most. -->
     <aside class="hero-card">
       <ul class="hero-meta">
-        <li><span class="meta-k">চেম্বার</span> <span class="meta-v">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</span></li>
+        <li><span class="meta-k">চেম্বার</span> <span class="meta-v">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</span></li>
         <li><span class="meta-k">চেম্বারের সময়</span> <span class="meta-v">সোমবার থেকে রবিবার, সকাল ৯টা থেকে রাত ৯টা</span></li>
       </ul>
       <p class="cta-col">
-        <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+  <a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" aria-label="গুগল ম্যাপে চেম্বারের ঠিকানা খুলুন" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#9906;</span><span class="btn-txt">পথনির্দেশ</span></a>
         <a class="btn btn-outline" href="/bn/contact/">যোগাযোগ</a>
       </p>
@@ -359,8 +365,8 @@
   <div class="wrap pillar-inner">
     <div class="pillar-text">
       <p class="section-label">আমাদের আইনজীবী</p>
-      <h2>দুই আইনজীবী ও সহযোগীদের একটি দল</h2>
-      <p>বিমলেশ কুমার জৈন, বি.এ. এলএল.বি., পঞ্চাশ বছরের বেশি সময় ধরে ওকালতি করছেন — সম্পত্তি ও বৈবাহিক আইন-সহ দেওয়ানি বিষয়ে। আদিত্য কুমার জৈন, বি.এ. এলএল.বি., দশ বছরের বেশি সময় ধরে ওকালতি করছেন, মূলত সম্পত্তি আইনে, এবং সহযোগীদের একটি দলের সঙ্গে কাজ করেন।</p>
+      <h2>আইনজীবী ও সহযোগী</h2>
+      <p>আইনজীবী বিমলেশ কুমার জৈন, বি.এ. এলএল.বি., 40+ বছর ধরে ওকালতি করছেন — সম্পত্তি ও বৈবাহিক আইন-সহ দেওয়ানি বিষয়ে। আইনজীবী আদিত্য কুমার জৈন, বি.এ. এলএল.বি., 5+ বছর ধরে ওকালতি করছেন, মূলত সম্পত্তি আইনে, এবং সহযোগীদের একটি দলের সঙ্গে কাজ করেন।</p>
       <p class="cta-row">
         <a class="btn btn-outline" href="/bn/advocates/">আইনজীবীদের পরিচিতি</a>
       </p>
@@ -389,9 +395,18 @@
       <circle cx="600" cy="395" r="26" fill="#c3b79f"/>
     </g>
   </svg>
-  <figcaption class="photo-note">ছবি দেওয়া হবে — দুই আইনজীবী, চেম্বারে</figcaption>
+  <figcaption class="photo-note">ছবি দেওয়া হবে — আইনজীবীরা, চেম্বারে</figcaption>
 </figure>
     </div>
+  </div>
+</section>
+
+<!-- ===== নির্দেশিকা ===== -->
+<section class="band">
+  <div class="wrap">
+    <h2>নির্দেশিকা</h2>
+    <p class="measure">পশ্চিমবঙ্গে সম্পত্তি সংক্রান্ত বিষয়ে ব্যবহৃত পদ্ধতিগুলির ব্যাখ্যা &mdash; নিবন্ধীকরণ ও স্ট্যাম্প শুল্ক, ভূমি নথি ও মিউটেশন, ভূমি ব্যবহার, আদালতের ফি এবং এখতিয়ার।</p>
+    <p><a class="link-more" href="/bn/guides/">নির্দেশিকা <span aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
@@ -415,12 +430,12 @@
          <source srcset="/assets/photos/home-3.webp" type="image/webp">
          <img src="/assets/photos/home-3.jpg" width="1200" height="750"
               loading="lazy" decoding="async"
-              alt="১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ">
+              alt="গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ">
        </picture>
   -->
   <svg class="photo-ph" viewBox="0 0 1200 750" width="1200" height="750"
-       role="img" aria-label="১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ" preserveAspectRatio="xMidYMid slice">
-    <title>১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ</title>
+       role="img" aria-label="গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ" preserveAspectRatio="xMidYMid slice">
+    <title>গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯-এ সিভিল ল ফার্মের চেম্বারের প্রবেশপথ</title>
     <rect width="1200" height="750" fill="#ece6da"/>
     <rect x="18" y="18" width="1164" height="714" fill="none" stroke="#d5cbb8" stroke-width="4"/>
     <g fill="#c3b79f">
@@ -444,12 +459,11 @@
       <h2>চেম্বার প্রতিদিন সকাল ৯টা থেকে রাত ৯টা পর্যন্ত খোলা</h2>
       <p>এই সময়ে আপনি ফোন করতে পারেন। সুবিধা হলে হোয়াটসঅ্যাপে এক-দুই লাইনে বিষয়টি লিখে পাঠান; চেম্বার জানিয়ে দেবে কোন কাগজগুলি প্রাসঙ্গিক।</p>
       <ul class="pillar-meta">
-        <li><span class="meta-k">চেম্বার</span> <span class="meta-v">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</span></li>
+        <li><span class="meta-k">চেম্বার</span> <span class="meta-v">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</span></li>
         <li><span class="meta-k">চেম্বারের সময়</span> <span class="meta-v">সোমবার থেকে রবিবার, সকাল ৯টা থেকে রাত ৯টা</span></li>
       </ul>
       <p class="cta-row">
-        <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+  <a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" aria-label="গুগল ম্যাপে চেম্বারের ঠিকানা খুলুন" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#9906;</span><span class="btn-txt">পথনির্দেশ</span></a>
         <a class="btn btn-outline" href="/bn/contact/">যোগাযোগ ও পথনির্দেশ</a>
       </p>
@@ -462,12 +476,12 @@
          <source srcset="/assets/photos/home-4.webp" type="image/webp">
          <img src="/assets/photos/home-4.jpg" width="1200" height="750"
               loading="lazy" decoding="async"
-              alt="১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন">
+              alt="গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন">
        </picture>
   -->
   <svg class="photo-ph" viewBox="0 0 1200 750" width="1200" height="750"
-       role="img" aria-label="১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন" preserveAspectRatio="xMidYMid slice">
-    <title>১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন</title>
+       role="img" aria-label="গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন" preserveAspectRatio="xMidYMid slice">
+    <title>গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ চিহ্নিত মানচিত্রের চিহ্ন</title>
     <rect width="1200" height="750" fill="#ece6da"/>
     <rect x="18" y="18" width="1164" height="714" fill="none" stroke="#d5cbb8" stroke-width="4"/>
     <g fill="#c3b79f">
@@ -489,36 +503,43 @@
     <h2>সাতটি ক্ষেত্র</h2>
     <ul class="cards cards-3">
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.2 12 3.5l9 6.7"/><path d="M5.4 9v11.5h13.2V9"/><path d="M9.8 20.5v-5.6h4.4v5.6"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/property-title-disputes/">সম্পত্তি ও স্বত্ব বিরোধ</a></h3>
         <p class="card-p">স্থাবর সম্পত্তিতে মালিকানা, স্বত্ব, সীমানা, বাঁটোয়ারা, দখল ও অধিকার ঘোষণা।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/property-title-disputes/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9.3" cy="14" r="5.4"/><circle cx="14.7" cy="14" r="5.4"/><path d="M7.6 6.2h3.4L9.3 8.9z"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/matrimonial-family-law/">বৈবাহিক ও পারিবারিক আইন</a></h3>
         <p class="card-p">বিবাহ, পৃথক্করণ, খোরপোশ, সন্তানের হেফাজত ও পারিবারিক ব্যবস্থার বিষয়।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/matrimonial-family-law/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a1.6 1.6 0 0 0-1.6 1.6v14.8A1.6 1.6 0 0 0 7 21h10a1.6 1.6 0 0 0 1.6-1.6V7.6z"/><path d="M14 3v4.6h4.6"/><path d="M8.6 12.6h6.8"/><path d="M8.6 16.2h4.2"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/contract-civil-disputes/">চুক্তি ও দেওয়ানি বিরোধ</a></h3>
         <p class="card-p">চুক্তিভঙ্গ, সুনির্দিষ্ট সম্পাদন, ক্ষতিপূরণ, এবং ব্যক্তি ও ব্যবসার মধ্যে সাধারণ দেওয়ানি বিরোধ।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/contract-civil-disputes/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.4 3.4h7.7l4.5 4.5v6.2"/><path d="M6.4 3.4v17.2h5"/><path d="M14.1 3.4v4.5h4.5"/><circle cx="16.2" cy="16.6" r="3"/><path d="M14.4 18.9 13.7 22l2.5-1.3 2.5 1.3-.7-3.1"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/succession-inheritance/">উত্তরাধিকার ও ওয়ারিশি অধিকার</a></h3>
         <p class="card-p">উইল, প্রোবেট, প্রশাসনপত্র, উত্তরাধিকার সার্টিফিকেট এবং সম্পত্তির অর্পণ।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/succession-inheritance/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7.6" cy="16.4" r="3.9"/><path d="M10.4 13.6 19.8 4.2"/><path d="M16.6 7.4 19 9.8"/><path d="M14.3 9.7l2.4 2.4"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/tenancy-landlord-tenant/">ভাড়াটিয়া — বাড়িওয়ালা ও ভাড়াটিয়া</a></h3>
         <p class="card-p">ভাড়া, উচ্ছেদ, ভাড়াটিয়ার অধিকার, সাব-লেট এবং বাড়িওয়ালা–ভাড়াটিয়া বিরোধ।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/tenancy-landlord-tenant/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="6.4" rx="6.6" ry="2.9"/><path d="M5.4 6.4v5.2c0 1.6 3 2.9 6.6 2.9s6.6-1.3 6.6-2.9V6.4"/><path d="M5.4 11.6v5.2c0 1.6 3 2.9 6.6 2.9s6.6-1.3 6.6-2.9v-5.2"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/recovery-suits/">অর্থ আদায়ের মামলা</a></h3>
         <p class="card-p">বিল, ঋণ, চেক, জামানত ও খতিয়ানের অধীনে প্রাপ্য অর্থ আদায় এবং ডিক্রি জারি।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/recovery-suits/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="card">
+        <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5.6V20.4"/><path d="M8.3 20.4h7.4"/><path d="M4.4 8.4h15.2"/><circle cx="12" cy="4.4" r="1.2"/><path d="M4.4 8.4 2 14.1h4.8z"/><path d="M19.6 8.4 22 14.1h-4.8z"/></svg></span>
         <h3 class="card-h"><a href="/bn/practice-areas/civil-appeals-writs/">দেওয়ানি আপিল ও রিট</a></h3>
         <p class="card-p">দেওয়ানি ডিক্রি ও আদেশ থেকে আপিল, রিভিশন ও রিভিউ, এবং দেওয়ানি বিষয়ে রিট আবেদন।</p>
         <p class="card-more"><a class="link-more" href="/bn/practice-areas/civil-appeals-writs/">আরও জানুন <span aria-hidden="true">&rarr;</span></a></p>
@@ -558,11 +579,10 @@
     <h2>চেম্বারে কথা বলুন</h2>
     <p>আপনি হোয়াটসঅ্যাপে বার্তা পাঠাতে পারেন, বা সপ্তাহের যে কোনও দিন সকাল ৯টা থেকে রাত ৯টার মধ্যে চেম্বারে ফোন করতে পারেন — দুটি নম্বরই যোগাযোগ পৃষ্ঠায় দেওয়া আছে। পরামর্শের আগেই আপনাকে জানিয়ে দেওয়া হবে কোন কোন কাগজ প্রাসঙ্গিক।</p>
     <p class="cta-row">
-      <!-- CONFIRM which of the two numbers is on WhatsApp. It is set to Aditya Kumar Jain, +91 76040 29237. To change it, replace 917604029237 in every wa.me link (see README.md). -->
-<a class="btn btn-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
+<a class="btn btn-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank"><span class="btn-ico" aria-hidden="true">&#128172;</span><span class="btn-txt">হোয়াটসঅ্যাপ</span></a>
       <a class="btn btn-outline" href="/bn/contact/">যোগাযোগ</a>
     </p>
-    <p class="cta-meta">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ &middot; সকাল ৯টা – রাত ৯টা, সোমবার থেকে রবিবার</p>
+    <p class="cta-meta">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯ &middot; সকাল ৯টা – রাত ৯টা, সোমবার থেকে রবিবার</p>
   </div>
 </section>
 </main>
@@ -573,7 +593,7 @@
 
     <div class="footer-col footer-brand">
       <p class="footer-firm"><strong>Civil Law Firm</strong></p>
-      <p class="footer-addr">১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</p>
+      <p class="footer-addr">গ্রাউন্ড ফ্লোর, ১২১/বি সীতারাম ঘোষ স্ট্রিট, কলকাতা ৭০০০০৯</p>
       <p class="footer-hours">চেম্বারের সময়: সোমবার থেকে রবিবার, সকাল ৯টা থেকে রাত ৯টা</p>
       <p class="footer-since">১৯৬৯ সাল থেকে ওকালতি</p>
     </div>
@@ -583,21 +603,28 @@
       <ul class="footer-list">
         <li><a href="/bn/about/">ফার্ম সম্পর্কে</a></li>
         <li><a href="/bn/practice-areas/">কাজের ক্ষেত্র</a></li>
+        <li><a href="/bn/guides/">নির্দেশিকা</a></li>
         <li><a href="/bn/advocates/">আমাদের আইনজীবী</a></li>
         <li><a href="/bn/insights/">তথ্য</a></li>
         <li><a href="/bn/contact/">যোগাযোগ</a></li>
+        <li><a href="/bn/careers/">কর্মসংস্থান</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-h">তথ্যসূত্র</h2>
+      <ul class="footer-list">
+        <li><a href="/bn/reference/courts-in-kolkata/">কলকাতার আদালত</a></li>
+        <li><a href="/bn/reference/glossary-of-land-and-revenue-terms/">জমি-সংক্রান্ত শব্দকোষ</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h2 class="footer-h">চেম্বারে যোগাযোগ</h2>
       <ul class="footer-list">
-        <li><a href="tel:+919831511983">বিমলেশ কুমার জৈন &middot; +91 98315 11983</a></li>
-        <li><a href="tel:+917604029237">আদিত্য কুমার জৈন &middot; +91 76040 29237</a></li>
-        <li><a href="https://wa.me/917604029237" rel="noopener" target="_blank">হোয়াটসঅ্যাপ</a></li>
-        <!-- PLACEHOLDER: replace [PLACEHOLDER-FIRM-EMAIL] with the firm's email address
-             here and in every other page (see README.md, "Filling the placeholders"). -->
-        <li><a href="mailto:[PLACEHOLDER-FIRM-EMAIL]">[PLACEHOLDER-FIRM-EMAIL]</a></li>
+        <li><a href="tel:+917604029237">আইনজীবী আদিত্য কুমার জৈন &middot; +91 76040 29237</a></li>
+        <li><a href="https://wa.me/919123305701" rel="noopener" target="_blank">হোয়াটসঅ্যাপ</a></li>
+        <li><a href="mailto:contact@civillawfirm.in">contact@civillawfirm.in</a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&amp;query=121%2FB%20Sitaram%20Ghosh%20Street%2C%20Kolkata%20700009" rel="noopener" target="_blank">পথনির্দেশ</a></li>
       </ul>
       <!-- PLACEHOLDER: social profiles. The firm has none listed, so this row is
@@ -623,7 +650,10 @@
 
 <!-- ===== Floating WhatsApp button (small screens only). ===== -->
 <div class="contactbar">
-  <a class="cb-item cb-wa" href="https://wa.me/917604029237" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank">
+  <a class="cb-item cb-call" href="tel:+917604029237" aria-label="চেম্বারে +91 76040 29237 নম্বরে ফোন করুন">
+    <span aria-hidden="true">&#9742;</span> <span class="cb-label">ফোন করুন</span>
+  </a>
+  <a class="cb-item cb-wa" href="https://wa.me/919123305701" aria-label="চেম্বারে হোয়াটসঅ্যাপে বার্তা পাঠান" rel="noopener" target="_blank">
     <span aria-hidden="true">&#128172;</span> <span class="cb-label">হোয়াটসঅ্যাপ</span>
   </a>
 </div>
@@ -638,7 +668,7 @@
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">
     <div class="gate-logo">
-      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><rect x="1" y="1" width="38" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="9" width="3" height="22" fill="currentColor"/><rect x="18.5" y="9" width="3" height="22" fill="currentColor"/><rect x="27" y="9" width="3" height="22" fill="currentColor"/><rect x="8" y="30" width="24" height="3" fill="currentColor"/></svg>
+      <svg class="mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true" focusable="false"><path d="M 30.004 30.358 A 14.4 14.4 0 1 1 30.004 9.642" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="17.2" y1="11.2" x2="17.2" y2="29.6" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="13.2" x2="25.2" y2="13.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/><line x1="17.2" y1="21.2" x2="23.6" y2="21.2" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg>
       <span><strong>Civil Law Firm</strong><small>১৯৬৯ সাল থেকে ওকালতি</small></span>
     </div>
     <h2 class="gate-title" id="gate-title">এগিয়ে যাওয়ার আগে পড়ুন</h2>

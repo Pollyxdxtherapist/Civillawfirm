@@ -489,6 +489,33 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://civillawfirm.in/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/careers/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/careers/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/hi/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/careers/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/careers/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/bn/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/careers/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/careers/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://civillawfirm.in/privacy-policy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/privacy-policy/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/privacy-policy/"/>
@@ -568,5 +595,115 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/disclaimer/"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/property-registration-process-west-bengal/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/property-registration-process-west-bengal/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/property-registration-process-west-bengal/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/property-registration-process-west-bengal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/property-registration-process-west-bengal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/land-records-and-banglarbhumi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/land-records-and-banglarbhumi/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/land-records-and-banglarbhumi/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/land-records-and-banglarbhumi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/land-records-and-banglarbhumi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/common-legal-questions/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/common-legal-questions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/common-legal-questions/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/mutation-namjari/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/mutation-namjari/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/mutation-namjari/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/mutation-namjari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/mutation-namjari/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/restricted-and-risky-land/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/restricted-and-risky-land/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/restricted-and-risky-land/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/restricted-and-risky-land/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/restricted-and-risky-land/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/guides/checking-property-documents-before-buying/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/guides/checking-property-documents-before-buying/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/guides/checking-property-documents-before-buying/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/guides/checking-property-documents-before-buying/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/guides/checking-property-documents-before-buying/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/reference/glossary-of-land-and-revenue-terms/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/reference/glossary-of-land-and-revenue-terms/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/reference/glossary-of-land-and-revenue-terms/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/reference/glossary-of-land-and-revenue-terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/reference/glossary-of-land-and-revenue-terms/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/practice-areas/property-title-disputes/partition-of-joint-property/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/property-title-disputes/partition-of-joint-property/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/property-title-disputes/partition-of-joint-property/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/property-title-disputes/partition-of-joint-property/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/property-title-disputes/partition-of-joint-property/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/practice-areas/property-title-disputes/builder-delay-and-wbrera/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/property-title-disputes/builder-delay-and-wbrera/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/property-title-disputes/builder-delay-and-wbrera/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/property-title-disputes/builder-delay-and-wbrera/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/property-title-disputes/builder-delay-and-wbrera/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/practice-areas/succession-inheritance/succession-certificate/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/succession-inheritance/succession-certificate/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/succession-inheritance/succession-certificate/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/succession-inheritance/succession-certificate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/succession-inheritance/succession-certificate/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
