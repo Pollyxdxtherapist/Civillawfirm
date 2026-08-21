@@ -343,37 +343,22 @@
   </section>
 
   <!-- ===== Application form =====
-       No backend and no database. The form posts to Web3Forms, which emails
-       the application to the chambers.
+       Posts to /api/apply -- this site's own code, in functions/api/apply.js,
+       which emails the application to the chambers with the curriculum vitae
+       attached. No third-party form service is involved, and no address or
+       key appears in this page: they are environment variables set in the
+       Cloudflare Pages dashboard. See README.md, section 1c2.
 
-       PLACEHOLDER: paste the Web3Forms access key into the value="" of the
-       hidden "access_key" field below (see README.md).
-
-       NOTE: the curriculum vitae attachment is a Web3Forms PAID feature. On
-       the free plan the form still sends, but the attached file is dropped
-       silently. See README.md, "The careers form", before going live. -->
+       With JavaScript switched off this form still posts normally and the
+       answer comes back as a plain page. -->
   <section class="formwrap" id="apply">
     <h2>Apply</h2>
     <p>The same form is used for both an internship and an associate position &mdash; say which one you are applying for.</p>
 
     <form class="careers-form" id="careers-form"
-          action="https://api.web3forms.com/submit" method="POST"
-          enctype="multipart/form-data">
-
-      <input type="hidden" name="access_key" value="0118d266-0f18-416a-9016-f571212295a4">
-      <input type="hidden" name="subject" value="Careers application -- civillawfirm.in">
-      <input type="hidden" name="from_name" value="civillawfirm.in">
-
-      <!-- Where the application is emailed is set in the Web3Forms account, not
-           here, so that no private address is published in this page's source.
-           README.md, "The careers form", explains how to add the second and
-           third recipients. -->
-
-      <!-- OPTIONAL: after a successful send, Web3Forms shows its own
-           confirmation page. To land the applicant back on this site instead,
-           put that address in the value below and uncomment the line.
-      <input type="hidden" name="redirect" value="https://civillawfirm.in/careers/">
-      -->
+          action="/api/apply" method="POST"
+          enctype="multipart/form-data"
+          data-sending="Sending…">
 
       <!-- Spam trap: real people never see or fill this. -->
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
@@ -417,8 +402,11 @@
       </p>
 
       <p class="form-actions">
-        <button type="submit" class="btn btn-primary">Send application</button>
+        <button type="submit" class="btn btn-primary" id="c-submit">Send application</button>
       </p>
+
+      <p class="form-status" id="careers-ok" role="status" hidden>Thank you — your application has been sent. The chambers will be in touch if there is a suitable opening.</p>
+      <p class="form-status form-bad" id="careers-bad" role="alert" hidden>The application could not be sent. Please email the chambers at contact@civillawfirm.in with your curriculum vitae attached.</p>
 
       <p class="form-note">The form sends your application by email. Please do not attach anything confidential to a client or to a matter you have worked on. Sending an application does not create any engagement with the chambers.</p>
     </form>

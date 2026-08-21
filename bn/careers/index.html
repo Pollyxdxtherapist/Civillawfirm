@@ -340,41 +340,22 @@
   </section>
 
   <!-- ===== Application form =====
-       No backend and no database. The form posts to Web3Forms, which emails
-       the application to the chambers.
+       Posts to /api/apply -- this site's own code, in functions/api/apply.js,
+       which emails the application to the chambers with the curriculum vitae
+       attached. No third-party form service is involved, and no address or
+       key appears in this page: they are environment variables set in the
+       Cloudflare Pages dashboard. See README.md, section 1c2.
 
-       PLACEHOLDER: paste the Web3Forms access key into the value="" of the
-       hidden "access_key" field below (see README.md).
-
-       NOTE: the curriculum vitae attachment is a Web3Forms PAID feature. On
-       the free plan the form still sends, but the attached file is dropped
-       silently. See README.md, "The careers form", before going live.
-
-       The name="" attributes and the <select> option value="" strings are
-       kept in English on every language version of this page, so the chambers
-       receives the same keys and values whatever language was used. -->
+       With JavaScript switched off this form still posts normally and the
+       answer comes back as a plain page. -->
   <section class="formwrap" id="apply">
     <h2>আবেদন করুন</h2>
     <p>ইন্টার্নশিপ ও সহযোগীর পদ &mdash; দুইয়ের জন্যই একই ফর্ম; আপনি কোনটির জন্য আবেদন করছেন তা জানিয়ে দিন।</p>
 
     <form class="careers-form" id="careers-form"
-          action="https://api.web3forms.com/submit" method="POST"
-          enctype="multipart/form-data">
-
-      <input type="hidden" name="access_key" value="0118d266-0f18-416a-9016-f571212295a4">
-      <input type="hidden" name="subject" value="Careers application -- civillawfirm.in (BN)">
-      <input type="hidden" name="from_name" value="civillawfirm.in">
-
-      <!-- Where the application is emailed is set in the Web3Forms account, not
-           here, so that no private address is published in this page's source.
-           README.md, "The careers form", explains how to add the second and
-           third recipients. -->
-
-      <!-- OPTIONAL: after a successful send, Web3Forms shows its own
-           confirmation page. To land the applicant back on this site instead,
-           put that address in the value below and uncomment the line.
-      <input type="hidden" name="redirect" value="https://civillawfirm.in/bn/careers/">
-      -->
+          action="/api/apply" method="POST"
+          enctype="multipart/form-data"
+          data-sending="পাঠানো হচ্ছে…">
 
       <!-- Spam trap: real people never see or fill this. -->
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
@@ -418,8 +399,11 @@
       </p>
 
       <p class="form-actions">
-        <button type="submit" class="btn btn-primary">আবেদন পাঠান</button>
+        <button type="submit" class="btn btn-primary" id="c-submit">আবেদন পাঠান</button>
       </p>
+
+      <p class="form-status" id="careers-ok" role="status" hidden>ধন্যবাদ — আপনার আবেদন পাঠানো হয়েছে। উপযুক্ত সুযোগ থাকলে চেম্বার আপনার সঙ্গে যোগাযোগ করবে।</p>
+      <p class="form-status form-bad" id="careers-bad" role="alert" hidden>আবেদন পাঠানো গেল না। অনুগ্রহ করে জীবনবৃত্তান্ত সংযুক্ত করে চেম্বারে contact@civillawfirm.in ঠিকানায় ইমেল করুন।</p>
 
       <p class="form-note">এই ফর্ম আপনার আবেদন ইমেলে পাঠায়। কোনও মক্কেল বা আপনি কাজ করেছেন এমন কোনও বিষয়ের গোপনীয় কিছু সংযুক্ত করবেন না। আবেদন পাঠানোর ফলে চেম্বারের সঙ্গে কোনও নিয়োগ বা কার্যভার তৈরি হয় না।</p>
     </form>

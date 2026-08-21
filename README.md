@@ -39,7 +39,8 @@ with its own web address, which is what makes them findable on Google.
 
 Items (a) to (c) below are **done**; they are kept here so you know how to
 change them later. Only **(d) the Google Search Console token** and **(e) the
-photographs** are still outstanding, plus the Web3Forms plan question in (c2).
+photographs** are still outstanding, plus the three Cloudflare settings the
+careers form needs — (c2).
 
 The only placeholder left in the files is
 `[PLACEHOLDER-GSC-VERIFICATION-TOKEN]` — searching the folder for
@@ -84,8 +85,8 @@ Contact pages (`/contact/index.html`, `/hi/contact/index.html`,
 
 Already filled in. The Web3Forms access key
 `0118d266-0f18-416a-9016-f571212295a4` is in the hidden `access_key` field of
-all six forms: the enquiry form on the three Contact pages, and the application
-form on the three Careers pages.
+the enquiry form on the three Contact pages. (The Careers form no longer uses
+Web3Forms at all — see the next section.)
 
 This key is meant to be public — it sits in the HTML that every visitor's
 browser downloads, and it only tells Web3Forms which mailbox to deliver to. It
@@ -107,37 +108,58 @@ your Formspree endpoint and delete the hidden `access_key` line.)
 **The Careers form needs more than this key** — please read the next section
 before announcing that page.
 
-### (c2) The careers form — please read before going live
+### (c2) The careers form — three settings in Cloudflare
 
-The Careers page lets an applicant attach a curriculum vitae, and you asked for
-each application to reach three addresses. **Both of those are paid features of
-Web3Forms.** On the free plan the form still sends, but:
+The Careers form does **not** use a form service. It posts to the site's own
+code, in `functions/api/apply.js`, which runs on Cloudflare Pages and emails
+each application on to the chambers with the curriculum vitae attached.
 
-- the attached CV is **dropped silently** — the applicant sees "sent", and no
-  file arrives; and
-- the application goes to one address only.
+That means no third-party branding, no cap on how many applications you can
+receive, no storage limit, and nothing about the form visible in the page
+source. It also means three settings have to exist before it works.
 
-So one of the following has to be true before the Careers page is announced:
+**Step 1 — an account with Resend** (the service that actually delivers the
+mail; a server cannot send email on its own).
 
-**Either** take a paid Web3Forms plan (see <https://web3forms.com/pricing>),
-which enables file attachments up to 5 MB and a `ccemail` field for the extra
-recipients;
+1. Sign up at <https://resend.com>. The free plan sends 3,000 emails a month,
+   100 a day — far more than a careers page needs.
+2. Add `civillawfirm.in` as a domain and follow their instructions to add the
+   DNS records. If the domain is already on Cloudflare this is a few clicks.
+   **Mail will not send until the domain shows as verified.**
+3. Create an API key and copy it. It is shown once.
 
-**or** move the careers form to a service whose free tier includes uploads —
-Google Forms is the usual choice, and it can email several people on each
-response. If you do that, replace the `<form>` block on the three Careers pages
-with a link to the Google Form.
+**Step 2 — three variables in Cloudflare.** Open the Pages project →
+**Settings** → **Variables and secrets**, and add:
 
-**Where the applications go.** Set the destination address in the Web3Forms
-account itself, not in the page. The HTML deliberately contains no email
-address, so that no private mailbox is published in the page source where it
-can be harvested for spam. To reach more than one mailbox, the tidiest route is
-to point Web3Forms at the firm's own address and then have that address forward
-to the others — that keeps every private address out of this repository as well.
+| Name | Value | Type |
+| --- | --- | --- |
+| `RESEND_API_KEY` | the key from step 1 | **Secret** |
+| `CAREERS_TO` | who receives applications, separated by commas | Plain text |
+| `CAREERS_FROM` | e.g. `Civil Law Firm <careers@civillawfirm.in>` | Plain text |
 
-Until the plan question is settled, it is worth changing the words "Curriculum
-vitae" on the three Careers pages to say that CVs should be emailed instead, so
-that nobody attaches a file that never arrives.
+`CAREERS_TO` takes as many addresses as you like:
+`one@example.com, two@example.com, three@example.com`. Keeping them here rather
+than in the website's files is deliberate — it means no private address is
+published in the page source where it can be harvested for spam, and none of
+them are stored in this repository.
+
+`CAREERS_FROM` must be **at the domain you verified with Resend**. It is the
+address the email appears to come from; replying to an application goes to the
+applicant, not to this address.
+
+**Step 3 — redeploy.** Variables are read at deploy time, so push any change
+(or hit *Retry deployment*) after adding them.
+
+**Checking it works.** Open `/careers/`, send yourself a real application with
+a small PDF attached, and confirm it arrives at every address in `CAREERS_TO`
+with the file attached. Until the three variables are set, the form answers
+"The application form is not switched on yet" rather than failing silently.
+
+**What the code already handles**: required fields, a valid-looking email and
+telephone number, PDF/DOC/DOCX only, a 5 MB ceiling, angle brackets stripped
+out of everything, and a hidden honeypot field that silently swallows robot
+submissions. With JavaScript switched off, the form still posts and answers
+with a plain page — that fallback page is in English only.
 
 ### (d) The Google Search Console token
 
@@ -560,6 +582,8 @@ Three habits worth keeping:
 /hi/                          The same pages, in Hindi
 /bn/                          The same pages, in Bengali
 
+/functions/api/apply.js       The site's only server-side code: receives the
+                              careers form and emails it on (see section 1c2)
 /css/styles.css               All the styling for the whole site
 /js/main.js                   The only script: menu, acknowledgement box, form
 /assets/                      favicon, logos, sharing picture
