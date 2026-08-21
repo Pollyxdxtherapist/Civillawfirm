@@ -670,8 +670,26 @@ code {
   border-radius: var(--radius);
   padding: .7rem .75rem;
 }
-.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.field select {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .7rem .75rem;
+}
+/* The file button is drawn by the browser, so it only gets the surrounding
+   box; the button itself is left alone rather than half-restyled. */
+.field input[type="file"] {
+  padding: .55rem .6rem;
+  font-size: .95rem;
+  background: var(--paper);
+}
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); }
 .field textarea { resize: vertical; min-height: 6.5rem; }
+.field-hint { display: block; font-size: .85rem; color: var(--muted); margin-top: .35rem; }
 .field-error { display: block; color: #9a2f2f; font-size: .88rem; margin-top: .3rem; }
 .field-error[hidden] { display: none; }
 .hp { position: absolute; left: -9999px; opacity: 0; }

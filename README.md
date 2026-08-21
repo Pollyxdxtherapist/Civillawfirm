@@ -94,6 +94,43 @@ the Call button on the Contact page.
 (If you prefer Formspree instead, change the form's `action="..."` address to
 your Formspree endpoint and delete the hidden `access_key` line.)
 
+The same `[PLACEHOLDER-WEB3FORMS-ACCESS-KEY]` also appears once on each of the
+three **Careers** pages. Replacing it everywhere at once covers both forms — but
+please read the next section first, because the Careers form asks more of
+Web3Forms than the enquiry form does.
+
+### (c2) The careers form — please read before going live
+
+The Careers page lets an applicant attach a curriculum vitae, and you asked for
+each application to reach three addresses. **Both of those are paid features of
+Web3Forms.** On the free plan the form still sends, but:
+
+- the attached CV is **dropped silently** — the applicant sees "sent", and no
+  file arrives; and
+- the application goes to one address only.
+
+So one of the following has to be true before the Careers page is announced:
+
+**Either** take a paid Web3Forms plan (see <https://web3forms.com/pricing>),
+which enables file attachments up to 5 MB and a `ccemail` field for the extra
+recipients;
+
+**or** move the careers form to a service whose free tier includes uploads —
+Google Forms is the usual choice, and it can email several people on each
+response. If you do that, replace the `<form>` block on the three Careers pages
+with a link to the Google Form.
+
+**Where the applications go.** Set the destination address in the Web3Forms
+account itself, not in the page. The HTML deliberately contains no email
+address, so that no private mailbox is published in the page source where it
+can be harvested for spam. To reach more than one mailbox, the tidiest route is
+to point Web3Forms at the firm's own address and then have that address forward
+to the others — that keeps every private address out of this repository as well.
+
+Until the plan question is settled, it is worth changing the words "Curriculum
+vitae" on the three Careers pages to say that CVs should be emailed instead, so
+that nobody attaches a file that never arrives.
+
 ### (d) The Google Search Console token
 
 See [section 4](#4-getting-found-on-google-search-console). Replace
@@ -507,11 +544,13 @@ Three habits worth keeping:
   advocates/                  Listing + one folder per advocate (2)
   insights/                   Blog listing, the posts, and _template/
   contact/                    Contact page, with the enquiry form
+  careers/                    Internships and associate positions, with the
+                              application form (see section 1c2)
   privacy-policy/  terms-of-use/  disclaimer/
   404.html                    Shown if someone types an address that is wrong
 
-/hi/                          The same 21 pages, in Hindi
-/bn/                          The same 21 pages, in Bengali
+/hi/                          The same pages, in Hindi
+/bn/                          The same pages, in Bengali
 
 /css/styles.css               All the styling for the whole site
 /js/main.js                   The only script: menu, acknowledgement box, form
