@@ -34,7 +34,15 @@ if ($c !== null) {
              'Connected as <code>' . e((string) ($c['db_user'] ?? '?')) . '</code> to <code>'
              . e((string) ($c['db_name'] ?? $c['db_dsn'] ?? '?')) . '</code>.');
     } catch (Throwable $e) {
-        $add('Connects to MySQL', false, clf_explain_db_error($e));
+        /* Show what was attempted -- never the password -- so a typo in the
+           username or database name is visible at a glance. */
+        $add('Connects to MySQL', false,
+             clf_explain_db_error($e)
+             . '<br><br>Tried to connect as <code>' . e((string) ($c['db_user'] ?? '(not set)'))
+             . '</code> to <code>' . e((string) ($c['db_name'] ?? '(not set)'))
+             . '</code>, with a password ' . (($c['db_pass'] ?? '') === '' ? 'that is <strong>empty</strong>'
+                : 'of ' . strlen((string) $c['db_pass']) . ' characters')
+             . '. Compare those two against hPanel &rarr; Databases &rarr; Management.');
     }
 }
 
