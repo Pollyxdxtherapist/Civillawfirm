@@ -134,7 +134,7 @@ try {
    Answers either as JSON (the page's own script asked for it) or as a plain
    page (JavaScript is switched off, so the form posted normally).
    ------------------------------------------------------------------------- */
-function clf_apply_reply(bool $wants_json, int $status, string $message): never
+function clf_apply_reply(bool $wants_json, int $status, string $message): void
 {
     http_response_code($status);
     $ok = $status === 200;

@@ -92,7 +92,13 @@ $add('PHP accepts a 5 MB upload', $up >= $need && $post >= $need,
      . (($up >= $need && $post >= $need) ? '' :
         ' Raise both to at least <strong>8M</strong> in hPanel &rarr; Advanced &rarr; PHP Configuration.'));
 
-/* 6. leftovers ------------------------------------------------------------ */
+/* 6. the PHP version ------------------------------------------------------ */
+$add('PHP is new enough', PHP_VERSION_ID >= 80000,
+     'Running PHP <code>' . e(PHP_VERSION) . '</code>. This code needs <strong>8.0</strong> or newer. '
+     . (PHP_VERSION_ID >= 80000 ? '' :
+        'Raise it in hPanel &rarr; Advanced &rarr; PHP Configuration &rarr; PHP version.'));
+
+/* 7. leftovers ------------------------------------------------------------ */
 $add('make-hash.php has been removed', !is_file(__DIR__ . '/make-hash.php'),
      is_file(__DIR__ . '/make-hash.php')
         ? 'Still present. Delete <code>admin/make-hash.php</code> now that the password is set.'

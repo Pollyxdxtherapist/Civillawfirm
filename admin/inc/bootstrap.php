@@ -223,7 +223,7 @@ function clf_explain_db_error(Throwable $e): string
 }
 
 /* Shows a readable page and stops. $detail is markup we wrote ourselves. */
-function clf_admin_error(string $heading, string $detail, ?Throwable $e = null): never
+function clf_admin_error(string $heading, string $detail, ?Throwable $e = null): void
 {
     if ($e !== null) {
         error_log('civillawfirm admin: ' . $e->getMessage());
