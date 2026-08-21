@@ -3,6 +3,8 @@
 # alike. Everything is allowed except the copy-me post template.
 
 User-agent: *
+Disallow: /admin/
+Disallow: /api/
 Allow: /
 Disallow: /insights/_template/
 Disallow: /hi/insights/_template/

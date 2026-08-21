@@ -340,11 +340,11 @@
   </section>
 
   <!-- ===== Application form =====
-       Posts to /api/apply -- this site's own code, in functions/api/apply.js,
-       which emails the application to the chambers with the curriculum vitae
-       attached. No third-party form service is involved, and no address or
-       key appears in this page: they are environment variables set in the
-       Cloudflare Pages dashboard. See README.md, section 1c2.
+       Posts to /api/apply.php -- this site's own code. It saves the
+       application to the firm's own MySQL database and puts the curriculum
+       vitae in a folder outside public_html. Nothing is emailed and no
+       outside service is involved; the chambers reads applications at
+       /admin/. See README.md, section 1c2.
 
        With JavaScript switched off this form still posts normally and the
        answer comes back as a plain page. -->
@@ -353,9 +353,12 @@
     <p>ইন্টার্নশিপ ও সহযোগীর পদ &mdash; দুইয়ের জন্যই একই ফর্ম; আপনি কোনটির জন্য আবেদন করছেন তা জানিয়ে দিন।</p>
 
     <form class="careers-form" id="careers-form"
-          action="/api/apply" method="POST"
+          action="/api/apply.php" method="POST"
           enctype="multipart/form-data"
           data-sending="পাঠানো হচ্ছে…">
+
+      <!-- Which language page this was sent from, so the portal can show it. -->
+      <input type="hidden" name="lang" value="bn">
 
       <!-- Spam trap: real people never see or fill this. -->
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">

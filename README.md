@@ -108,58 +108,78 @@ your Formspree endpoint and delete the hidden `access_key` line.)
 **The Careers form needs more than this key** — please read the next section
 before announcing that page.
 
-### (c2) The careers form — three settings in Cloudflare
+### (c2) The careers form and the applications portal
 
-The Careers form does **not** use a form service. It posts to the site's own
-code, in `functions/api/apply.js`, which runs on Cloudflare Pages and emails
-each application on to the chambers with the curriculum vitae attached.
+Applications are **not emailed**. They are saved into the firm's own MySQL
+database on Hostinger, and the curriculum vitae files are kept in a folder
+outside `public_html`. You read them by signing in at
+**civillawfirm.in/admin/**.
 
-That means no third-party branding, no cap on how many applications you can
-receive, no storage limit, and nothing about the form visible in the page
-source. It also means three settings have to exist before it works.
+No outside form service is involved, and nothing about the arrangement is
+visible in the website's source.
 
-**Step 1 — an account with Resend** (the service that actually delivers the
-mail; a server cannot send email on its own).
+#### Setting it up, once
 
-1. Sign up at <https://resend.com>. The free plan sends 3,000 emails a month,
-   100 a day — far more than a careers page needs.
-2. Add `civillawfirm.in` as a domain and follow their instructions to add the
-   DNS records. If the domain is already on Cloudflare this is a few clicks.
-   **Mail will not send until the domain shows as verified.**
-3. Create an API key and copy it. It is shown once.
+**1. Make the database.** hPanel → **Databases** → **Management** → create a
+database and a user. Note the four values it gives you.
 
-**Step 2 — three variables in Cloudflare.** Open the Pages project →
-**Settings** → **Variables and secrets**, and add:
+**2. Make the table.** hPanel → **phpMyAdmin** → open the database → the
+**SQL** tab → paste in the whole of `admin/schema.sql` → **Go**.
 
-| Name | Value | Type |
-| --- | --- | --- |
-| `RESEND_API_KEY` | the key from step 1 | **Secret** |
-| `CAREERS_TO` | who receives applications, separated by commas | Plain text |
-| `CAREERS_FROM` | e.g. `Civil Law Firm <careers@civillawfirm.in>` | Plain text |
+**3. Make the folder for the CV files.** hPanel → **File Manager**. Go *up*
+one level from `public_html`, so you are in `/home/uXXXXXXXX/`, and create a
+folder called `clf-storage`. It must sit **beside** `public_html`, never
+inside it — that is what stops anyone downloading a CV without signing in.
 
-`CAREERS_TO` takes as many addresses as you like:
-`one@example.com, two@example.com, three@example.com`. Keeping them here rather
-than in the website's files is deliberate — it means no private address is
-published in the page source where it can be harvested for spam, and none of
-them are stored in this repository.
+**4. Choose the admin password.** Visit `civillawfirm.in/admin/make-hash.php`,
+type the password you want, and copy the long line it gives back. Then
+**delete `admin/make-hash.php`** from the File Manager.
 
-`CAREERS_FROM` must be **at the domain you verified with Resend**. It is the
-address the email appears to come from; replying to an application goes to the
-applicant, not to this address.
+**5. Write the configuration.** In File Manager, open
+`public_html/admin/inc/`, copy `config.sample.php` to `config.php`, and fill
+in: the four database values, the full path to `clf-storage/cvs`, and the
+username and hash from step 4.
 
-**Step 3 — redeploy.** Variables are read at deploy time, so push any change
-(or hit *Retry deployment*) after adding them.
+`config.php` is in `.gitignore` and must never be committed — this repository
+is public, so anything committed to it can be read by anyone.
 
-**Checking it works.** Open `/careers/`, send yourself a real application with
-a small PDF attached, and confirm it arrives at every address in `CAREERS_TO`
-with the file attached. Until the three variables are set, the form answers
-"The application form is not switched on yet" rather than failing silently.
+**6. Try it.** Send yourself an application through `/careers/` with a small
+PDF, then sign in at `/admin/` and check it is there and the CV downloads.
 
-**What the code already handles**: required fields, a valid-looking email and
-telephone number, PDF/DOC/DOCX only, a 5 MB ceiling, angle brackets stripped
-out of everything, and a hidden honeypot field that silently swallows robot
-submissions. With JavaScript switched off, the form still posts and answers
-with a plain page — that fallback page is in English only.
+#### Using it
+
+- `/admin/` — every application, newest first. A dot marks unread ones.
+- Click a name for the full application, with a download link for the CV.
+  Opening it marks it read.
+- **Delete this application** removes the record *and* the CV file.
+- `/admin/prune.php` deletes anything older than `retain_days` in config.php
+  (a year by default). Hostinger can run it monthly: hPanel → **Advanced** →
+  **Cron Jobs**:
+  `/usr/bin/php /home/uXXXXXXXX/public_html/admin/prune.php --cli`
+
+#### What the code already does about security
+
+Passwords are stored as bcrypt hashes, never in the clear. Sign-in gives no
+clue whether it was the username or the password that was wrong, and stops
+after eight tries in fifteen minutes. Session cookies are HttpOnly, SameSite
+and HTTPS-only. Every action that changes something carries a one-use token,
+so another website cannot make your browser delete an application. All
+database access uses prepared statements. Uploads are checked for what they
+actually contain, not just what they are called — a program renamed to
+`.pdf` is refused — and are stored under a random name, so nothing an
+applicant types can ever become a path on the server.
+
+#### Two things that are your decision, not the code's
+
+**The Privacy Policy needs a line about this.** The site now stores personal
+data: names, telephone numbers, email addresses and CVs. The Privacy Policy
+page should say so, say how long it is kept, and say how someone asks for
+theirs to be removed. Please have that wording checked by someone qualified.
+
+**Nothing tells you an application has arrived.** There is no email, by
+design. Somebody has to remember to open `/admin/`. If that turns out not to
+happen, say so and a short "new application" alert can be added without
+putting any applicant's details in the email.
 
 ### (d) The Google Search Console token
 
@@ -582,8 +602,15 @@ Three habits worth keeping:
 /hi/                          The same pages, in Hindi
 /bn/                          The same pages, in Bengali
 
-/functions/api/apply.js       The site's only server-side code: receives the
-                              careers form and emails it on (see section 1c2)
+/api/apply.php                Receives the careers form and saves it
+/admin/                       The applications portal (sign-in required)
+  index.php                   Sign in, and the list of applications
+  application.php             One application in full
+  download.php                Hands over a CV, to signed-in people only
+  prune.php                   Deletes applications past the retention period
+  make-hash.php               Makes a password hash -- DELETE after setup
+  schema.sql                  The one table, for phpMyAdmin
+  inc/config.php              Database password etc -- NEVER committed
 /css/styles.css               All the styling for the whole site
 /js/main.js                   The only script: menu, acknowledgement box, form
 /assets/                      favicon, logos, sharing picture

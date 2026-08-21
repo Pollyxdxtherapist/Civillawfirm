@@ -1,0 +1,13 @@
+# The real configuration lives only on the server. It holds the database
+# password and the admin password hashes, and this repository is public.
+admin/inc/config.php
+
+# If the curriculum vitae folder is ever created inside the site by mistake,
+# make sure it is never committed.
+storage/
+admin/storage/
+
+# Editor and operating-system litter
+.DS_Store
+Thumbs.db
+*.swp
