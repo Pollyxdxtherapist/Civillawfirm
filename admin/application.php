@@ -9,9 +9,13 @@ require __DIR__ . '/inc/page.php';
 clf_require_login();
 
 $id = (int) ($_GET['id'] ?? 0);
-$stmt = clf_db()->prepare('SELECT * FROM applications WHERE id = ?');
-$stmt->execute([$id]);
-$a = $stmt->fetch();
+try {
+    $stmt = clf_db()->prepare('SELECT * FROM applications WHERE id = ?');
+    $stmt->execute([$id]);
+    $a = $stmt->fetch();
+} catch (Throwable $ex) {
+    clf_admin_error('The database is not ready yet', clf_explain_db_error($ex), $ex);
+}
 
 if (!$a) {
     http_response_code(404);

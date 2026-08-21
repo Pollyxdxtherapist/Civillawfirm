@@ -100,12 +100,16 @@ if (!empty($_SESSION['flash'])) {
     unset($_SESSION['flash']);
 }
 
-$rows = clf_db()->query(
-    'SELECT id, name, position, email, phone, cv_original, lang, submitted_at, is_read
-       FROM applications
-   ORDER BY submitted_at DESC, id DESC
-      LIMIT 500'
-)->fetchAll();
+try {
+    $rows = clf_db()->query(
+        'SELECT id, name, position, email, phone, cv_original, lang, submitted_at, is_read
+           FROM applications
+       ORDER BY submitted_at DESC, id DESC
+          LIMIT 500'
+    )->fetchAll();
+} catch (Throwable $ex) {
+    clf_admin_error('The database is not ready yet', clf_explain_db_error($ex), $ex);
+}
 
 $unread = 0;
 foreach ($rows as $r) {
