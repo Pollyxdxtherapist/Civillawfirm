@@ -24,32 +24,39 @@
    1. Colours, fonts and other settings
    ========================================================================== */
 :root {
-  /* Warm light grey / beige palette */
-  --bg:          #f6f3ee;   /* page background */
-  --bg-alt:      #efeae0;   /* alternating band */
-  --bg-deep:     #e7e0d3;   /* hero / footer tint */
-  --surface:     #fffdf9;   /* cards */
-  --ink:         #241f19;   /* main text */
-  --ink-2:       #423b31;   /* headings on tinted panels */
-  --muted:       #6b6357;   /* secondary text */
-  --line:        #ddd6c9;   /* hairlines and borders */
-  --line-soft:   #eae4d8;
-  --accent:      #7d6a4f;   /* warm brown — links, buttons */
-  --accent-dark: #5b4c37;   /* hover */
-  --accent-soft: #f0e9dc;   /* tinted background for accents */
-  --wa:          #1f7a53;   /* WhatsApp green, darkened for contrast */
-  --wa-dark:     #17603f;
-  --focus:       #9a5b1f;   /* focus ring */
+  /* ---- The palette. Seven colours; everything else is built from these. ---- */
+  --paper:       #f6f3ee;   /* page background */
+  --surface:     #efe9df;   /* cards, header, footer, section bands */
+  --ink:         #23211d;   /* body text */
+  --muted:       #5c574e;   /* secondary text, dates, captions */
+  --accent:      #6b2436;   /* deep oxblood — accents, links, buttons */
+  --accent-dark: #52182a;   /* hover / active */
+  --hairline:    #ddd5c8;   /* borders and dividers */
 
-  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+  /* ---- Working aliases. These keep the rest of the sheet readable; each one
+         resolves to a palette colour above, so section 1 stays the only place
+         a colour is ever chosen. ---- */
+  --bg:          var(--paper);
+  --bg-alt:      var(--surface);
+  --bg-deep:     var(--surface);
+  --ink-2:       #3b3730;   /* body text on tinted panels: ink, one step softer */
+  --line:        var(--hairline);
+  --line-soft:   #e8e1d4;   /* the quieter of the two hairlines */
+  --accent-soft: #efe4e3;   /* barely-there oxblood tint, for hover fills only */
+  --focus:       var(--ink);/* focus ring: reads against paper, surface and oxblood */
+
+  /* Libre Baskerville for headings, Inter for everything else. The Noto faces
+     carry Devanagari and Bengali, which neither webfont covers, so the /hi/
+     and /bn/ pages fall through to them. */
+  --font-serif: "Libre Baskerville", Georgia, "Iowan Old Style", "Palatino Linotype",
                 "Noto Serif Devanagari", "Noto Serif Bengali", serif;
-  --font-sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+  --font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
                 "Noto Sans Devanagari", "Noto Sans Bengali", Arial, sans-serif;
 
   --wrap: 1140px;          /* maximum content width */
   --measure: 68ch;         /* comfortable reading width */
   --radius: 4px;
-  --shadow: 0 1px 2px rgba(36, 31, 25, .06), 0 6px 18px rgba(36, 31, 25, .05);
+  /* No shadow token: hairlines and background steps carry the structure now. */
   --header-h: 66px;
 }
 
@@ -68,34 +75,38 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 1.0625rem;          /* 17px */
-  line-height: 1.65;
+  font-size: 1.0625rem;          /* 17px on a phone */
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
 }
+/* 18px once there is room for it. */
+@media (min-width: 700px) { body { font-size: 1.125rem; } }
 
 /* Hindi and Bengali read better with a little more line height. */
 html[lang^="hi"] body,
-html[lang^="bn"] body { line-height: 1.8; }
+html[lang^="bn"] body { line-height: 1.85; }
 
 img, svg { max-width: 100%; height: auto; }
 
+/* Libre Baskerville is a wide, generously proportioned face: it carries the
+   large sizes at its regular weight, and only wants bold once it gets small. */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   color: var(--ink);
-  line-height: 1.22;
+  line-height: 1.28;
   margin: 0 0 .6em;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  font-weight: 400;
+  letter-spacing: 0;
 }
-h1 { font-size: clamp(1.85rem, 1.3rem + 2.4vw, 2.85rem); }
-h2 { font-size: clamp(1.4rem, 1.15rem + 1.1vw, 1.9rem); }
-h3 { font-size: 1.2rem; }
-h4 { font-size: 1.05rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.1vw, 2.5rem); }
+h2 { font-size: clamp(1.3rem, 1.1rem + .95vw, 1.7rem); }
+h3 { font-size: 1.12rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; }
 
-p, ul, ol, dl { margin: 0 0 1.1em; }
+p, ul, ol, dl { margin: 0 0 1.15em; }
 
-a { color: var(--accent-dark); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:hover { color: var(--ink); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-dark); }
 
 hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
@@ -145,7 +156,7 @@ code {
   max-width: 60ch;
 }
 
-.band { padding: 3rem 0; border-top: 1px solid var(--line); }
+.band { padding: 4.5rem 0; border-top: 1px solid var(--line); }
 .band-alt { background: var(--bg-alt); }
 
 .section-label, .eyebrow, .post-date, .card-meta {
@@ -155,6 +166,23 @@ code {
   text-transform: uppercase;
   color: var(--muted);
   margin: 0 0 .6rem;
+}
+
+/* A short oxblood rule under the section label — the one place the accent
+   appears as pure ornament, and it stays small. */
+.section-label, .eyebrow {
+  display: block;
+  padding-bottom: .65rem;
+  position: relative;
+}
+.section-label::after, .eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent);
 }
 
 /* Breadcrumbs */
@@ -171,8 +199,7 @@ code {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 243, 238, .96);
-  backdrop-filter: saturate(140%) blur(6px);
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
 
@@ -323,12 +350,12 @@ code {
   flex-wrap: wrap;
   justify-content: center;
   gap: .45rem;
-  padding: .7rem 1.05rem;
+  padding: .85rem 1.35rem;
   border: 1px solid transparent;
   border-radius: var(--radius);
   font: inherit;
   font-size: .97rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
@@ -343,19 +370,18 @@ code {
 }
 .btn-txt { white-space: nowrap; }
 
-.btn-primary { background: var(--accent-dark); color: #fffdf9; }
-.btn-primary:hover { background: var(--ink); color: #fffdf9; }
-
-.btn-wa { background: var(--wa); color: #fff; }
-.btn-wa:hover { background: var(--wa-dark); color: #fff; }
+/* The contact actions — Call and WhatsApp alike — are the one solid-oxblood
+   element on the page. Nothing else competes with them for the eye. */
+.btn-primary, .btn-wa { background: var(--accent); color: var(--paper); }
+.btn-primary:hover, .btn-wa:hover { background: var(--accent-dark); color: var(--paper); }
 
 .btn-outline { background: transparent; color: var(--ink); border-color: var(--accent); }
-.btn-outline:hover { background: var(--accent-soft); color: var(--ink); }
+.btn-outline:hover { background: var(--accent-soft); color: var(--accent-dark); }
 
-.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--line); }
 .btn-ghost:hover { background: var(--accent-soft); }
 
-.btn-sm { padding: .5rem .7rem; font-size: .9rem; }
+.btn-sm { padding: .55rem .8rem; font-size: .9rem; }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.35rem 0; }
 .cta-col { display: flex; flex-direction: column; gap: .5rem; margin: 1rem 0; }
@@ -376,7 +402,7 @@ code {
   color: var(--muted);
   text-decoration: none;
   font-size: 1.15rem;
-  background: var(--surface);
+  background: var(--paper);
 }
 .scroll-cue:hover { color: var(--ink); border-color: var(--accent); }
 .hero-cue, .pillar-cue { margin: 1.5rem 0 0; }
@@ -390,7 +416,7 @@ code {
   border-bottom: 1px solid var(--line);
 }
 .hero-inner {
-  padding: 2.75rem 1.15rem 3rem;
+  padding: 3.5rem 1.15rem 4rem;
   display: grid;
   gap: 2rem;
   align-items: start;
@@ -404,9 +430,8 @@ code {
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 1.2rem 1.25rem;
-  box-shadow: var(--shadow);
+  border-radius: 6px;
+  padding: 1.5rem 1.5rem;
 }
 .hero-card .hero-meta { margin: 0; }
 .hero-card .hero-meta li { display: block; }
@@ -437,14 +462,14 @@ code {
 .meta-k { color: var(--muted); min-width: 9.5rem; font-size: .87rem; text-transform: uppercase; letter-spacing: .06em; }
 .meta-v { color: var(--ink); }
 
-.pillar { padding: 3.25rem 0; border-top: 1px solid var(--line); }
+.pillar { padding: 4.75rem 0; border-top: 1px solid var(--line); }
 .pillar-alt { background: var(--bg-alt); }
-.pillar-inner { display: grid; gap: 2rem; align-items: center; }
+.pillar-inner { display: grid; gap: 2.5rem; align-items: center; }
 .pillar-text h2 { margin-bottom: .7rem; }
 .pillar-text p { max-width: 54ch; color: var(--ink-2); }
 
 @media (min-width: 860px) {
-  .pillar-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; }
+  .pillar-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4.5rem; }
   .pillar-alt .pillar-text { order: 2; }
   .pillar-alt .pillar-media { order: 1; }
 }
@@ -452,23 +477,37 @@ code {
 /* ==========================================================================
    7. Cards, lists, prose, fact boxes
    ========================================================================== */
-.cards { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.cards { list-style: none; margin: 2.25rem 0 0; padding: 0; display: grid; gap: 1.5rem; }
 @media (min-width: 620px) { .cards-2, .cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 960px) { .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.15rem 1.2rem 1.05rem;
-  box-shadow: var(--shadow);
+  border-radius: 6px;
+  padding: 1.6rem 1.6rem 1.45rem;
 }
-.card-h { font-size: 1.13rem; margin-bottom: .4rem; }
+/* On a tinted band the card would otherwise be the same colour as the band
+   behind it, so it lifts to paper instead. */
+.band-alt .card, .pillar-alt .card { background: var(--paper); }
+
+/* These are h2 on the practice-areas hub and h3 on the home page; the weight
+   is pinned here so the same card looks the same on both. */
+.card-h { font-size: 1.12rem; font-weight: 700; margin-bottom: .45rem; }
 .card-h a { text-decoration: none; color: var(--ink); }
-.card-h a:hover { color: var(--accent-dark); text-decoration: underline; }
-.card-p { color: var(--muted); font-size: .97rem; margin-bottom: .8rem; }
+.card-h a:hover { color: var(--accent); text-decoration: underline; }
+.card-p { color: var(--muted); font-size: .97rem; margin-bottom: .9rem; }
 .card-meta { margin-bottom: .5rem; }
 .card-more { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem 1rem; font-size: .95rem; }
+
+/* Thin-line icon at the head of each practice-area card, for scanning. */
+.card-ico {
+  display: block;
+  color: var(--accent);
+  margin-bottom: .9rem;
+  line-height: 0;
+}
+.card-ico svg { width: 30px; height: 30px; }
 
 .prose > :last-child, .card > :last-child, .factbox > :last-child { margin-bottom: 0; }
 .prose p, .prose li { max-width: var(--measure); }
@@ -497,8 +536,8 @@ code {
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 1.15rem 1.2rem;
+  border-radius: 6px;
+  padding: 1.5rem 1.5rem;
 }
 .factbox h2 { font-size: 1.12rem; }
 .factbox dl { margin: 0; }
@@ -517,17 +556,17 @@ code {
 .related a:hover { text-decoration: underline; }
 
 /* Insight posts */
-.post-list { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 1.25rem; }
+.post-list { list-style: none; margin: 2rem 0; padding: 0; display: grid; gap: 1.5rem; }
 .post-item {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.15rem 1.2rem;
+  border-radius: 6px;
+  padding: 1.5rem 1.5rem;
 }
 .post-list-lg { gap: 1rem; }
-.post-h { font-size: 1.2rem; margin-bottom: .4rem; }
+.post-h { font-size: 1.2rem; font-weight: 700; margin-bottom: .4rem; }
 .post-h a { text-decoration: none; color: var(--ink); }
-.post-h a:hover { color: var(--accent-dark); text-decoration: underline; }
+.post-h a:hover { color: var(--accent); text-decoration: underline; }
 .post-x { color: var(--muted); margin-bottom: .6rem; }
 .post-date { margin-bottom: .35rem; }
 .post-body { margin-top: 1.5rem; }
@@ -544,11 +583,11 @@ code {
 
 /* Call-to-action band, repeated at the foot of content pages */
 .cta-block {
-  background: var(--bg-deep);
+  background: var(--surface);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 2.5rem 0;
-  margin-top: 3rem;
+  padding: 3.5rem 0;
+  margin-top: 4rem;
 }
 .cta-block h2 { margin-bottom: .5rem; }
 .cta-block p { max-width: 62ch; color: var(--ink-2); }
@@ -601,9 +640,8 @@ code {
 .office, .formwrap {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.4rem 1.35rem;
-  box-shadow: var(--shadow);
+  border-radius: 6px;
+  padding: 1.75rem 1.7rem;
 }
 .office-dl { margin: 0 0 1rem; }
 .office-dl dt {
@@ -627,10 +665,10 @@ code {
   font: inherit;
   font-size: 1rem;
   color: var(--ink);
-  background: #fff;
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: .65rem .7rem;
+  padding: .7rem .75rem;
 }
 .field input:focus, .field textarea:focus { border-color: var(--accent); }
 .field textarea { resize: vertical; min-height: 6.5rem; }
@@ -657,13 +695,13 @@ code {
   background: var(--bg-deep);
   border-top: 1px solid var(--line);
   margin-top: 0;
-  padding: 2.5rem 0 1.5rem;
+  padding: 3.5rem 0 1.75rem;
   font-size: .95rem;
 }
 /* Below 1000px the floating WhatsApp button sits over the bottom-right
    corner of the page; give the footer's last line room to clear it. */
 @media (max-width: 999px) {
-  .site-footer { padding-bottom: 4.75rem; }
+  .site-footer { padding-bottom: 6.5rem; }
 }
 .footer-grid { display: grid; gap: 1.75rem; }
 @media (min-width: 700px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1.4fr 1fr; gap: 2rem; } }
@@ -686,43 +724,48 @@ code {
 .footer-copy { font-size: .85rem; color: var(--muted); margin: 0; }
 
 /* ==========================================================================
-   11. Floating WhatsApp button
-   A small round button pinned to the bottom-right corner, the usual place
-   visitors expect a WhatsApp action -- not a bar spanning the screen.
+   11. Sticky contact bar (phone + WhatsApp)
+   On a phone this is the most prominent thing on the screen, and it stays
+   in reach the whole way down the page. Prominent by placement and colour,
+   not by size or noise.
    ========================================================================== */
 .contactbar {
   position: fixed;
-  right: 1rem;
-  /* env() keeps it clear of the home-bar / gesture area on iOS; the plain
-     1rem is what browsers without env() support use instead. */
-  bottom: 1rem;
-  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 60;
+  display: flex;
+  gap: .6rem;
+  padding: .65rem .9rem;
+  /* env() keeps it clear of the home-bar / gesture area on iOS; the plain
+     value is what browsers without env() support use instead. */
+  padding-bottom: .65rem;
+  padding-bottom: max(.65rem, env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 1px solid var(--line);
 }
 .cb-item {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   align-items: center;
-  gap: .4rem;
-  padding: .8rem 1.1rem;
-  border-radius: 999px;
-  font-size: .95rem;
+  justify-content: center;
+  gap: .45rem;
+  padding: .85rem 1rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  color: #fff;
-  background: var(--wa);
-  box-shadow: 0 4px 14px rgba(36, 31, 25, .28);
+  color: var(--paper);
+  background: var(--accent);
 }
-.cb-item:hover { background: var(--wa-dark); color: #fff; }
-@media (max-width: 360px) {
-  /* Icon only on the narrowest phones, so the button stays out of the way
-     of the page content beneath it. The link's aria-label still names it
-     for screen readers. */
-  .cb-item .cb-label { display: none; }
-  .cb-item { padding: .8rem; }
-}
+.cb-item:hover, .cb-item:active { background: var(--accent-dark); color: var(--paper); }
+.cb-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* On wider screens the header's own WhatsApp button is visible, so the
-   floating one is redundant. This breakpoint must match the header's. */
+/* On wider screens the header's own WhatsApp button is visible and the
+   Contact page is one click away, so the bar is redundant. This breakpoint
+   must match the header's. */
 @media (min-width: 1000px) {
   .contactbar { display: none; }
 }
@@ -738,33 +781,40 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: rgba(36, 31, 25, .62);
+  padding: 1.5rem 1rem;
+  background: var(--paper);
   overflow-y: auto;
 }
 .gate[hidden] { display: none; }   /* keep it out of the way until JS shows it */
 
 .gate-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, .3);
-  max-width: 46rem;
+  background: transparent;
+  max-width: 40rem;
   width: 100%;
-  padding: 1.5rem 1.4rem;
+  padding: 1.5rem 0;
   margin: auto;
+  text-align: center;
 }
-.gate-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
-.gate-logo .mark { color: var(--accent-dark); }
-.gate-logo span { display: flex; flex-direction: column; line-height: 1.15; }
-.gate-logo strong { font-family: var(--font-serif); font-size: 1.1rem; }
-.gate-logo small { font-size: .72rem; color: var(--muted); }
-.gate-title { font-size: 1.3rem; margin-bottom: .75rem; }
+/* The firm's own mark, centred at the top — this reads as the firm's front
+   door rather than a legal barrier. */
+.gate-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: 2.25rem;
+}
+.gate-logo .mark { color: var(--accent); width: 44px; height: 44px; }
+.gate-logo span { display: flex; flex-direction: column; line-height: 1.2; }
+.gate-logo strong { font-family: var(--font-serif); font-size: 1.25rem; color: var(--ink); }
+.gate-logo small { font-size: .75rem; color: var(--muted); letter-spacing: .04em; }
+.gate-title { font-size: 1.45rem; margin-bottom: 1.25rem; color: var(--ink); }
 /* The notice scrolls inside the card, so the checkbox and buttons stay in view
    on a small screen. The hairline underneath shows there is more to read. */
 .gate-body {
   font-size: .95rem;
   color: var(--ink-2);
+  text-align: left;
   max-height: 40vh;
   min-height: 5rem;
   overflow-y: auto;
@@ -780,17 +830,22 @@ code {
 .gate-check {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: .55rem;
-  margin: 1.1rem 0 .5rem;
+  margin: 1.75rem 0 .5rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  text-align: left;
 }
-.gate-check input { width: 1.15rem; height: 1.15rem; margin-top: .18rem; flex: 0 0 auto; }
-.gate-error { color: #9a2f2f; font-size: .92rem; margin: .25rem 0 .5rem; }
+.gate-check input {
+  width: 1.15rem; height: 1.15rem; margin-top: .28rem; flex: 0 0 auto;
+  accent-color: var(--accent);
+}
+.gate-error { color: var(--accent-dark); font-size: .92rem; margin: .25rem 0 .5rem; }
 .gate-error[hidden] { display: none; }
-.gate-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .75rem; }
-.gate-foot { margin: 1rem 0 0; font-size: .85rem; }
+.gate-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.25rem; }
+.gate-foot { margin: 1.75rem 0 0; font-size: .85rem; }
 body.gate-open { overflow: hidden; }
 
 /* ==========================================================================
@@ -854,9 +909,9 @@ body.gate-open { overflow: hidden; }
 .docblock, .authority {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.15rem 1.25rem;
-  margin: 1.85rem 0;
+  border-radius: 6px;
+  padding: 1.5rem 1.55rem;
+  margin: 2.25rem 0;
   max-width: var(--measure);
 }
 .docblock h2, .authority h2 { font-size: 1.05rem; margin-bottom: .6rem; }
@@ -903,7 +958,7 @@ body.gate-open { overflow: hidden; }
 .glossary-filter label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: .35rem; }
 .glossary-filter input {
   width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
   padding: .65rem .75rem;
 }
 .glossary-filter input:focus { border-color: var(--accent); }
@@ -924,9 +979,9 @@ body.gate-open { overflow: hidden; }
 .calc {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.3rem 1.35rem;
-  margin: 1.85rem 0;
+  border-radius: 6px;
+  padding: 1.6rem 1.65rem;
+  margin: 2.25rem 0;
   max-width: var(--measure);
 }
 .calc[hidden] { display: none; }
