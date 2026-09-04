@@ -1,14 +1,14 @@
 # Civil Law Firm
 
 > Civil litigation and advisory in Kolkata, India. In continuous civil practice
-> since 1969, with a team of advocates and associates. This file is a plain-text
+> since 1988, with a team of advocates and associates. This file is a plain-text
 > summary for AI assistants and crawlers. Everything here is factual and is
 > published for information only.
 
 ## Facts
 
 - Name: Civil Law Firm
-- Practising since: 1969
+- Practising since: 1988
 - Chambers: Ground Floor, 121/B Sitaram Ghosh Street, Kolkata 700009, West Bengal, India
   (College Street legal quarter, north Kolkata)
 - Chambers hours: 9:00 AM to 9:00 PM, Monday to Sunday

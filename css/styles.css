@@ -220,7 +220,7 @@ code {
   color: var(--ink);
   text-decoration: none;
 }
-.brand .mark { color: var(--accent-dark); flex: 0 0 auto; }
+.brand .mark { color: var(--accent); flex: 0 0 auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-text strong {
   font-family: var(--font-serif);
@@ -822,7 +822,7 @@ code {
   gap: .55rem;
   margin-bottom: 2.25rem;
 }
-.gate-logo .mark { color: var(--accent); width: 44px; height: 44px; }
+.gate-logo .mark { color: var(--accent); width: 31px; height: 44px; }
 .gate-logo span { display: flex; flex-direction: column; line-height: 1.2; }
 .gate-logo strong { font-family: var(--font-serif); font-size: 1.25rem; color: var(--ink); }
 .gate-logo small { font-size: .75rem; color: var(--muted); letter-spacing: .04em; }

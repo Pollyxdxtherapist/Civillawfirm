@@ -544,7 +544,7 @@ later must do the same. Before publishing any new words, check them against
 this list.
 
 **You may state, as plain fact:** the firm's name; that it has practised since
-1969; the chambers address and hours; the advocates' names, their B.A. LL.B.
+1988; the chambers address and hours; the advocates' names, their B.A. LL.B.
 qualification, their years in practice and their areas of work; the courts they
 appear in; and the contact details.
 
@@ -630,6 +630,7 @@ Three habits worth keeping:
 /css/styles.css               All the styling for the whole site
 /js/main.js                   The only script: menu, acknowledgement box, form
 /assets/                      favicon, logos, sharing picture
+  logo-mark.svg               the CLF monogram on its own
   favicon.svg                 the small icon in the browser tab
   logo-dark.svg               logo for light backgrounds (the one in use)
   logo-light.svg              logo for dark backgrounds, if ever needed
