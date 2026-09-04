@@ -73,13 +73,15 @@
 
   if (gate) {
     var form = document.getElementById('gate-form');
-    var box = document.getElementById('gate-accept');
-    var error = document.getElementById('gate-error');
 
     if (!alreadyAccepted()) {
       gate.hidden = false;
       document.body.classList.add('gate-open');
-      if (box) { box.focus(); }
+      /* Move reading position into the notice itself, so a screen reader
+         announces it. We do not focus either button: nothing should be one
+         stray keypress away from being agreed to. */
+      gate.setAttribute('tabindex', '-1');
+      gate.focus();
     }
 
     function closeGate() {
@@ -87,25 +89,15 @@
       document.body.classList.remove('gate-open');
     }
 
+    /* Pressing "Accept and continue" IS the acceptance -- there is nothing
+       else to fill in, so there is nothing to validate. */
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (box && !box.checked) {
-          if (error) { error.hidden = false; }
-          if (box) { box.focus(); }
-          return;
-        }
-        if (error) { error.hidden = true; }
         remember();
         closeGate();
         var main = document.getElementById('main');
         if (main) { main.setAttribute('tabindex', '-1'); main.focus(); }
-      });
-    }
-
-    if (box && error) {
-      box.addEventListener('change', function () {
-        if (box.checked) { error.hidden = true; }
       });
     }
   }

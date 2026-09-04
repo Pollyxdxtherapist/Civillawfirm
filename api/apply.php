@@ -151,7 +151,7 @@ function clf_apply_reply(bool $wants_json, int $status, string $message): void
        . '<meta name="viewport" content="width=device-width, initial-scale=1">'
        . '<meta name="robots" content="noindex">'
        . '<title>' . e($heading) . ' | Civil Law Firm</title>'
-       . '<link rel="stylesheet" href="/css/styles.css?v=4"></head><body>'
+       . '<link rel="stylesheet" href="/css/styles.css?v=5"></head><body>'
        . '<main id="main"><div class="wrap"><header class="page-head">'
        . '<h1>' . e($heading) . '</h1><p class="lede">' . e($message) . '</p></header>'
        . '<p class="cta-row"><a class="btn btn-outline" href="/careers/">Back to Careers</a>'

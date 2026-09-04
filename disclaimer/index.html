@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="/css/styles.css?v=4">
+<link rel="stylesheet" href="/css/styles.css?v=5">
 <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg?v=2">
 <meta name="theme-color" content="#f6f3ee">
@@ -242,7 +242,7 @@
 
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
-<script src="/js/main.js?v=2" defer></script>
+<script src="/js/main.js?v=3" defer></script>
 </head>
 <body>
 
@@ -445,17 +445,12 @@
     <h2 class="gate-title" id="gate-title">Please read before you continue</h2>
     <div class="gate-body" id="gate-body">
         <p>As per the rules of the Bar Council of India, advocates are not permitted to solicit work or advertise.</p>
-        <p>By checking the box below and clicking “Proceed to website”, you acknowledge and confirm that you are seeking information about Civil Law Firm of your own accord, and that there has been no advertisement, personal communication, solicitation, invitation, or inducement of any sort by the firm or any of its members.</p>
+        <p>By clicking “Accept and continue”, you acknowledge and confirm that you are seeking information about Civil Law Firm of your own accord, and that there has been no advertisement, personal communication, solicitation, invitation, or inducement of any sort by the firm or any of its members.</p>
         <p>You further acknowledge that you have read and understood the <a href="/disclaimer/">Disclaimer</a>, that the information on this website is provided only for general understanding, that it is not legal advice, and that browsing this website does not create an advocate–client relationship.</p>
     </div>
     <form class="gate-form" id="gate-form" novalidate>
-      <label class="gate-check">
-        <input type="checkbox" id="gate-accept">
-        <span>I accept the above</span>
-      </label>
-      <p class="gate-error" id="gate-error" role="alert" hidden>Please accept the above to continue.</p>
       <div class="gate-actions">
-        <button type="submit" class="btn btn-primary" id="gate-proceed">Proceed to website</button>
+        <button type="submit" class="btn btn-primary" id="gate-proceed">Accept and continue</button>
         <a class="btn btn-ghost" href="https://www.google.com" id="gate-exit" rel="noopener">Exit</a>
       </div>
     </form>

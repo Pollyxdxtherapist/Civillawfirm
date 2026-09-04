@@ -845,24 +845,16 @@ code {
 }
 .gate-body p { margin-bottom: .8em; }
 .gate-body p:last-child { margin-bottom: 0; }
-.gate-check {
+/* The overlay itself takes focus when it opens, so the notice is announced.
+   It is a scroll container, not a control, so it shows no focus ring. */
+.gate:focus { outline: none; }
+.gate-actions {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: .55rem;
-  margin: 1.75rem 0 .5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
+  gap: .6rem;
+  margin-top: 1.75rem;
 }
-.gate-check input {
-  width: 1.15rem; height: 1.15rem; margin-top: .28rem; flex: 0 0 auto;
-  accent-color: var(--accent);
-}
-.gate-error { color: var(--accent-dark); font-size: .92rem; margin: .25rem 0 .5rem; }
-.gate-error[hidden] { display: none; }
-.gate-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.25rem; }
 .gate-foot { margin: 1.75rem 0 0; font-size: .85rem; }
 body.gate-open { overflow: hidden; }
 
