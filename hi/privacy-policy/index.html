@@ -242,7 +242,7 @@
 
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js?v=2" defer></script>
 </head>
 <body>
 
@@ -324,8 +324,8 @@
 
     <section class="prose-sec">
       <h2>जो जानकारी आपके ही उपकरण पर रहती है</h2>
-      <p>पहली बार आने पर दिखाई जाने वाली भारतीय विधिज्ञ परिषद संबंधी स्वीकृति जब आप स्वीकार करते हैं, तो वह स्वीकृति आपके ब्राउज़र के लोकल स्टोरेज में दर्ज हो जाती है, जिससे बाद की बार आपसे पुनः न पूछा जाए। वह आपके उपकरण पर ही रहती है, कहीं प्रेषित नहीं होती, और इस डोमेन का साइट-डेटा साफ़ करके कभी भी हटाई जा सकती है।</p>
-      <p>नीचे वर्णित गूगल एनालिटिक्स अपनी ओर से दो कुकीज़ रखती है — _ga तथा _ga_D89Y18BMVX — जिनसे वह एक भेंट को दूसरी से अलग पहचानती है। ये स्वयं ही समाप्त हो जाती हैं, और ब्राउज़र में इस साइट का डेटा साफ़ करने पर ऊपर उल्लिखित स्वीकृति के साथ ये भी हट जाती हैं। साइट इनके अतिरिक्त कोई कुकी नहीं रखती।</p>
+      <p>भारतीय विधिज्ञ परिषद संबंधी स्वीकृति हर बार वेबसाइट खोलने पर दिखाई जाती है। जब आप उसे स्वीकार करते हैं, तो वह स्वीकृति आपके ब्राउज़र के सेशन स्टोरेज में रहती है, जिससे एक पृष्ठ से दूसरे पर जाते समय आपसे पुनः न पूछा जाए। वेबसाइट बंद करते ही ब्राउज़र उसे स्वयं हटा देता है, और वह कहीं प्रेषित नहीं होती।</p>
+      <p>नीचे वर्णित गूगल एनालिटिक्स अपनी ओर से दो कुकीज़ रखती है — _ga तथा _ga_D89Y18BMVX — जिनसे वह एक भेंट को दूसरी से अलग पहचानती है। ये स्वयं ही समाप्त हो जाती हैं, और ब्राउज़र में इस साइट का डेटा साफ़ करने पर ये हट जाती हैं। साइट इनके अतिरिक्त कोई कुकी नहीं रखती।</p>
     </section>
 
     <section class="prose-sec">
@@ -438,9 +438,10 @@
 <!-- ===== BCI acknowledgement overlay =====
      IMPORTANT: this block is deliberately the LAST thing in <body> and starts
      hidden.  The whole page is already present above it, so search engines and
-     AI crawlers read the content normally.  js/main.js shows this overlay on a
-     first visit and records acceptance in localStorage. Do not change it into a
-     redirect or make the page depend on it. -->
+     AI crawlers read the content normally.  js/main.js shows this overlay once
+     each time the site is opened, and records acceptance in sessionStorage,
+     which the browser clears by itself. Do not change it into a redirect or
+     make the page depend on it. -->
 <div class="gate" id="gate" hidden role="dialog" aria-modal="true"
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">

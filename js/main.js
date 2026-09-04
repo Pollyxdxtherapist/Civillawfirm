@@ -48,19 +48,27 @@
      2. Acknowledgement overlay (Bar Council of India)
 
      The overlay sits on top of the finished page and starts hidden. We show
-     it only if this browser has not accepted before. Acceptance is stored on
-     the visitor's own device (localStorage) and is never sent anywhere.
+     it once each time the website is opened. Acceptance is kept in
+     sessionStorage, which the browser empties by itself when the visitor
+     closes the site -- so moving between pages, or reloading one, does not
+     ask again, but coming back later does. Nothing is sent anywhere, and
+     nothing is left behind on the device afterwards.
      ------------------------------------------------------------------ */
-  var STORE_KEY = 'clf-acknowledgement-v1';
+  var STORE_KEY = 'clf-acknowledgement-session';
+  var OLD_KEY = 'clf-acknowledgement-v1';   /* the earlier permanent record */
   var gate = document.getElementById('gate');
 
+  /* The acknowledgement used to be remembered for good. Clear that old entry
+     so nothing of ours is left sitting in local storage for ever. */
+  try { window.localStorage.removeItem(OLD_KEY); } catch (err) { /* ignore */ }
+
   function alreadyAccepted() {
-    try { return window.localStorage.getItem(STORE_KEY) === 'yes'; }
+    try { return window.sessionStorage.getItem(STORE_KEY) === 'yes'; }
     catch (err) { return false; }   // private browsing, storage disabled, etc.
   }
 
   function remember() {
-    try { window.localStorage.setItem(STORE_KEY, 'yes'); } catch (err) { /* ignore */ }
+    try { window.sessionStorage.setItem(STORE_KEY, 'yes'); } catch (err) { /* ignore */ }
   }
 
   if (gate) {

@@ -317,7 +317,7 @@
 
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js?v=2" defer></script>
 </head>
 <body>
 
@@ -533,9 +533,10 @@
 <!-- ===== BCI acknowledgement overlay =====
      IMPORTANT: this block is deliberately the LAST thing in <body> and starts
      hidden.  The whole page is already present above it, so search engines and
-     AI crawlers read the content normally.  js/main.js shows this overlay on a
-     first visit and records acceptance in localStorage. Do not change it into a
-     redirect or make the page depend on it. -->
+     AI crawlers read the content normally.  js/main.js shows this overlay once
+     each time the site is opened, and records acceptance in sessionStorage,
+     which the browser clears by itself. Do not change it into a redirect or
+     make the page depend on it. -->
 <div class="gate" id="gate" hidden role="dialog" aria-modal="true"
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">

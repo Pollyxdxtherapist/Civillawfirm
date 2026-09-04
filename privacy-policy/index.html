@@ -242,7 +242,7 @@
 
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js?v=2" defer></script>
 </head>
 <body>
 
@@ -324,8 +324,8 @@
 
     <section class="prose-sec">
       <h2>Information stored on your own device</h2>
-      <p>When you accept the Bar Council of India acknowledgement shown on your first visit, that acceptance is recorded in your browser’s local storage so that you are not asked again on later visits. It stays on your device, is not transmitted anywhere, and can be removed at any time by clearing your browser’s site data for this domain.</p>
-      <p>Google Analytics, described below, sets two cookies of its own — named _ga and _ga_D89Y18BMVX — which let it tell one visit apart from another. They expire by themselves, and clearing this site’s data in your browser removes them along with the acknowledgement above. The site sets no other cookies.</p>
+      <p>The Bar Council of India acknowledgement is shown each time you open this website. When you accept it, that acceptance is held in your browser’s session storage, so that you are not asked again while you move from page to page. The browser discards it by itself when you close the site, and it is never transmitted anywhere.</p>
+      <p>Google Analytics, described below, sets two cookies of its own — named _ga and _ga_D89Y18BMVX — which let it tell one visit apart from another. They expire by themselves, and clearing this site’s data in your browser removes them. The site sets no other cookies.</p>
     </section>
 
     <section class="prose-sec">
@@ -438,9 +438,10 @@
 <!-- ===== BCI acknowledgement overlay =====
      IMPORTANT: this block is deliberately the LAST thing in <body> and starts
      hidden.  The whole page is already present above it, so search engines and
-     AI crawlers read the content normally.  js/main.js shows this overlay on a
-     first visit and records acceptance in localStorage. Do not change it into a
-     redirect or make the page depend on it. -->
+     AI crawlers read the content normally.  js/main.js shows this overlay once
+     each time the site is opened, and records acceptance in sessionStorage,
+     which the browser clears by itself. Do not change it into a redirect or
+     make the page depend on it. -->
 <div class="gate" id="gate" hidden role="dialog" aria-modal="true"
      aria-labelledby="gate-title" aria-describedby="gate-body">
   <div class="gate-card">

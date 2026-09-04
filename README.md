@@ -562,9 +562,15 @@ appear in; and the contact details.
 chambers handles partition matters" is safe. "We are the people to call for
 partition matters" is not.
 
-Two further things to leave alone: the acknowledgement box that appears on a
-first visit, and the `/disclaimer/` page. They are what record that the visitor
-came looking of their own accord.
+Two further things to leave alone: the acknowledgement box, which appears once
+each time someone opens the website, and the `/disclaimer/` page. They are what
+record that the visitor came looking of their own accord.
+
+The acceptance is kept in the browser's **session** storage, so moving between
+pages or reloading one does not ask again, but coming back to the site later
+does. To go back to asking only once per device, change `sessionStorage` to
+`localStorage` in the acknowledgement section of `js/main.js` — and change the
+matching paragraph in the Privacy Policy, in all three languages, to say so.
 
 ---
 
