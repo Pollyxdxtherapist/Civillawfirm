@@ -39,8 +39,8 @@ with its own web address, which is what makes them findable on Google.
 
 Items (a) to (c) below are **done**; they are kept here so you know how to
 change them later. Only **(d) the Google Search Console token** and **(e) the
-photographs** are still outstanding, plus the three Cloudflare settings the
-careers form needs — (c2).
+remaining photographs** are still outstanding, plus the database and admin
+portal the careers form needs — (c2).
 
 The only placeholder left in the files is
 `[PLACEHOLDER-GSC-VERIFICATION-TOKEN]` — searching the folder for
@@ -188,13 +188,14 @@ See [section 4](#4-getting-found-on-google-search-console). Replace
 
 ### (e) Photographs
 
-There are no photographs yet. Every place a photograph should go shows a grey
+The chambers interior is in place — `assets/photos/home-1.jpg`, on the home
+page in all three languages. Every place still waiting for one shows a grey
 placeholder box with a caption saying what belongs there:
 
 - each advocate (on their profile page)
-- the chambers interior (bookshelf / desk)
+- the advocates together, at the chambers (home page)
 - the street exterior (the building entrance)
-- the locality (on the home page)
+- the chambers, on the About page
 
 See [Replace a photo placeholder](#replace-a-photo-placeholder-with-a-real-photograph).
 
@@ -642,7 +643,8 @@ Three habits worth keeping:
   logo-light.svg              logo for dark backgrounds, if ever needed
   og-image.png                picture shown when a link is shared
   og-image.svg                editable version of that picture
-/assets/photos/               (create this) real photographs go here
+/assets/photos/               real photographs
+  home-1.jpg / .webp          the chambers interior, on the home page
 
 sitemap.xml                   List of every page, for Google
 robots.txt                    Permission for search engines and AI crawlers
