@@ -188,14 +188,17 @@ See [section 4](#4-getting-found-on-google-search-console). Replace
 
 ### (e) Photographs
 
-The chambers interior is in place — `assets/photos/home-1.jpg`, on the home
-page in all three languages. Every place still waiting for one shows a grey
-placeholder box with a caption saying what belongs there:
+Four are in place, in all three languages: the chambers interior and the two
+advocates together on the home page, and a portrait on each advocate's profile
+page. Every place still waiting for one shows a grey placeholder box with a
+caption saying what belongs there:
 
-- each advocate (on their profile page)
-- the advocates together, at the chambers (home page)
-- the street exterior (the building entrance)
+- the street exterior (the building entrance, on the home page)
 - the chambers, on the About page
+
+The two advocate portraits and the pair shot are crops of one supplied image.
+The alt text describes who is shown and what they are wearing; it does not call
+any of them a photograph.
 
 See [Replace a photo placeholder](#replace-a-photo-placeholder-with-a-real-photograph).
 
@@ -643,8 +646,11 @@ Three habits worth keeping:
   logo-light.svg              logo for dark backgrounds, if ever needed
   og-image.png                picture shown when a link is shared
   og-image.svg                editable version of that picture
-/assets/photos/               real photographs
+/assets/photos/               pictures used on the site
   home-1.jpg / .webp          the chambers interior, on the home page
+  home-2.jpg / .webp          the two advocates, on the home page
+  bimlesh-kumar-jain.*        portrait, on his profile page
+  aditya-kumar-jain.*         portrait, on his profile page
 
 sitemap.xml                   List of every page, for Google
 robots.txt                    Permission for search engines and AI crawlers
