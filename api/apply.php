@@ -22,7 +22,7 @@ try {
     /* Spam trap. A real applicant never sees this field, so anything in it is
        a robot. Answer as though it worked, and save nothing. */
     if (trim((string) ($_POST['botcheck'] ?? '')) !== '') {
-        clf_apply_reply($wants_json, 200, 'Thank you — your application has been sent.');
+        clf_apply_reply($wants_json, 200, 'Thank you, your application has been sent.');
     }
 
     /* Angle brackets are stripped so nothing tag-like is ever stored. */
@@ -123,7 +123,7 @@ try {
         throw $e;
     }
 
-    clf_apply_reply($wants_json, 200, 'Thank you — your application has been sent.');
+    clf_apply_reply($wants_json, 200, 'Thank you, your application has been sent.');
 
 } catch (Throwable $e) {
     error_log('careers: ' . $e->getMessage());
