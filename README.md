@@ -190,11 +190,17 @@ See [section 4](#4-getting-found-on-google-search-console). Replace
 
 Four are in place, in all three languages: the chambers interior and the two
 advocates together on the home page, and a portrait on each advocate's profile
-page. Every place still waiting for one shows a grey placeholder box with a
+page. One place still waiting for one shows a grey placeholder box with a
 caption saying what belongs there:
 
-- the street exterior (the building entrance, on the home page)
 - the chambers, on the About page
+
+The home page no longer has a street-exterior slot: there was never a
+photograph for it, so the placeholder box was removed rather than left
+standing empty, and the "The firm" section reads as plain text, full width.
+If a photograph of the building exterior turns up later, add a new
+`.pillar-media` block matching the ones still in place elsewhere on the page,
+and drop the `pillar-solo` class from that section's `.pillar-inner`.
 
 The two advocate portraits and the pair shot are crops of one supplied image.
 The alt text describes who is shown and what they are wearing; it does not call

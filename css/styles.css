@@ -472,6 +472,9 @@ code {
   .pillar-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4.5rem; }
   .pillar-alt .pillar-text { order: 2; }
   .pillar-alt .pillar-media { order: 1; }
+  /* A pillar with no photograph yet: one full-width column, so there is no
+     empty half left by the missing .pillar-media. */
+  .pillar-solo { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
