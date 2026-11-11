@@ -279,3 +279,53 @@
       });
   });
 })();
+
+/* Share buttons on Recents posts. Hidden until this script has wired them,
+   so a visitor without JavaScript never sees a button that does nothing. */
+(function () {
+  var box = document.querySelector('[data-share]');
+  if (!box) return;
+  var canon = document.querySelector('link[rel="canonical"]');
+  var url = (canon && canon.href) || location.href;
+  var h1 = document.querySelector('h1');
+  var title = h1 ? h1.textContent.replace(/\s+/g, ' ').trim() : document.title;
+  var nativeBtn = box.querySelector('.share-native');
+  var wa = box.querySelector('.share-wa');
+  var copyBtn = box.querySelector('.share-copy');
+  var status = box.querySelector('.share-status');
+
+  wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+
+  if (navigator.share) {
+    nativeBtn.hidden = false;
+    wa.hidden = true;          /* the system share sheet already offers WhatsApp */
+    nativeBtn.addEventListener('click', function () {
+      navigator.share({ title: title, url: url }).catch(function () {});
+    });
+  }
+
+  function copied() {
+    status.textContent = copyBtn.getAttribute('data-copied') || '';
+    setTimeout(function () { status.textContent = ''; }, 2500);
+  }
+  function fallbackCopy() {
+    var t = document.createElement('textarea');
+    t.value = url;
+    t.setAttribute('readonly', '');
+    t.style.position = 'fixed';
+    t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    try { if (document.execCommand('copy')) copied(); } catch (e) {}
+    document.body.removeChild(t);
+  }
+  copyBtn.addEventListener('click', function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(copied, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  });
+
+  box.hidden = false;
+})();

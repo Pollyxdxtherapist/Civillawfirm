@@ -59,7 +59,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="/css/styles.css?v=6">
+<link rel="stylesheet" href="/css/styles.css?v=7">
 <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg?v=2">
 <meta name="theme-color" content="#f6f3ee">
@@ -276,7 +276,7 @@
 
 <!-- Small, deferred script: menu toggle, acknowledgement overlay, contact form.
      Nothing on this site depends on it to display content. -->
-<script src="/js/main.js?v=3" defer></script>
+<script src="/js/main.js?v=4" defer></script>
 </head>
 <body>
 
@@ -360,6 +360,15 @@
     </div>
 
     <footer class="post-foot">
+      <div class="share" data-share hidden>
+        <p class="share-label">Share this note</p>
+        <p class="share-row">
+          <button type="button" class="btn btn-ghost btn-sm share-native" hidden>Share</button>
+          <a class="btn btn-ghost btn-sm share-wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+          <button type="button" class="btn btn-ghost btn-sm share-copy" data-copied="Link copied">Copy link</button>
+          <span class="share-status" role="status" aria-live="polite"></span>
+        </p>
+      </div>
       <p><a class="link-more" href="/insights/">&larr; Back to all Recents</a></p>
     </footer>
   </article>
