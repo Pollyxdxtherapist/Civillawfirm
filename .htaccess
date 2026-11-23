@@ -1,0 +1,39 @@
+# Read by Apache and LiteSpeed, which is what Hostinger runs. This does the
+# same job as _headers does on Cloudflare: a little security hardening and
+# some caching. Nothing here is required for the site to work.
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Pages are checked for freshness every visit, so an edit shows up at once.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  # The stylesheet and scripts are cached for an hour.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  # Logos and pictures rarely change.
+  <FilesMatch "\.(svg|png|jpg|jpeg|webp|ico|woff2)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  # The admin portal must never be cached or indexed.
+  <FilesMatch "^(index|application|download|logout|prune|make-hash)\.php$">
+    Header always set X-Robots-Tag "noindex, nofollow"
+  </FilesMatch>
+</IfModule>
+
+# Never serve the database schema or a stray configuration file as text.
+<FilesMatch "\.(sql|sample\.php|md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
