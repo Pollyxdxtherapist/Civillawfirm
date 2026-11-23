@@ -530,10 +530,10 @@ Keep every post **informational** — see
 4. Add the new area to the list of cards on `practice-areas/index.html`: copy an
    existing `<li class="card">...</li>` block and change the address and words.
 5. Add a link to it in the "Related practice areas" list of the other
-   practice-area pages, and to the seven cards on the home page if you want it
+   practice-area pages, and to the eight cards on the home page if you want it
    there.
 6. Add the new area to the `"hasOfferCatalog"` list inside the JSON-LD block —
-   the easiest way is to copy one of the seven entries already there.
+   the easiest way is to copy one of the eight entries already there.
 7. Add three `<url>` blocks to `sitemap.xml` (English, Hindi, Bengali).
 8. Repeat steps 1–5 in the `hi/` and `bn/` folders.
 9. Mention the new area in `llms.txt`.

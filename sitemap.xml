@@ -255,6 +255,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://civillawfirm.in/practice-areas/criminal-law/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://civillawfirm.in/hi/practice-areas/civil-appeals-writs/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/civil-appeals-writs/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/civil-appeals-writs/"/>
@@ -264,11 +273,29 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://civillawfirm.in/hi/practice-areas/criminal-law/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://civillawfirm.in/bn/practice-areas/civil-appeals-writs/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/civil-appeals-writs/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/civil-appeals-writs/"/>
     <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/civil-appeals-writs/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/civil-appeals-writs/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://civillawfirm.in/bn/practice-areas/criminal-law/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://civillawfirm.in/hi/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://civillawfirm.in/bn/practice-areas/criminal-law/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://civillawfirm.in/practice-areas/criminal-law/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
